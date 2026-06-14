@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bibdle 📖
 
-## Getting Started
+The daily Bible guessing game — a Wordle/LoLdle-inspired puzzle with four game
+modes, polished hand-written CSS animations, and (coming soon) an AI chat where
+you can talk to the character you just guessed.
 
-First, run the development server:
+> One puzzle per day, the same answer for everyone, no account required.
+
+## Game modes
+
+| Mode | Goal | Feedback |
+| --- | --- | --- |
+| 📖 **Classic** | Guess the Bible character | Per-trait tiles: Testament, Book, Role, Tribe/Nation, Era, Gender — 🟩 correct / 🟨 partial / ⬛ wrong, with ⬆️/⬇️ era hints |
+| 💬 **Quote** | Name who said it | Wrong guesses progressively reveal book → chapter → first letter |
+| 🐳 **Emoji** | Decode the emoji story | One emoji revealed at a time per wrong guess |
+| 📜 **Verse** | Guess which book a verse is from | 🟩 book / 🟨 section / 🟧 testament / ⬛ wrong, plus canonical ⬆️/⬇️ direction |
+
+Solve a mode to see a confetti win popup with your spoiler-free emoji-grid
+result (copy-to-clipboard / native share) and quick links to jump straight into
+the other modes. Per-mode stats — games played, win rate, current and max
+streak — are tracked locally.
+
+## Tech stack
+
+- **[Next.js](https://nextjs.org/) (App Router) + TypeScript** — statically
+  rendered, deploys to the Vercel free tier.
+- **Vanilla CSS Modules** — every animation (staggered 3D tile flips, shake,
+  confetti, modal pop-in) is hand-written keyframes; no Tailwind or animation
+  libraries. Respects `prefers-reduced-motion`.
+- **No backend / database** — the daily answer is a deterministic FNV-1a hash of
+  `mode + date`, so every player gets the same puzzle with zero server state.
+  Progress and stats live in `localStorage`.
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other scripts:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build    # production build
+npm run start    # serve the production build
+npm run lint     # eslint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure
 
-## Learn More
+```
+src/
+├─ app/                 # routes: / (mode select), /classic, /quote, /emoji, /verse
+├─ components/          # game UIs, search inputs, share modal, confetti
+├─ data/
+│  ├─ types.ts          # Character / Book / Verse types + ordered ERAS
+│  ├─ characters.ts     # ~90 characters with traits, emojis, quotes, persona notes
+│  ├─ books.ts          # all 66 books (testament, section, canonical order, chapters)
+│  └─ verses.ts         # verse pool for Verse mode
+└─ lib/
+   ├─ daily.ts          # deterministic daily-answer selection
+   ├─ compare.ts        # Classic-mode trait comparison
+   ├─ stats.ts          # streaks / win-rate persistence
+   ├─ share.ts          # emoji-grid share text
+   ├─ modes.ts          # mode registry
+   └─ useDailyState.ts  # per-day localStorage hook
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Adding content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Characters:** append entries to `src/data/characters.ts` (every field is
+  typed; `era`, `roles`, and `section` are string unions checked by `tsc`).
+- **Verses:** append to `src/data/verses.ts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+All quotes and verses use the KJV (public domain).
 
-## Deploy on Vercel
+## Roadmap
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- AI character chat — talk to the character in persona after solving (Gemini
+  Flash via a Vercel serverless route; provider abstracted).
+- More modes: Relation (genealogy), Object/Symbol, Timeline ordering.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See [`PRD.md`](./PRD.md) for the full product spec.
+
+## Deploying
+
+Push to GitHub and import the repo on [Vercel](https://vercel.com/new) — no
+configuration or environment variables needed for the current build. The AI chat
+milestone will add a single API key.

@@ -1,0 +1,67 @@
+.guessList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.guessRow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-tile);
+  animation: flipIn 500ms ease both;
+}
+
+.guessName {
+  font-weight: 700;
+  min-width: 8.5rem;
+}
+
+.guessDetail {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+}
+
+.guessArrow {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.correct {
+  background: var(--correct);
+  border-color: transparent;
+}
+
+.correct .guessDetail {
+  color: var(--fg);
+}
+
+.section {
+  border-color: var(--partial);
+}
+
+.testament {
+  border-color: #8a5a00;
+}
+
+.wrong {
+  background: var(--wrong);
+  border-color: transparent;
+}
+
+@keyframes flipIn {
+  0% {
+    opacity: 0;
+    transform: rotateX(60deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}

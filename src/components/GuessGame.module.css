@@ -1,0 +1,155 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 640px;
+}
+
+.prompt {
+  width: 100%;
+  padding: 1.4rem 1.6rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  font-style: italic;
+  text-align: center;
+  animation: rise 500ms ease-out both;
+}
+
+.emojiRow {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 2.6rem;
+}
+
+.emojiTile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  animation: flipIn 500ms ease both;
+}
+
+.emojiHidden {
+  color: var(--fg-muted);
+  font-size: 1.6rem;
+  animation: none;
+}
+
+.hints {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.hint {
+  padding: 0.4rem 0.9rem;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  animation: pop 400ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.wrongList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 100%;
+}
+
+.wrongChip {
+  padding: 0.35rem 0.8rem;
+  background: var(--wrong);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  text-decoration: line-through;
+  animation: pop 300ms ease-out both;
+}
+
+.winBanner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.2rem 2rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--correct);
+  border-radius: var(--radius);
+  text-align: center;
+  animation: pop 500ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.winName {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.winSub {
+  color: var(--fg-muted);
+  font-size: 0.9rem;
+}
+
+.count {
+  color: var(--fg-muted);
+  font-size: 0.85rem;
+}
+
+.shareLink {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: opacity 150ms ease;
+}
+
+.shareLink:hover {
+  opacity: 0.8;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes flipIn {
+  0% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}

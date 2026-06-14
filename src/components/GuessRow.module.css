@@ -1,0 +1,68 @@
+.row {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  gap: 6px;
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 64px;
+  padding: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-tile);
+}
+
+.nameTile {
+  flex-direction: column;
+  background: var(--bg-raised);
+  border-color: var(--accent-soft);
+}
+
+.nameEmoji {
+  font-size: 1.3rem;
+}
+
+.flip {
+  animation: flipIn var(--flip-duration) ease both;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+}
+
+.correct {
+  background: var(--correct);
+  border-color: transparent;
+}
+
+.partial {
+  background: var(--partial);
+  border-color: transparent;
+}
+
+.wrong {
+  background: var(--wrong);
+  border-color: transparent;
+  color: var(--fg-muted);
+}
+
+@keyframes flipIn {
+  0% {
+    transform: rotateX(90deg);
+    background: var(--bg-tile);
+    color: transparent;
+  }
+  55% {
+    transform: rotateX(90deg);
+    color: transparent;
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
