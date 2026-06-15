@@ -3,7 +3,7 @@ import VerseGame from "@/components/VerseGame";
 
 export default function VersePage() {
   return (
-    <ModePage icon="📜" title="Verse" subtitle="Which book is this verse from?">
+    <ModePage modeId="verse" icon="📜" title="Verse" subtitle="Which book is this verse from?">
       <VerseGame />
     </ModePage>
   );

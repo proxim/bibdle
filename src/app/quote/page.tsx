@@ -3,7 +3,7 @@ import QuoteGame from "@/components/QuoteGame";
 
 export default function QuotePage() {
   return (
-    <ModePage icon="💬" title="Quote" subtitle="Who said it?">
+    <ModePage modeId="quote" icon="💬" title="Quote" subtitle="Who said it?">
       <QuoteGame />
     </ModePage>
   );
