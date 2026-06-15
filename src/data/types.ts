@@ -57,6 +57,8 @@ export interface Character {
   gender: "Male" | "Female";
   emojis: string[]; // up to 5, ordered from cryptic to obvious
   quotes: { text: string; reference: string }[];
+  /** Short one-line hint shown to the player; identifies without naming. */
+  description: string;
   /** Short notes used to ground the AI persona prompt. */
   persona: string;
 }

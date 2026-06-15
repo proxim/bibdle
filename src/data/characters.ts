@@ -19,6 +19,7 @@ export const CHARACTERS: Character[] = [
         reference: "Genesis 3:12",
       },
     ],
+    description: "The first man, created by God",
     persona:
       "The first man, formed from dust in Eden. Named the animals, husband of Eve, exiled after eating the forbidden fruit. Speaks with wonder about creation and regret about the fall.",
   },
@@ -39,6 +40,7 @@ export const CHARACTERS: Character[] = [
         reference: "Genesis 3:13",
       },
     ],
+    description: "The first woman, mother of all living",
     persona:
       "The first woman, mother of all living. Deceived by the serpent in Eden; mother of Cain, Abel, and Seth.",
   },
@@ -59,6 +61,7 @@ export const CHARACTERS: Character[] = [
         reference: "Genesis 9:25",
       },
     ],
+    description: "Built an ark to survive the great flood",
     persona:
       "Builder of the ark, preserved through the flood with his family and the animals. Received the rainbow covenant. Patient, obedient, a preacher of righteousness.",
   },
@@ -79,6 +82,7 @@ export const CHARACTERS: Character[] = [
         reference: "Genesis 22:8",
       },
     ],
+    description: "Father of faith, called to a promised land",
     persona:
       "Father of faith, called out of Ur to a promised land. Husband of Sarah, father of Isaac and Ishmael. Tested on Mount Moriah. Speaks of promises, stars, and journeys.",
   },
@@ -99,6 +103,7 @@ export const CHARACTERS: Character[] = [
         reference: "Genesis 21:6",
       },
     ],
+    description: "Bore a son in old age and laughed at the promise",
     persona:
       "Wife of Abraham, mother of Isaac in old age. Laughed at the promise and then named her son 'laughter.'",
   },
@@ -119,6 +124,7 @@ export const CHARACTERS: Character[] = [
         reference: "Genesis 32:26",
       },
     ],
+    description: "Wrestled with God; father of the twelve tribes",
     persona:
       "Twin who grasped his brother's heel, traded stew for a birthright, dreamed of a ladder to heaven, and wrestled with God to earn the name Israel. Father of the twelve tribes.",
   },
@@ -139,6 +145,7 @@ export const CHARACTERS: Character[] = [
         reference: "Genesis 50:20",
       },
     ],
+    description: "Dreamer sold into Egypt who rose to power",
     persona:
       "Dreamer sold by his brothers, falsely imprisoned in Egypt, raised to second over Pharaoh's house. Interpreter of dreams, forgiver of betrayal.",
   },
@@ -159,6 +166,7 @@ export const CHARACTERS: Character[] = [
         reference: "Exodus 8:1",
       },
     ],
+    description: "Led the Israelites out of Egypt; received the Law",
     persona:
       "Drawn from the Nile, raised in Pharaoh's court, called at the burning bush. Led Israel through the Red Sea, received the Law at Sinai. Humble but fierce against injustice.",
   },
@@ -179,6 +187,7 @@ export const CHARACTERS: Character[] = [
         reference: "Joshua 24:15",
       },
     ],
+    description: "Successor of Moses who conquered Jericho",
     persona:
       "Moses' aide and successor, spy of Canaan, conqueror of Jericho whose walls fell to trumpets. Bold, courageous, devoted.",
   },
@@ -199,6 +208,7 @@ export const CHARACTERS: Character[] = [
         reference: "Ruth 1:16",
       },
     ],
+    description: "Loyal Moabite widow, great-grandmother of David",
     persona:
       "Moabite widow who clung to Naomi, gleaned in the fields of Boaz, and became great-grandmother of King David. Loyal, humble, kind.",
   },
@@ -219,6 +229,7 @@ export const CHARACTERS: Character[] = [
         reference: "Judges 14:14",
       },
     ],
+    description: "Strongman judge whose power lay in his hair",
     persona:
       "Nazirite judge of supernatural strength bound to his unshorn hair. Slew a lion bare-handed, betrayed by Delilah, brought down the temple of Dagon.",
   },
@@ -243,6 +254,7 @@ export const CHARACTERS: Character[] = [
         reference: "1 Samuel 17:45",
       },
     ],
+    description: "Shepherd boy who became king of Israel",
     persona:
       "Shepherd boy who felled Goliath with a sling, psalmist and king of Israel, a man after God's own heart who also fell gravely and repented deeply.",
   },
@@ -267,6 +279,7 @@ export const CHARACTERS: Character[] = [
         reference: "1 Kings 3:9",
       },
     ],
+    description: "The wisest king, builder of the first temple",
     persona:
       "Wisest of kings, builder of the first temple, author of proverbs. Famed for the divided-baby judgment; reflective and aphoristic.",
   },
@@ -287,6 +300,7 @@ export const CHARACTERS: Character[] = [
         reference: "1 Kings 18:21",
       },
     ],
+    description: "Fiery prophet taken to heaven in a whirlwind",
     persona:
       "Fiery prophet fed by ravens, victor over the prophets of Baal at Carmel, taken to heaven in a whirlwind by chariots of fire. Intense and uncompromising, yet knew despair.",
   },
@@ -307,6 +321,7 @@ export const CHARACTERS: Character[] = [
         reference: "Esther 4:16",
       },
     ],
+    description: "Jewish queen of Persia who saved her people",
     persona:
       "Jewish orphan who became queen of Persia and risked her life to save her people from Haman's plot. Courageous, strategic, raised up 'for such a time as this.'",
   },
@@ -327,6 +342,7 @@ export const CHARACTERS: Character[] = [
         reference: "Daniel 6:22",
       },
     ],
+    description: "Exile who survived a night in the lions' den",
     persona:
       "Exile in Babylon who refused the king's food, interpreted dreams and the writing on the wall, and survived the lions' den. Disciplined, faithful, visionary.",
   },
@@ -343,10 +359,11 @@ export const CHARACTERS: Character[] = [
     emojis: ["🐳", "🏃", "⛵", "🌊", "🌱"],
     quotes: [
       {
-        text: "I cried by reason of mine affliction unto the LORD, and he heard me; out of the belly of hell cried I.",
+        text: "I cried by reason of mine affliction unto the LORD, and he heard me; out of the belly of hell cried I, and thou heardest my voice.",
         reference: "Jonah 2:2",
       },
     ],
+    description: "Reluctant prophet swallowed by a great fish",
     persona:
       "Reluctant prophet who fled to Tarshish, was swallowed by a great fish, and grudgingly preached to Nineveh. Honest about his stubbornness; God's mercy frustrated him.",
   },
@@ -367,6 +384,7 @@ export const CHARACTERS: Character[] = [
         reference: "Luke 1:38",
       },
     ],
+    description: "The virgin mother of Jesus",
     persona:
       "Mother of Jesus, visited by the angel Gabriel, who treasured all these things in her heart. Humble, contemplative, faithful from manger to cross.",
   },
@@ -391,6 +409,7 @@ export const CHARACTERS: Character[] = [
         reference: "Matthew 3:2",
       },
     ],
+    description: "Wilderness preacher who baptized in the Jordan",
     persona:
       "Wilderness preacher in camel's hair eating locusts and honey, forerunner who baptized Jesus in the Jordan and lost his head to Herod. Blunt and fearless.",
   },
@@ -402,7 +421,7 @@ export const CHARACTERS: Character[] = [
     book: "Matthew",
     roles: ["Apostle", "Fisherman"],
     tribeNation: "Israel (Galilee)",
-    era: "Early Church",
+    era: "Life of Jesus",
     gender: "Male",
     emojis: ["🎣", "🐓", "🗝️", "🌊", "🪨"],
     quotes: [
@@ -415,6 +434,7 @@ export const CHARACTERS: Character[] = [
         reference: "John 6:68",
       },
     ],
+    description: "Fisherman apostle who denied Jesus three times",
     persona:
       "Impulsive fisherman turned rock of the church. Walked on water briefly, denied Jesus three times before the rooster crowed, restored and bold at Pentecost.",
   },
@@ -439,6 +459,7 @@ export const CHARACTERS: Character[] = [
         reference: "Philippians 1:21",
       },
     ],
+    description: "Persecutor turned apostle to the Gentiles",
     persona:
       "Persecutor blinded on the Damascus road, transformed into the apostle to the Gentiles. Tentmaker, letter-writer, shipwrecked missionary, prisoner who sang hymns.",
   },
@@ -459,6 +480,7 @@ export const CHARACTERS: Character[] = [
         reference: "John 20:13",
       },
     ],
+    description: "First witness of the resurrection",
     persona:
       "Delivered from seven demons, devoted follower of Jesus, first witness of the resurrection at the empty tomb. Speaks with deep gratitude and devotion.",
   },
@@ -470,16 +492,17 @@ export const CHARACTERS: Character[] = [
     book: "Matthew",
     roles: ["Apostle"],
     tribeNation: "Israel (Galilee)",
-    era: "Early Church",
+    era: "Life of Jesus",
     gender: "Male",
     emojis: ["🤔", "👆", "🩹", "🙏", "👀"],
     quotes: [
       {
-        text: "Except I shall see in his hands the print of the nails... I will not believe.",
+        text: "Except I shall see in his hands the print of the nails, and put my finger into the print of the nails, and thrust my hand into his side, I will not believe.",
         reference: "John 20:25",
       },
       { text: "My Lord and my God.", reference: "John 20:28" },
     ],
+    description: "The apostle who doubted the resurrection",
     persona:
       "The apostle who demanded to touch the wounds before believing — and then gave the Gospels' clearest confession. Honest, skeptical, ultimately devoted.",
   },
@@ -500,6 +523,7 @@ export const CHARACTERS: Character[] = [
         reference: "Luke 19:8",
       },
     ],
+    description: "Short tax collector who climbed a tree to see Jesus",
     persona:
       "Short, wealthy chief tax collector of Jericho who climbed a sycamore tree to see Jesus and repaid fourfold what he had taken. Joyful and generous after his change of heart.",
   },
@@ -517,6 +541,7 @@ export const CHARACTERS: Character[] = [
     quotes: [
       { text: "Am I my brother's keeper?", reference: "Genesis 4:9" },
     ],
+    description: "First murderer, who killed his brother",
     persona:
       "Firstborn of Adam and Eve, a tiller of the ground who murdered his brother Abel out of jealousy and was marked and made a wanderer.",
   },
@@ -532,6 +557,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["🐑", "🔥", "🙏", "🩸", "😇"],
     quotes: [],
+    description: "Shepherd son slain by his brother",
     persona:
       "Second son of Adam and Eve, a keeper of sheep whose offering was accepted by God. Slain by his brother Cain; remembered as the first martyr.",
   },
@@ -547,6 +573,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["👶", "🌱", "🙏", "👨", "📜"],
     quotes: [],
+    description: "Third son of Adam, ancestor of Noah",
     persona:
       "Third son of Adam and Eve, appointed in place of slain Abel. Through his line the worship of God continued; ancestor of Noah.",
   },
@@ -562,6 +589,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["🚶", "☁️", "✨", "🙏", "⬆️"],
     quotes: [],
+    description: "Walked with God and was taken without dying",
     persona:
       "A man who walked with God and did not see death, for God took him. Father of Methuselah; remembered for his close fellowship with God.",
   },
@@ -577,6 +605,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["👴", "⏳", "🎂", "📜", "🕰️"],
     quotes: [],
+    description: "The longest-lived man in the Bible",
     persona:
       "The longest-lived man in the Bible at nine hundred sixty-nine years. Son of Enoch and grandfather of Noah.",
   },
@@ -597,6 +626,7 @@ export const CHARACTERS: Character[] = [
         reference: "Genesis 22:7",
       },
     ],
+    description: "Son of promise nearly sacrificed on an altar",
     persona:
       "Son of promise to Abraham and Sarah, bound on the altar yet spared by the ram. Husband of Rebekah, father of Esau and Jacob.",
   },
@@ -614,6 +644,7 @@ export const CHARACTERS: Character[] = [
     quotes: [
       { text: "I will go.", reference: "Genesis 24:58" },
     ],
+    description: "Met at a well; wife of Isaac, mother of twins",
     persona:
       "Wife of Isaac, met at the well drawing water for the servant's camels. Mother of the twins Esau and Jacob; helped secure the blessing for Jacob.",
   },
@@ -634,6 +665,7 @@ export const CHARACTERS: Character[] = [
         reference: "Genesis 27:38",
       },
     ],
+    description: "Hunter who sold his birthright for stew",
     persona:
       "Firstborn twin of Isaac, a skilled hunter who sold his birthright for a bowl of stew and lost his blessing to Jacob. Father of the Edomites.",
   },
@@ -651,6 +683,7 @@ export const CHARACTERS: Character[] = [
     quotes: [
       { text: "Give me children, or else I die.", reference: "Genesis 30:1" },
     ],
+    description: "Beloved wife of Jacob, mother of Joseph",
     persona:
       "Beloved wife of Jacob, for whom he served fourteen years. Mother of Joseph and Benjamin; died giving birth on the road to Bethlehem.",
   },
@@ -671,6 +704,7 @@ export const CHARACTERS: Character[] = [
         reference: "Genesis 29:35",
       },
     ],
+    description: "Jacob's first wife, mother of six tribes",
     persona:
       "Elder daughter of Laban, given to Jacob in place of Rachel. Mother of six of the twelve tribes, including Levi and Judah.",
   },
@@ -685,7 +719,13 @@ export const CHARACTERS: Character[] = [
     era: "Exodus & Wilderness",
     gender: "Male",
     emojis: ["🗣️", "🐍", "🐂", "🕎", "👘"],
-    quotes: [],
+    quotes: [
+      {
+        text: "These be thy gods, O Israel, which brought thee up out of the land of Egypt.",
+        reference: "Exodus 32:4",
+      },
+    ],
+    description: "Israel's first high priest, brother of Moses",
     persona:
       "Brother of Moses and Israel's first high priest, his spokesman before Pharaoh. Fashioned the golden calf yet his rod budded as a sign of his priesthood.",
   },
@@ -702,10 +742,11 @@ export const CHARACTERS: Character[] = [
     emojis: ["🪘", "💃", "🌊", "👶", "🧺"],
     quotes: [
       {
-        text: "Sing ye to the LORD, for he hath triumphed gloriously.",
+        text: "Sing ye to the LORD, for he hath triumphed gloriously; the horse and his rider hath he thrown into the sea.",
         reference: "Exodus 15:21",
       },
     ],
+    description: "Prophetess sister of Moses who led in song",
     persona:
       "Sister of Moses and Aaron who watched over him in the bulrushes. A prophetess who led the women in song and dance after crossing the Red Sea.",
   },
@@ -726,6 +767,7 @@ export const CHARACTERS: Character[] = [
         reference: "Numbers 13:30",
       },
     ],
+    description: "Faithful spy who trusted God to take the land",
     persona:
       "One of the twelve spies who, with Joshua, trusted God to take the land. Rewarded for wholehearted faith; claimed his mountain Hebron at eighty-five.",
   },
@@ -746,6 +788,7 @@ export const CHARACTERS: Character[] = [
         reference: "Joshua 2:11",
       },
     ],
+    description: "Jericho innkeeper who hid the Israelite spies",
     persona:
       "Innkeeper of Jericho who hid the Israelite spies and was spared by the scarlet cord. Ancestor of King David, remembered for her faith.",
   },
@@ -766,6 +809,7 @@ export const CHARACTERS: Character[] = [
         reference: "Judges 7:20",
       },
     ],
+    description: "Judge who routed Midian with three hundred men",
     persona:
       "Reluctant judge who tested God with a fleece, then routed Midian with three hundred men bearing torches and trumpets. Humble before his great victory.",
   },
@@ -786,6 +830,7 @@ export const CHARACTERS: Character[] = [
         reference: "Judges 4:14",
       },
     ],
+    description: "Prophetess and judge who held court under a palm",
     persona:
       "Prophetess and judge who held court under a palm tree and summoned Barak to defeat Sisera. Sang a triumphant song of victory.",
   },
@@ -806,6 +851,7 @@ export const CHARACTERS: Character[] = [
         reference: "1 Samuel 3:10",
       },
     ],
+    description: "Last judge who anointed Israel's first kings",
     persona:
       "Dedicated to God as a child, the last judge and a prophet who anointed both Saul and David as kings of Israel.",
   },
@@ -826,6 +872,7 @@ export const CHARACTERS: Character[] = [
         reference: "1 Samuel 26:21",
       },
     ],
+    description: "Israel's first king, who lost his throne",
     persona:
       "Israel's first king, tall and chosen, who lost the kingdom through disobedience. Tormented and jealous, he hunted David before falling on Mount Gilboa.",
   },
@@ -846,6 +893,7 @@ export const CHARACTERS: Character[] = [
         reference: "1 Samuel 17:43",
       },
     ],
+    description: "Philistine giant felled by a shepherd's sling",
     persona:
       "Philistine giant of Gath who defied the armies of Israel and was felled by a shepherd's sling and stone from David.",
   },
@@ -866,6 +914,7 @@ export const CHARACTERS: Character[] = [
         reference: "1 Samuel 14:6",
       },
     ],
+    description: "King's son and devoted friend of David",
     persona:
       "Valiant son of King Saul and devoted friend of David, bound to him in covenant love. Fell with his father in battle against the Philistines.",
   },
@@ -881,6 +930,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["💇", "🐴", "🌳", "👑", "🗡️"],
     quotes: [],
+    description: "David's rebel son caught by his hair in a tree",
     persona:
       "Handsome son of David, famed for his hair, who rebelled and seized the throne. Caught by his head in an oak tree and slain by Joab.",
   },
@@ -901,6 +951,7 @@ export const CHARACTERS: Character[] = [
         reference: "1 Kings 1:31",
       },
     ],
+    description: "Woman David took, later mother of Solomon",
     persona:
       "Wife of Uriah taken by King David, later mother of Solomon. Secured her son's succession to the throne of Israel.",
   },
@@ -918,6 +969,7 @@ export const CHARACTERS: Character[] = [
     quotes: [
       { text: "Thou art the man.", reference: "2 Samuel 12:7" },
     ],
+    description: "Prophet who rebuked David with a parable",
     persona:
       "Court prophet who confronted David with the parable of the poor man's lamb and announced God's covenant of an everlasting throne.",
   },
@@ -938,6 +990,7 @@ export const CHARACTERS: Character[] = [
         reference: "2 Kings 2:9",
       },
     ],
+    description: "Successor of Elijah who worked many miracles",
     persona:
       "Successor to Elijah who received a double portion of his spirit. Worked many miracles: purifying water, multiplying oil, and raising the dead.",
   },
@@ -958,6 +1011,7 @@ export const CHARACTERS: Character[] = [
         reference: "2 Kings 5:15",
       },
     ],
+    description: "Syrian commander healed of leprosy in the Jordan",
     persona:
       "Syrian army commander and leper who, on a servant girl's word, dipped seven times in the Jordan at Elisha's command and was healed.",
   },
@@ -978,6 +1032,7 @@ export const CHARACTERS: Character[] = [
         reference: "2 Kings 20:3",
       },
     ],
+    description: "Righteous king of Judah given fifteen more years",
     persona:
       "Righteous king of Judah who trusted God against Assyria, saw Jerusalem delivered, and had fifteen years added to his life with the sun's shadow turned back.",
   },
@@ -993,6 +1048,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["👑", "📜", "🛠️", "🙏", "👦"],
     quotes: [],
+    description: "Boy king who rediscovered the Book of the Law",
     persona:
       "Boy king of Judah who repaired the temple, rediscovered the Book of the Law, and led a great reformation against idolatry.",
   },
@@ -1013,6 +1069,7 @@ export const CHARACTERS: Character[] = [
         reference: "Isaiah 6:8",
       },
     ],
+    description: "Prophet who foretold the coming Messiah",
     persona:
       "Prophet who saw the Lord high and lifted up, his lips touched by a coal. Foretold Immanuel and the suffering servant; majestic and messianic in vision.",
   },
@@ -1033,6 +1090,7 @@ export const CHARACTERS: Character[] = [
         reference: "Jeremiah 1:5",
       },
     ],
+    description: "The weeping prophet who warned of exile",
     persona:
       "The weeping prophet who warned Judah of coming exile and suffered persecution for it. Promised a new covenant written on the heart.",
   },
@@ -1053,6 +1111,7 @@ export const CHARACTERS: Character[] = [
         reference: "Ezekiel 37:4",
       },
     ],
+    description: "Exiled prophet of the valley of dry bones",
     persona:
       "Priest exiled to Babylon who saw the wheels within wheels and the valley of dry bones. Acted out dramatic signs of judgment and restoration.",
   },
@@ -1073,6 +1132,7 @@ export const CHARACTERS: Character[] = [
         reference: "Daniel 3:24",
       },
     ],
+    description: "Babylonian king humbled to live like a beast",
     persona:
       "Mighty king of Babylon who built a golden image and a great empire, was humbled to live as a beast, and came to praise the Most High God.",
   },
@@ -1093,6 +1153,7 @@ export const CHARACTERS: Character[] = [
         reference: "Daniel 3:17",
       },
     ],
+    description: "Hebrew who survived the fiery furnace",
     persona:
       "One of Daniel's three companions in Babylon who refused to bow to the golden image and was preserved unharmed in the fiery furnace.",
   },
@@ -1108,6 +1169,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["🔥", "🧍", "👑", "🚫", "🛡️"],
     quotes: [],
+    description: "Hebrew unharmed in the burning furnace",
     persona:
       "One of Daniel's three Hebrew companions who would not worship Nebuchadnezzar's image and walked unhurt in the flames with a fourth like the Son of God.",
   },
@@ -1123,6 +1185,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["🔥", "🧍", "👑", "🚫", "🛡️"],
     quotes: [],
+    description: "Hebrew delivered from the fiery furnace",
     persona:
       "One of Daniel's three friends in Babylon who defied the king's decree and was delivered from the burning fiery furnace by God.",
   },
@@ -1138,6 +1201,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["📜", "🖋️", "🙏", "🏛️", "📖"],
     quotes: [],
+    description: "Priest-scribe who taught the Law after exile",
     persona:
       "Priest and scribe who led exiles back from Babylon, taught the Law, and called the people to renew their covenant with God.",
   },
@@ -1158,6 +1222,7 @@ export const CHARACTERS: Character[] = [
         reference: "Nehemiah 2:20",
       },
     ],
+    description: "Cupbearer who rebuilt Jerusalem's walls",
     persona:
       "Cupbearer to the Persian king who returned to rebuild the walls of Jerusalem in fifty-two days despite fierce opposition. A man of prayer and action.",
   },
@@ -1178,6 +1243,7 @@ export const CHARACTERS: Character[] = [
         reference: "Job 1:21",
       },
     ],
+    description: "Righteous man who endured immense suffering",
     persona:
       "A blameless man who lost everything yet refused to curse God. Wrestled with suffering until God answered from the whirlwind; restored in the end.",
   },
@@ -1193,6 +1259,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["💔", "💍", "🌾", "❤️‍🩹", "📜"],
     quotes: [],
+    description: "Prophet who married an unfaithful wife",
     persona:
       "Prophet commanded to marry the unfaithful Gomer as a living picture of God's relentless love for wayward Israel.",
   },
@@ -1213,6 +1280,7 @@ export const CHARACTERS: Character[] = [
         reference: "Amos 5:24",
       },
     ],
+    description: "Herdsman prophet who cried out for justice",
     persona:
       "Herdsman and gatherer of sycamore fruit called to prophesy against Israel's injustice and complacency, crying out for justice to roll down.",
   },
@@ -1228,6 +1296,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["🪚", "🔨", "👶", "🌟", "🫏"],
     quotes: [],
+    description: "Carpenter who was the earthly father of Jesus",
     persona:
       "Carpenter of Nazareth, husband of Mary and earthly guardian of Jesus. A just man who obeyed the angel's dreams and fled to Egypt to protect the child.",
   },
@@ -1248,6 +1317,7 @@ export const CHARACTERS: Character[] = [
         reference: "Luke 1:42",
       },
     ],
+    description: "Mother of John the Baptist in her old age",
     persona:
       "Aged kinswoman of Mary who conceived John the Baptist in her old age. Her babe leaped in the womb when Mary came to greet her.",
   },
@@ -1268,6 +1338,7 @@ export const CHARACTERS: Character[] = [
         reference: "Luke 1:63",
       },
     ],
+    description: "Priest struck mute, father of John the Baptist",
     persona:
       "Priest struck mute for doubting the angel Gabriel's promise of a son. His speech returned when he named the child John, and he prophesied.",
   },
@@ -1275,11 +1346,11 @@ export const CHARACTERS: Character[] = [
     id: "gabriel",
     name: "Gabriel",
     aliases: [],
-    testament: "New",
+    testament: "Old",
     book: "Daniel",
     roles: ["Prophet"],
     tribeNation: "Heaven (angel)",
-    era: "Life of Jesus",
+    era: "Exile & Return",
     gender: "Male",
     emojis: ["👼", "📯", "✨", "📜", "🌟"],
     quotes: [
@@ -1288,13 +1359,14 @@ export const CHARACTERS: Character[] = [
         reference: "Luke 1:30",
       },
     ],
+    description: "The angel who announced the birth of Jesus",
     persona:
       "The archangel who stands in the presence of God, sent to announce the births of John the Baptist and of Jesus to Mary.",
   },
   {
     id: "herod",
-    name: "Herod the Great",
-    aliases: ["Herod"],
+    name: "King Herod",
+    aliases: ["Herod the Great", "Herod"],
     testament: "New",
     book: "Matthew",
     roles: ["King"],
@@ -1308,6 +1380,7 @@ export const CHARACTERS: Character[] = [
         reference: "Matthew 2:8",
       },
     ],
+    description: "Paranoid king who sought to kill the infant Jesus",
     persona:
       "Paranoid king of Judea who questioned the wise men and ordered the slaughter of the infants of Bethlehem, seeking to kill the newborn king.",
   },
@@ -1328,6 +1401,7 @@ export const CHARACTERS: Character[] = [
         reference: "John 18:38",
       },
     ],
+    description: "Roman governor who sentenced Jesus to die",
     persona:
       "Roman governor of Judea who tried Jesus, found no fault, yet yielded to the crowd and washed his hands of the matter before the crucifixion.",
   },
@@ -1348,6 +1422,7 @@ export const CHARACTERS: Character[] = [
         reference: "Matthew 26:49",
       },
     ],
+    description: "The disciple who betrayed Jesus with a kiss",
     persona:
       "The disciple who kept the money bag and betrayed Jesus for thirty pieces of silver with a kiss, then despaired and hanged himself.",
   },
@@ -1359,7 +1434,7 @@ export const CHARACTERS: Character[] = [
     book: "Matthew",
     roles: ["Apostle", "Fisherman"],
     tribeNation: "Israel (Galilee)",
-    era: "Early Church",
+    era: "Life of Jesus",
     gender: "Male",
     emojis: ["❤️", "🎣", "📜", "🦅", "🕊️"],
     quotes: [
@@ -1368,6 +1443,7 @@ export const CHARACTERS: Character[] = [
         reference: "1 John 4:8",
       },
     ],
+    description: "The beloved disciple who wrote a Gospel",
     persona:
       "The disciple whom Jesus loved, brother of James, who leaned on Jesus at the supper and received Mary at the cross. Wrote a Gospel and Revelation.",
   },
@@ -1379,10 +1455,11 @@ export const CHARACTERS: Character[] = [
     book: "Matthew",
     roles: ["Apostle", "Fisherman"],
     tribeNation: "Israel (Galilee)",
-    era: "Early Church",
+    era: "Life of Jesus",
     gender: "Male",
     emojis: ["🎣", "⚡", "⛵", "🗡️", "🐟"],
     quotes: [],
+    description: "Son of thunder, first apostle to be martyred",
     persona:
       "Brother of John and son of Zebedee, one of the inner three with Peter. A 'son of thunder' and the first apostle to be martyred, slain by Herod.",
   },
@@ -1394,7 +1471,7 @@ export const CHARACTERS: Character[] = [
     book: "Matthew",
     roles: ["Apostle", "Fisherman"],
     tribeNation: "Israel (Galilee)",
-    era: "Early Church",
+    era: "Life of Jesus",
     gender: "Male",
     emojis: ["🎣", "🐟", "🍞", "👬", "⛵"],
     quotes: [
@@ -1403,6 +1480,7 @@ export const CHARACTERS: Character[] = [
         reference: "John 1:41",
       },
     ],
+    description: "Fisherman apostle, brother of Simon Peter",
     persona:
       "Brother of Simon Peter and a fisherman, first a follower of John the Baptist. He brought his brother and the boy with loaves and fishes to Jesus.",
   },
@@ -1414,7 +1492,7 @@ export const CHARACTERS: Character[] = [
     book: "Matthew",
     roles: ["Apostle"],
     tribeNation: "Israel (Galilee)",
-    era: "Early Church",
+    era: "Life of Jesus",
     gender: "Male",
     emojis: ["🍞", "🤝", "❓", "👣", "📖"],
     quotes: [
@@ -1423,6 +1501,7 @@ export const CHARACTERS: Character[] = [
         reference: "John 14:8",
       },
     ],
+    description: "Apostle from Bethsaida who brought Nathanael",
     persona:
       "Apostle from Bethsaida who brought Nathanael to Jesus and was tested over feeding the multitude. Practical and inquisitive.",
   },
@@ -1434,10 +1513,11 @@ export const CHARACTERS: Character[] = [
     book: "Matthew",
     roles: ["Apostle", "Tax Collector"],
     tribeNation: "Israel (Galilee)",
-    era: "Early Church",
+    era: "Life of Jesus",
     gender: "Male",
     emojis: ["💰", "🪙", "📜", "🧾", "✍️"],
     quotes: [],
+    description: "Tax collector called from his booth to follow",
     persona:
       "Tax collector called from his booth to follow Jesus, who left all and wrote the first Gospel. Hosted a feast for sinners at his house.",
   },
@@ -1449,7 +1529,7 @@ export const CHARACTERS: Character[] = [
     book: "John",
     roles: ["Apostle"],
     tribeNation: "Israel (Galilee)",
-    era: "Early Church",
+    era: "Life of Jesus",
     gender: "Male",
     emojis: ["🌳", "❓", "🙌", "👑", "📖"],
     quotes: [
@@ -1462,6 +1542,7 @@ export const CHARACTERS: Character[] = [
         reference: "John 1:49",
       },
     ],
+    description: "Apostle called from under the fig tree",
     persona:
       "An Israelite in whom was no guile, called from under the fig tree. Skeptical at first about Nazareth, he quickly confessed Jesus as the Son of God.",
   },
@@ -1482,6 +1563,7 @@ export const CHARACTERS: Character[] = [
         reference: "John 3:4",
       },
     ],
+    description: "Pharisee who came to Jesus by night",
     persona:
       "A Pharisee and ruler of the Jews who came to Jesus by night and heard that he must be born again. Later helped bury Jesus with myrrh and aloes.",
   },
@@ -1502,6 +1584,7 @@ export const CHARACTERS: Character[] = [
         reference: "Luke 10:40",
       },
     ],
+    description: "Busy host of Bethany, sister of Lazarus",
     persona:
       "Busy host of Bethany, sister of Mary and Lazarus, who served while her sister listened. Confessed Jesus as the Christ before Lazarus was raised.",
   },
@@ -1517,6 +1600,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["⚰️", "🪦", "🧻", "😢", "🚶"],
     quotes: [],
+    description: "Friend of Jesus raised after four days dead",
     persona:
       "Friend of Jesus from Bethany, brother of Mary and Martha, who died and was raised from the tomb after four days at Jesus' word, 'Come forth.'",
   },
@@ -1537,6 +1621,7 @@ export const CHARACTERS: Character[] = [
         reference: "John 11:32",
       },
     ],
+    description: "Sat at Jesus' feet and anointed him with oil",
     persona:
       "Sister of Martha and Lazarus who sat at Jesus' feet to learn and anointed him with costly spikenard, wiping his feet with her hair.",
   },
@@ -1552,6 +1637,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["🤝", "💰", "✉️", "⛵", "🕊️"],
     quotes: [],
+    description: "The 'son of encouragement' who traveled with Paul",
     persona:
       "The 'son of encouragement' who vouched for Saul, sold his land for the church, and traveled with Paul on the first missionary journey.",
   },
@@ -1572,6 +1658,7 @@ export const CHARACTERS: Character[] = [
         reference: "Acts 7:60",
       },
     ],
+    description: "The first Christian martyr, stoned to death",
     persona:
       "First of the seven deacons and the first Christian martyr, full of faith and the Holy Spirit. Stoned while seeing the Son of man at God's right hand.",
   },
@@ -1587,6 +1674,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["✉️", "👦", "📖", "🤝", "⛪"],
     quotes: [],
+    description: "Young protege of Paul, pastor at Ephesus",
     persona:
       "Young companion of Paul, raised in the faith by his mother and grandmother. Paul's true son in the faith, entrusted to shepherd the church at Ephesus.",
   },
@@ -1607,6 +1695,7 @@ export const CHARACTERS: Character[] = [
         reference: "Acts 16:15",
       },
     ],
+    description: "Seller of purple, first convert in Europe",
     persona:
       "A seller of purple at Philippi whose heart the Lord opened. The first European convert, she opened her home to Paul and his companions.",
   },
@@ -1622,6 +1711,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["🪖", "🙏", "👼", "🕊️", "🏠"],
     quotes: [],
+    description: "Roman centurion, the first Gentile convert",
     persona:
       "A devout Roman centurion at Caesarea whose prayers reached God. Through a vision he sent for Peter, and the Holy Spirit fell on the Gentiles in his house.",
   },
@@ -1637,6 +1727,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["⚕️", "✍️", "📜", "⛵", "🐂"],
     quotes: [],
+    description: "Physician who wrote a Gospel and Acts",
     persona:
       "The beloved physician and careful historian who traveled with Paul and wrote the Gospel of Luke and the Acts of the Apostles.",
   },
@@ -1652,6 +1743,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["⛓️", "🎶", "🌍", "✉️", "🌊"],
     quotes: [],
+    description: "Paul's companion who sang in prison",
     persona:
       "Companion of Paul who sang hymns at midnight in the Philippian jail before an earthquake freed them. A leader and prophet in the early church.",
   },
@@ -1667,6 +1759,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["🗣️", "📖", "💧", "🌊", "🔥"],
     quotes: [],
+    description: "Eloquent Alexandrian preacher of Christ",
     persona:
       "An eloquent Jew of Alexandria, mighty in the Scriptures, instructed more fully by Priscilla and Aquila and a powerful preacher of Christ.",
   },
@@ -1682,6 +1775,7 @@ export const CHARACTERS: Character[] = [
     gender: "Female",
     emojis: ["⛺", "🧵", "📖", "🏠", "🤝"],
     quotes: [],
+    description: "Tentmaker and teacher who instructed Apollos",
     persona:
       "Tentmaker and teacher, wife of Aquila, who with her husband instructed Apollos and hosted a church in their home. A faithful coworker of Paul.",
   },
@@ -1697,6 +1791,7 @@ export const CHARACTERS: Character[] = [
     gender: "Male",
     emojis: ["⛺", "🧵", "📖", "🏠", "🤝"],
     quotes: [],
+    description: "Jewish tentmaker who labored beside Paul",
     persona:
       "A Jewish tentmaker from Pontus, husband of Priscilla, who labored alongside Paul and helped instruct Apollos in the way of God more perfectly.",
   },
@@ -1721,8 +1816,626 @@ export const CHARACTERS: Character[] = [
         reference: "Mark 10:14",
       },
     ],
+    description: "The promised Messiah, born in Bethlehem",
     persona:
       "The Messiah, born in Bethlehem and raised in Nazareth. Teacher of parables, healer of the sick, who fed multitudes and walked on water. Crucified and risen. Speaks with grace, authority, and compassion.",
+  },
+  {
+    id: "cyrus",
+    name: "Cyrus",
+    aliases: ["Cyrus the Great"],
+    testament: "Old",
+    book: "Ezra",
+    roles: ["King"],
+    tribeNation: "Gentile (Persian)",
+    era: "Exile & Return",
+    gender: "Male",
+    emojis: ["👑", "📜", "🏛️", "🕊️", "🔓"],
+    quotes: [
+      {
+        text: "The LORD God of heaven hath given me all the kingdoms of the earth; and he hath charged me to build him an house at Jerusalem.",
+        reference: "Ezra 1:2",
+      },
+    ],
+    description: "Persian king who freed the Jews from exile",
+    persona:
+      "King of Persia who conquered Babylon and decreed the return of the Jews to rebuild the temple in Jerusalem. Named by Isaiah long before his birth as God's anointed shepherd.",
+  },
+  {
+    id: "delilah",
+    name: "Delilah",
+    aliases: [],
+    testament: "Old",
+    book: "Judges",
+    roles: ["Wife"],
+    tribeNation: "Gentile (Philistine)",
+    era: "Conquest & Judges",
+    gender: "Female",
+    emojis: ["💇", "💰", "😴", "✂️", "🕸️"],
+    quotes: [
+      {
+        text: "Tell me, I pray thee, wherein thy great strength lieth.",
+        reference: "Judges 16:6",
+      },
+    ],
+    description: "Woman who coaxed the secret of Samson's strength",
+    persona:
+      "The woman of the valley of Sorek who, for silver from the Philistine lords, lured Samson into revealing the secret of his strength and betrayed him to his enemies.",
+  },
+  {
+    id: "boaz",
+    name: "Boaz",
+    aliases: [],
+    testament: "Old",
+    book: "Ruth",
+    roles: ["Leader"],
+    tribeNation: "Judah",
+    era: "Conquest & Judges",
+    gender: "Male",
+    emojis: ["🌾", "💍", "🏞️", "👞", "❤️"],
+    quotes: [
+      {
+        text: "The LORD recompense thy work, and a full reward be given thee of the LORD God of Israel.",
+        reference: "Ruth 2:12",
+      },
+    ],
+    description: "Wealthy landowner who redeemed and married Ruth",
+    persona:
+      "A wealthy and honorable man of Bethlehem who showed kindness to Ruth gleaning in his fields, then redeemed her as kinsman and took her to wife. Great-grandfather of King David.",
+  },
+  {
+    id: "naomi",
+    name: "Naomi",
+    aliases: ["Mara"],
+    testament: "Old",
+    book: "Ruth",
+    roles: ["Mother", "Wife"],
+    tribeNation: "Judah",
+    era: "Conquest & Judges",
+    gender: "Female",
+    emojis: ["👵", "😢", "🌾", "💞", "👶"],
+    quotes: [
+      {
+        text: "Call me not Naomi, call me Mara: for the Almighty hath dealt very bitterly with me.",
+        reference: "Ruth 1:20",
+      },
+    ],
+    description: "Bereaved widow whose daughter-in-law clung to her",
+    persona:
+      "A widow of Bethlehem who lost her husband and sons in Moab and returned home bitter, yet found new hope through the loyalty of her daughter-in-law Ruth and the birth of Obed.",
+  },
+  {
+    id: "melchizedek",
+    name: "Melchizedek",
+    aliases: [],
+    testament: "Old",
+    book: "Genesis",
+    roles: ["Priest", "King"],
+    tribeNation: "Salem",
+    era: "Patriarchs",
+    gender: "Male",
+    emojis: ["🍞", "🍷", "👑", "🙏", "⛰️"],
+    quotes: [
+      {
+        text: "Blessed be Abram of the most high God, possessor of heaven and earth.",
+        reference: "Genesis 14:19",
+      },
+    ],
+    description: "Priest-king of Salem who blessed Abraham",
+    persona:
+      "The mysterious priest and king of Salem who brought out bread and wine and blessed Abram after his victory, receiving a tithe. A type of an eternal priesthood.",
+  },
+  {
+    id: "lot",
+    name: "Lot",
+    aliases: [],
+    testament: "Old",
+    book: "Genesis",
+    roles: ["Patriarch"],
+    tribeNation: "Hebrew",
+    era: "Patriarchs",
+    gender: "Male",
+    emojis: ["🏙️", "🔥", "🧂", "⛺", "🏃"],
+    quotes: [
+      {
+        text: "Oh, not so, my Lord.",
+        reference: "Genesis 19:18",
+      },
+    ],
+    description: "Abraham's nephew rescued from Sodom",
+    persona:
+      "Nephew of Abraham who chose the well-watered plain and dwelt in Sodom. Rescued by angels before the city's destruction; his wife looked back and became a pillar of salt.",
+  },
+  {
+    id: "ishmael",
+    name: "Ishmael",
+    aliases: [],
+    testament: "Old",
+    book: "Genesis",
+    roles: ["Patriarch"],
+    tribeNation: "Hebrew",
+    era: "Patriarchs",
+    gender: "Male",
+    emojis: ["🏹", "🏜️", "💧", "👶", "👨"],
+    quotes: [],
+    description: "Abraham's firstborn son by Hagar",
+    persona:
+      "Son of Abraham by Hagar the Egyptian, sent away into the wilderness yet promised to become a great nation. A wild man, an archer, father of twelve princes.",
+  },
+  {
+    id: "hagar",
+    name: "Hagar",
+    aliases: [],
+    testament: "Old",
+    book: "Genesis",
+    roles: ["Mother"],
+    tribeNation: "Gentile (Egyptian)",
+    era: "Patriarchs",
+    gender: "Female",
+    emojis: ["🏜️", "💧", "👶", "😢", "👼"],
+    quotes: [
+      {
+        text: "Thou God seest me.",
+        reference: "Genesis 16:13",
+      },
+    ],
+    description: "Egyptian handmaid, mother of Ishmael",
+    persona:
+      "Sarah's Egyptian handmaid who bore Ishmael to Abraham. Fleeing into the wilderness, she met the angel of the Lord by a well and named God 'Thou God seest me.'",
+  },
+  {
+    id: "laban",
+    name: "Laban",
+    aliases: [],
+    testament: "Old",
+    book: "Genesis",
+    roles: ["Patriarch"],
+    tribeNation: "Hebrew (Aramean)",
+    era: "Patriarchs",
+    gender: "Male",
+    emojis: ["🐑", "💍", "🤝", "💰", "⛺"],
+    quotes: [
+      {
+        text: "It must not be so done in our country, to give the younger before the firstborn.",
+        reference: "Genesis 29:26",
+      },
+    ],
+    description: "Crafty uncle who tricked Jacob into long service",
+    persona:
+      "Brother of Rebekah and father of Leah and Rachel, who tricked Jacob into fourteen years of service and changed his wages ten times. Shrewd and grasping.",
+  },
+  {
+    id: "pharaoh-exodus",
+    name: "Pharaoh",
+    aliases: [],
+    testament: "Old",
+    book: "Exodus",
+    roles: ["King"],
+    tribeNation: "Gentile (Egyptian)",
+    era: "Exodus & Wilderness",
+    gender: "Male",
+    emojis: ["👑", "🐍", "🌊", "🐸", "🏜️"],
+    quotes: [
+      {
+        text: "Who is the LORD, that I should obey his voice to let Israel go?",
+        reference: "Exodus 5:2",
+      },
+    ],
+    description: "Hard-hearted king of Egypt of the Exodus",
+    persona:
+      "The king of Egypt whose heart was hardened against Moses, refusing to free Israel through ten plagues until the Red Sea swallowed his army.",
+  },
+  {
+    id: "barak",
+    name: "Barak",
+    aliases: [],
+    testament: "Old",
+    book: "Judges",
+    roles: ["Warrior", "Leader"],
+    tribeNation: "Naphtali",
+    era: "Conquest & Judges",
+    gender: "Male",
+    emojis: ["⚔️", "⛰️", "🐎", "🌧️", "🎶"],
+    quotes: [
+      {
+        text: "If thou wilt go with me, then I will go: but if thou wilt not go with me, then I will not go.",
+        reference: "Judges 4:8",
+      },
+    ],
+    description: "General who fought Sisera alongside Deborah",
+    persona:
+      "Israelite commander who would only march against Sisera's iron chariots if the prophetess Deborah went with him. Routed the Canaanite host at the river Kishon.",
+  },
+  {
+    id: "jezebel",
+    name: "Jezebel",
+    aliases: [],
+    testament: "Old",
+    book: "1 Kings",
+    roles: ["Queen"],
+    tribeNation: "Gentile (Sidonian)",
+    era: "Divided Kingdom",
+    gender: "Female",
+    emojis: ["👑", "💄", "🐕", "🔥", "🪟"],
+    quotes: [
+      {
+        text: "So let the gods do to me, and more also, if I make not thy life as the life of one of them by to morrow about this time.",
+        reference: "1 Kings 19:2",
+      },
+    ],
+    description: "Wicked queen who promoted Baal worship",
+    persona:
+      "Sidonian princess and wife of King Ahab who promoted Baal worship, hunted the prophets, and seized Naboth's vineyard. Thrown from a window and devoured by dogs.",
+  },
+  {
+    id: "ahab",
+    name: "Ahab",
+    aliases: [],
+    testament: "Old",
+    book: "1 Kings",
+    roles: ["King"],
+    tribeNation: "Israel",
+    era: "Divided Kingdom",
+    gender: "Male",
+    emojis: ["👑", "🍇", "🏹", "⛈️", "😠"],
+    quotes: [
+      {
+        text: "Hast thou found me, O mine enemy?",
+        reference: "1 Kings 21:20",
+      },
+    ],
+    description: "Wicked king of Israel, husband of Jezebel",
+    persona:
+      "King of Israel who married Jezebel, served Baal, and coveted Naboth's vineyard. Opposed by Elijah; he died in battle as the prophets foretold.",
+  },
+  {
+    id: "joel",
+    name: "Joel",
+    aliases: [],
+    testament: "Old",
+    book: "Joel",
+    roles: ["Prophet"],
+    tribeNation: "Judah",
+    era: "Divided Kingdom",
+    gender: "Male",
+    emojis: ["🦗", "🌾", "🔥", "🌙", "📜"],
+    quotes: [
+      {
+        text: "I will pour out my spirit upon all flesh; and your sons and your daughters shall prophesy.",
+        reference: "Joel 2:28",
+      },
+    ],
+    description: "Prophet of the locust plague and the Spirit poured out",
+    persona:
+      "Prophet of Judah who called the people to repent amid a devastating locust plague and foretold the day of the Lord and the outpouring of God's Spirit on all flesh.",
+  },
+  {
+    id: "micah",
+    name: "Micah",
+    aliases: [],
+    testament: "Old",
+    book: "Micah",
+    roles: ["Prophet"],
+    tribeNation: "Judah",
+    era: "Divided Kingdom",
+    gender: "Male",
+    emojis: ["⚖️", "🌾", "🏙️", "🐑", "📜"],
+    quotes: [
+      {
+        text: "What doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?",
+        reference: "Micah 6:8",
+      },
+    ],
+    description: "Prophet who foretold Messiah's birth in Bethlehem",
+    persona:
+      "A prophet of Judah who decried injustice and oppression, called for justice and mercy, and foretold that the ruler of Israel would come out of Bethlehem.",
+  },
+  {
+    id: "mordecai",
+    name: "Mordecai",
+    aliases: [],
+    testament: "Old",
+    book: "Esther",
+    roles: ["Leader"],
+    tribeNation: "Benjamin",
+    era: "Exile & Return",
+    gender: "Male",
+    emojis: ["🚪", "📜", "🐎", "✡️", "👑"],
+    quotes: [
+      {
+        text: "Who knoweth whether thou art come to the kingdom for such a time as this?",
+        reference: "Esther 4:14",
+      },
+    ],
+    description: "Esther's guardian who foiled a plot against the king",
+    persona:
+      "A Jew of the captivity who raised his cousin Esther, refused to bow to Haman, and uncovered a plot against the king. Exalted to honor as the deliverer of his people.",
+  },
+  {
+    id: "haman",
+    name: "Haman",
+    aliases: [],
+    testament: "Old",
+    book: "Esther",
+    roles: ["Leader"],
+    tribeNation: "Gentile (Agagite)",
+    era: "Exile & Return",
+    gender: "Male",
+    emojis: ["😡", "🎲", "⚰️", "👑", "📜"],
+    quotes: [
+      {
+        text: "Thus shall it be done to the man whom the king delighteth to honour.",
+        reference: "Esther 6:9",
+      },
+    ],
+    description: "Plotter who sought to destroy the Jews",
+    persona:
+      "The proud Agagite raised high by King Ahasuerus who plotted to destroy all the Jews because Mordecai would not bow. He was hanged on the gallows he built.",
+  },
+  {
+    id: "belshazzar",
+    name: "Belshazzar",
+    aliases: [],
+    testament: "Old",
+    book: "Daniel",
+    roles: ["King"],
+    tribeNation: "Gentile (Babylonian)",
+    era: "Exile & Return",
+    gender: "Male",
+    emojis: ["✍️", "🍷", "🧱", "👑", "😨"],
+    quotes: [
+      {
+        text: "Whosoever shall read this writing, and shew me the interpretation thereof, shall be clothed with scarlet.",
+        reference: "Daniel 5:7",
+      },
+    ],
+    description: "Babylonian king who saw the writing on the wall",
+    persona:
+      "The last king of Babylon who feasted with the temple vessels and saw a hand write upon the wall. Daniel read his doom; that night he was slain.",
+  },
+  {
+    id: "zerubbabel",
+    name: "Zerubbabel",
+    aliases: [],
+    testament: "Old",
+    book: "Ezra",
+    roles: ["Leader"],
+    tribeNation: "Judah",
+    era: "Exile & Return",
+    gender: "Male",
+    emojis: ["🧱", "🏛️", "📜", "👷", "🕊️"],
+    quotes: [],
+    description: "Governor who rebuilt the temple after exile",
+    persona:
+      "Governor of Judah who led the first return from Babylon and laid the foundation of the second temple. A descendant of David through whom the promise continued.",
+  },
+  {
+    id: "abigail",
+    name: "Abigail",
+    aliases: [],
+    testament: "Old",
+    book: "1 Samuel",
+    roles: ["Wife"],
+    tribeNation: "Judah",
+    era: "United Kingdom",
+    gender: "Female",
+    emojis: ["🍞", "🫏", "🙇‍♀️", "👑", "🕊️"],
+    quotes: [
+      {
+        text: "Upon me, my lord, upon me let this iniquity be.",
+        reference: "1 Samuel 25:24",
+      },
+    ],
+    description: "Wise woman who appeased David's anger",
+    persona:
+      "A beautiful and wise woman, wife of the churlish Nabal, who intercepted David with gifts and counsel to prevent bloodshed. Later she became David's wife.",
+  },
+  {
+    id: "joab",
+    name: "Joab",
+    aliases: [],
+    testament: "Old",
+    book: "2 Samuel",
+    roles: ["Warrior", "Leader"],
+    tribeNation: "Judah",
+    era: "United Kingdom",
+    gender: "Male",
+    emojis: ["⚔️", "🩸", "🐴", "🏰", "🗡️"],
+    quotes: [],
+    description: "David's ruthless army commander",
+    persona:
+      "Nephew of David and captain of his armies, a fierce and ruthless general who slew Abner, Absalom, and Amasa. Loyal to David yet often acting on his own counsel.",
+  },
+  {
+    id: "obadiah-prophet",
+    name: "Obadiah",
+    aliases: [],
+    testament: "Old",
+    book: "Obadiah",
+    roles: ["Prophet"],
+    tribeNation: "Judah",
+    era: "Exile & Return",
+    gender: "Male",
+    emojis: ["🦅", "⛰️", "🔥", "📜", "⚖️"],
+    quotes: [
+      {
+        text: "The pride of thine heart hath deceived thee.",
+        reference: "Obadiah 1:3",
+      },
+    ],
+    description: "Prophet who pronounced doom on Edom",
+    persona:
+      "Prophet of the shortest book in the Old Testament, who proclaimed judgment upon Edom for its pride and violence against Judah, and the coming day of the Lord.",
+  },
+  {
+    id: "matthias",
+    name: "Matthias",
+    aliases: [],
+    testament: "New",
+    book: "Acts",
+    roles: ["Apostle"],
+    tribeNation: "Israel",
+    era: "Early Church",
+    gender: "Male",
+    emojis: ["🎲", "1️⃣2️⃣", "📜", "🙏", "🕊️"],
+    quotes: [],
+    description: "Apostle chosen by lot to replace Judas",
+    persona:
+      "A follower of Jesus from the beginning, chosen by lot to take the place of Judas Iscariot and numbered with the eleven apostles after the resurrection.",
+  },
+  {
+    id: "ananias",
+    name: "Ananias",
+    aliases: [],
+    testament: "New",
+    book: "Acts",
+    roles: ["Disciple"],
+    tribeNation: "Israel",
+    era: "Early Church",
+    gender: "Male",
+    emojis: ["💰", "🤥", "⚰️", "🏠", "😨"],
+    quotes: [],
+    description: "Believer struck dead for lying about a gift",
+    persona:
+      "A member of the early church who, with his wife Sapphira, sold land but lied to the apostles about the price they kept back. He fell down dead at Peter's rebuke.",
+  },
+  {
+    id: "philip-evangelist",
+    name: "Philip the Evangelist",
+    aliases: ["Philip the Deacon"],
+    testament: "New",
+    book: "Acts",
+    roles: ["Missionary"],
+    tribeNation: "Israel",
+    era: "Early Church",
+    gender: "Male",
+    emojis: ["🏜️", "🛞", "💧", "📜", "🏃"],
+    quotes: [
+      {
+        text: "Understandest thou what thou readest?",
+        reference: "Acts 8:30",
+      },
+    ],
+    description: "Deacon who baptized the Ethiopian eunuch",
+    persona:
+      "One of the seven deacons who preached in Samaria and was carried by the Spirit to baptize the Ethiopian eunuch on the desert road, then was caught away.",
+  },
+  {
+    id: "dorcas",
+    name: "Dorcas",
+    aliases: ["Tabitha"],
+    testament: "New",
+    book: "Acts",
+    roles: ["Disciple"],
+    tribeNation: "Israel (Joppa)",
+    era: "Early Church",
+    gender: "Female",
+    emojis: ["🧵", "👗", "💞", "🪡", "🙏"],
+    quotes: [],
+    description: "Charitable seamstress raised from death by Peter",
+    persona:
+      "A disciple of Joppa full of good works and almsdeeds, known for making garments for widows. She died and was raised to life by Peter at the believers' plea.",
+  },
+  {
+    id: "james-the-just",
+    name: "James the Just",
+    aliases: ["James, the Lord's brother"],
+    testament: "New",
+    book: "Acts",
+    roles: ["Leader", "Apostle"],
+    tribeNation: "Judah",
+    era: "Early Church",
+    gender: "Male",
+    emojis: ["⛪", "📜", "🙏", "🤝", "👑"],
+    quotes: [
+      {
+        text: "Faith without works is dead.",
+        reference: "James 2:20",
+      },
+    ],
+    description: "The Lord's brother who led the Jerusalem church",
+    persona:
+      "Brother of the Lord who led the church in Jerusalem and presided at the council. Author of the epistle of James, known for piety and his call to living faith.",
+  },
+  {
+    id: "titus",
+    name: "Titus",
+    aliases: [],
+    testament: "New",
+    book: "Acts",
+    roles: ["Missionary", "Leader"],
+    tribeNation: "Gentile (Greek)",
+    era: "Early Church",
+    gender: "Male",
+    emojis: ["✉️", "⛪", "🏝️", "🤝", "📖"],
+    quotes: [],
+    description: "Greek coworker of Paul, pastor in Crete",
+    persona:
+      "A Greek convert and trusted companion of Paul, sent to set in order the churches of Crete and to minister among the Corinthians. Recipient of one of Paul's letters.",
+  },
+  {
+    id: "onesimus",
+    name: "Onesimus",
+    aliases: [],
+    testament: "New",
+    book: "Philemon",
+    roles: ["Disciple"],
+    tribeNation: "Gentile",
+    era: "Early Church",
+    gender: "Male",
+    emojis: ["⛓️", "🏃", "✉️", "🤝", "🕊️"],
+    quotes: [],
+    description: "Runaway slave converted and sent back to his master",
+    persona:
+      "A runaway slave who met Paul in prison, was converted, and was sent back to his master Philemon as a beloved brother. His name means 'profitable.'",
+  },
+  {
+    id: "herodias",
+    name: "Herodias",
+    aliases: [],
+    testament: "New",
+    book: "Matthew",
+    roles: ["Queen"],
+    tribeNation: "Gentile (Idumean)",
+    era: "Life of Jesus",
+    gender: "Female",
+    emojis: ["💃", "👑", "🗡️", "🍽️", "😠"],
+    quotes: [],
+    description: "Queen who plotted the death of John the Baptist",
+    persona:
+      "Wife of Herod Antipas, condemned by John the Baptist for her unlawful marriage. Through her daughter's dance she schemed to have John beheaded on a platter.",
+  },
+  {
+    id: "simon-of-cyrene",
+    name: "Simon of Cyrene",
+    aliases: [],
+    testament: "New",
+    book: "Matthew",
+    roles: ["Disciple"],
+    tribeNation: "Gentile (Cyrene)",
+    era: "Life of Jesus",
+    gender: "Male",
+    emojis: ["✝️", "🪵", "🤝", "🛣️", "💪"],
+    quotes: [],
+    description: "Man compelled to carry the cross of Jesus",
+    persona:
+      "A passer-by from Cyrene whom the soldiers compelled to bear the cross of Jesus on the road to Golgotha. Father of Alexander and Rufus.",
+  },
+  {
+    id: "joseph-of-arimathea",
+    name: "Joseph of Arimathea",
+    aliases: [],
+    testament: "New",
+    book: "Matthew",
+    roles: ["Disciple"],
+    tribeNation: "Israel (Arimathea)",
+    era: "Life of Jesus",
+    gender: "Male",
+    emojis: ["🪦", "🧺", "🪨", "🕊️", "💰"],
+    quotes: [],
+    description: "Rich man who gave his tomb for Jesus' burial",
+    persona:
+      "A rich man and honorable counsellor, a secret disciple, who begged the body of Jesus from Pilate and laid it in his own new tomb hewn out of rock.",
   },
 ];
 
