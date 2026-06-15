@@ -31,8 +31,15 @@ export default function ShareModal({ mode, guessCount, grid, onClose }: Props) {
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
+  // Use the native share sheet only on touch devices (phones/tablets);
+  // desktop browsers always copy to clipboard instead.
+  const isTouchDevice =
+    typeof navigator !== "undefined" &&
+    (navigator.maxTouchPoints > 0 ||
+      (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches));
+
   async function handleShare() {
-    if (typeof navigator !== "undefined" && navigator.share) {
+    if (isTouchDevice && typeof navigator !== "undefined" && navigator.share) {
       try {
         await navigator.share({ text: shareText });
         return;

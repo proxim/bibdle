@@ -18,5 +18,5 @@ export function buildShareText(
   const meta = modeMeta.get(mode)!;
   const header = `Bibdle ${meta.icon} ${meta.title} — ${dateKey()}`;
   const result = `Solved in ${guessCount} ${guessCount === 1 ? "guess" : "guesses"}`;
-  return [header, ...grid, result, "https://bibdle.vercel.app"].join("\n");
+  return [header, ...grid, result, "https://bibdle-daily.vercel.app"].join("\n");
 }

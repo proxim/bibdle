@@ -1700,6 +1700,30 @@ export const CHARACTERS: Character[] = [
     persona:
       "A Jewish tentmaker from Pontus, husband of Priscilla, who labored alongside Paul and helped instruct Apollos in the way of God more perfectly.",
   },
+  {
+    id: "jesus",
+    name: "Jesus",
+    aliases: ["Christ", "Jesus of Nazareth", "Yeshua", "Son of Man"],
+    testament: "New",
+    book: "Matthew",
+    roles: ["Messiah", "Shepherd"],
+    tribeNation: "Judah",
+    era: "Life of Jesus",
+    gender: "Male",
+    emojis: ["✝️", "🐟", "🍞", "👑", "🕊️"],
+    quotes: [
+      {
+        text: "I am the way, the truth, and the life: no man cometh unto the Father, but by me.",
+        reference: "John 14:6",
+      },
+      {
+        text: "Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of God.",
+        reference: "Mark 10:14",
+      },
+    ],
+    persona:
+      "The Messiah, born in Bethlehem and raised in Nazareth. Teacher of parables, healer of the sick, who fed multitudes and walked on water. Crucified and risen. Speaks with grace, authority, and compassion.",
+  },
 ];
 
 export const characterById = new Map(CHARACTERS.map((c) => [c.id, c]));
