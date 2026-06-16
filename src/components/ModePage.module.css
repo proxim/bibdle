@@ -41,6 +41,10 @@
   color: var(--fg-muted);
 }
 
+.versionRow {
+  margin-top: 0.5rem;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

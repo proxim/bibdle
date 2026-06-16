@@ -6,6 +6,8 @@ import type { Book } from "@/data/types";
 import { dailyVerse } from "@/lib/daily";
 import { useDailyState } from "@/lib/useDailyState";
 import { recordWin } from "@/lib/stats";
+import { getText } from "@/data/translations";
+import { POPULATED_VERSIONS, useBibleVersion } from "@/lib/version";
 import BookSearch from "./BookSearch";
 import ShareModal from "./ShareModal";
 import styles from "./GuessGame.module.css";
@@ -47,6 +49,11 @@ export default function VerseGame() {
     won: false,
   });
   const [showShare, setShowShare] = useState(false);
+  const { version, mounted: versionMounted } = useBibleVersion();
+
+  const verseText = getText(verse.reference, verse.text, version);
+  const showVersionNote =
+    versionMounted && !POPULATED_VERSIONS.includes(version);
 
   const guesses = state.guessedNames
     .map((name) => bookByName.get(name))
@@ -85,7 +92,11 @@ export default function VerseGame() {
 
   return (
     <div className={styles.game}>
-      <blockquote className={styles.prompt}>“{verse.text}”</blockquote>
+      <blockquote className={styles.prompt}>“{verseText}”</blockquote>
+
+      {showVersionNote && (
+        <p className={styles.versionNote}>{version} coming soon — showing KJV</p>
+      )}
 
       {hints.length > 0 && !state.won && (
         <div className={styles.hints}>
