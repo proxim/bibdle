@@ -9,6 +9,7 @@ import { TILE_EMOJI } from "@/lib/share";
 import { useDailyState } from "@/lib/useDailyState";
 import { recordWin } from "@/lib/stats";
 import CharacterSearch from "./CharacterSearch";
+import CharacterChat from "./CharacterChat";
 import GuessRow, { HEADER_LABELS } from "./GuessRow";
 import ShareModal from "./ShareModal";
 import styles from "./ClassicGame.module.css";
@@ -25,6 +26,7 @@ export default function ClassicGame() {
     won: false,
   });
   const [showShare, setShowShare] = useState(false);
+  const [showChat, setShowChat] = useState(false);
 
   const feedbacks = state.guessedIds
     .map((id) => characterById.get(id))
@@ -68,9 +70,14 @@ export default function ClassicGame() {
             🎉 {answer.name} in {feedbacks.length}{" "}
             {feedbacks.length === 1 ? "guess" : "guesses"}!
           </span>
-          <button className={styles.shareLink} onClick={() => setShowShare(true)}>
-            Share your result →
-          </button>
+          <div className={styles.winActions}>
+            <button className={styles.chatLink} onClick={() => setShowChat(true)}>
+              💬 Talk to {answer.name} →
+            </button>
+            <button className={styles.shareLink} onClick={() => setShowShare(true)}>
+              Share your result →
+            </button>
+          </div>
         </div>
       )}
 
@@ -94,6 +101,10 @@ export default function ClassicGame() {
           ? `${CHARACTERS.length} possible characters`
           : `${feedbacks.length} ${feedbacks.length === 1 ? "guess" : "guesses"} so far`}
       </p>
+
+      {showChat && (
+        <CharacterChat character={answer} onClose={() => setShowChat(false)} />
+      )}
 
       {showShare && (
         <ShareModal

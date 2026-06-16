@@ -6,7 +6,10 @@ import type { Character } from "@/data/types";
 import { dailyQuote } from "@/lib/daily";
 import { useDailyState } from "@/lib/useDailyState";
 import { recordWin } from "@/lib/stats";
+import { getText } from "@/data/translations";
+import { POPULATED_VERSIONS, useBibleVersion } from "@/lib/version";
 import CharacterSearch from "./CharacterSearch";
+import CharacterChat from "./CharacterChat";
 import ShareModal from "./ShareModal";
 import styles from "./GuessGame.module.css";
 
@@ -22,6 +25,12 @@ export default function QuoteGame() {
     won: false,
   });
   const [showShare, setShowShare] = useState(false);
+  const [showChat, setShowChat] = useState(false);
+  const { version, mounted: versionMounted } = useBibleVersion();
+
+  const quoteText = getText(quote.reference, quote.text, version);
+  const showVersionNote =
+    versionMounted && !POPULATED_VERSIONS.includes(version);
 
   const wrong = state.wrongIds
     .map((id) => characterById.get(id))
@@ -58,7 +67,11 @@ export default function QuoteGame() {
 
   return (
     <div className={styles.game}>
-      <blockquote className={styles.prompt}>“{quote.text}”</blockquote>
+      <blockquote className={styles.prompt}>“{quoteText}”</blockquote>
+
+      {showVersionNote && (
+        <p className={styles.versionNote}>{version} coming soon — showing KJV</p>
+      )}
 
       {hints.length > 0 && !state.won && (
         <div className={styles.hints}>
@@ -75,9 +88,14 @@ export default function QuoteGame() {
           <span className={styles.winName}>
             🎉 {answer.name} — {quote.reference}
           </span>
-          <button className={styles.shareLink} onClick={() => setShowShare(true)}>
-            Share your result →
-          </button>
+          <div className={styles.winActions}>
+            <button className={styles.chatLink} onClick={() => setShowChat(true)}>
+              💬 Talk to {answer.name} →
+            </button>
+            <button className={styles.shareLink} onClick={() => setShowShare(true)}>
+              Share your result →
+            </button>
+          </div>
         </div>
       ) : (
         <CharacterSearch options={remaining} onSelect={handleGuess} />
@@ -91,6 +109,10 @@ export default function QuoteGame() {
             </span>
           ))}
         </div>
+      )}
+
+      {showChat && (
+        <CharacterChat character={answer} onClose={() => setShowChat(false)} />
       )}
 
       {showShare && (

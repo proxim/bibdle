@@ -50,11 +50,16 @@ Guess the Bible character. Each guess renders a row of attribute tiles compared 
 - Object/symbol mode.
 - Timeline ordering mode.
 
-## AI character chat
-- Unlocks per-mode after a correct guess ("Talk to David →").
+## AI character chat — ✅ implemented
+- Unlocks per-mode after a correct guess ("Talk to David →") in Classic, Quote,
+  and Emoji modes. (Verse mode has no character, so no chat there.)
 - Serverless API route `/api/chat`: validates the character is actually unlocked today (client sends solved proof token or simply the date-derived character id — acceptable for portfolio), injects persona system prompt, streams response.
 - Persona prompt: speak in character, ground answers in the biblical narrative, gracefully deflect off-topic/modern questions, keep replies short.
-- Caps: ~10 messages/day/user, max token limits, streaming UI with typing animation.
+- Caps: ~10 messages/day/user, max token limits, typing animation.
+- **Status:** Implemented via `src/app/api/chat/route.ts` + a provider-abstracted
+  `src/lib/llm.ts` (default Google Gemini Flash over plain `fetch`, no SDK). The
+  build/route degrade gracefully with no `GEMINI_API_KEY` set. Daily cap +
+  per-message length/count limits enforced client- and server-side.
 
 ## UX / animation requirements
 - Tile flip reveal (staggered), shake on invalid guess, pure-CSS confetti burst in the win/share popup — all pure CSS.
@@ -68,9 +73,19 @@ Guess the Bible character. Each guess renders a row of attribute tiles compared 
 - ~80–150 characters with: name, aliases, testament, book, role(s), tribe/nation, era (ordinal + label), gender, emojis[], quotes[] (with reference), persona notes for chatbot.
 - Stored as typed JSON; one source of truth shared by all modes.
 
+## Bible version switcher — ✅ infrastructure implemented
+- KJV ↔ NIV switch on the scripture-text modes (Quote, Verse), persisted to
+  `localStorage` (`bibdle:version`, default KJV) via `src/lib/version.ts`.
+- KJV is the populated baseline (existing inline text); NIV is wired end-to-end
+  but unpopulated — marked "coming soon" and falls back to KJV with a note.
+- Adding NIV later: fill `src/data/translations.ts` (override map keyed by
+  verse `reference`) and add the version to `POPULATED_VERSIONS`. No churn to
+  `characters.ts` / `verses.ts`.
+
 ## Non-goals (v1)
 - Accounts, server-side persistence, leaderboards.
-- Multiple languages / translations.
+- Multiple languages. (Multiple English translations: infrastructure now in
+  place; only KJV populated.)
 - Anti-cheat beyond obscuring the daily answer.
 
 ## Milestones
