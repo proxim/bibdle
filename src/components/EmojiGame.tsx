@@ -31,6 +31,10 @@ export default function EmojiGame() {
     ? answer.emojis.length
     : Math.min(wrong.length + 1, answer.emojis.length);
 
+  // Once every emoji is showing and the player guesses wrong again, reveal the
+  // text hint as a last leg-up.
+  const showHint = !state.won && wrong.length >= answer.emojis.length;
+
   const guessedIds = new Set(state.wrongIds);
   const remaining = CHARACTERS.filter((c) => !guessedIds.has(c.id));
 
@@ -79,7 +83,13 @@ export default function EmojiGame() {
         </div>
       ) : (
         <>
-          <p className={styles.count}>Each wrong guess reveals another emoji</p>
+          {showHint ? (
+            <div className={styles.hints}>
+              <span className={styles.hint}>💡 {answer.description}</span>
+            </div>
+          ) : (
+            <p className={styles.count}>Each wrong guess reveals another emoji</p>
+          )}
           <CharacterSearch
             options={remaining}
             onSelect={handleGuess}
