@@ -123,6 +123,35 @@
   opacity: 0.8;
 }
 
+.winActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 1.1rem;
+}
+
+.chatLink {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: opacity 150ms ease;
+}
+
+.chatLink:hover {
+  opacity: 0.8;
+}
+
+.versionNote {
+  margin-top: -0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--fg-muted);
+}
+
 @keyframes rise {
   from {
     opacity: 0;

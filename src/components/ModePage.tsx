@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ModeId } from "@/lib/daily";
 import { HelpButton } from "./HowToPlay";
+import VersionToggle from "./VersionToggle";
 import styles from "./ModePage.module.css";
 
 interface Props {
@@ -8,10 +9,19 @@ interface Props {
   title: string;
   subtitle: string;
   modeId?: ModeId;
+  /** Show the Bible-version switcher (scripture-text modes: quote & verse). */
+  showVersionToggle?: boolean;
   children: React.ReactNode;
 }
 
-export default function ModePage({ icon, title, subtitle, modeId, children }: Props) {
+export default function ModePage({
+  icon,
+  title,
+  subtitle,
+  modeId,
+  showVersionToggle = false,
+  children,
+}: Props) {
   return (
     <main className={styles.page}>
       <header className={styles.header}>
@@ -23,6 +33,11 @@ export default function ModePage({ icon, title, subtitle, modeId, children }: Pr
           <HelpButton focusMode={modeId} className={styles.help} />
         </h1>
         <p className={styles.sub}>{subtitle}</p>
+        {showVersionToggle && (
+          <div className={styles.versionRow}>
+            <VersionToggle />
+          </div>
+        )}
       </header>
       {children}
     </main>

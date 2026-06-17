@@ -7,6 +7,7 @@ import { dailyCharacter } from "@/lib/daily";
 import { useDailyState } from "@/lib/useDailyState";
 import { recordWin } from "@/lib/stats";
 import CharacterSearch from "./CharacterSearch";
+import CharacterChat from "./CharacterChat";
 import ShareModal from "./ShareModal";
 import styles from "./GuessGame.module.css";
 
@@ -22,6 +23,7 @@ export default function EmojiGame() {
     won: false,
   });
   const [showShare, setShowShare] = useState(false);
+  const [showChat, setShowChat] = useState(false);
 
   const wrong = state.wrongIds
     .map((id) => characterById.get(id))
@@ -77,9 +79,14 @@ export default function EmojiGame() {
       {state.won ? (
         <div className={styles.winBanner}>
           <span className={styles.winName}>🎉 {answer.name}!</span>
-          <button className={styles.shareLink} onClick={() => setShowShare(true)}>
-            Share your result →
-          </button>
+          <div className={styles.winActions}>
+            <button className={styles.chatLink} onClick={() => setShowChat(true)}>
+              💬 Talk to {answer.name} →
+            </button>
+            <button className={styles.shareLink} onClick={() => setShowShare(true)}>
+              Share your result →
+            </button>
+          </div>
         </div>
       ) : (
         <>
@@ -106,6 +113,10 @@ export default function EmojiGame() {
             </span>
           ))}
         </div>
+      )}
+
+      {showChat && (
+        <CharacterChat character={answer} onClose={() => setShowChat(false)} />
       )}
 
       {showShare && (
