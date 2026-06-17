@@ -42,7 +42,7 @@ const geminiProvider: ChatProvider = {
   async chat({ system, messages }: ChatRequest): Promise<string> {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) throw new LlmNotConfiguredError("GEMINI_API_KEY is not set");
-    const model = process.env.GEMINI_MODEL || "gemini-1.5-flash";
+    const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
 
     // Gemini uses role "model" for the assistant; system text goes in
     // systemInstruction (supported by the v1beta generateContent endpoint).
@@ -65,7 +65,10 @@ const geminiProvider: ChatProvider = {
           contents,
           generationConfig: {
             temperature: 0.8,
-            maxOutputTokens: 300,
+            maxOutputTokens: 400,
+            // Gemini 2.5 flash is a "thinking" model; without this, reasoning
+            // tokens consume the output budget and truncate short replies.
+            thinkingConfig: { thinkingBudget: 0 },
           },
         }),
       });
