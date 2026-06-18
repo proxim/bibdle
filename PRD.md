@@ -45,10 +45,59 @@ Guess the Bible character. Each guess renders a row of attribute tiles compared 
 - Feedback per guess: ✅ correct book / 🟡 right section (Law, History, Wisdom, Prophets, Gospels, Acts/Epistles, Revelation) / ❌ wrong testament, plus ⬆️/⬇️ arrow toward the book's canonical position.
 - Wrong guesses progressively reveal: testament → section → chapter count hint.
 
+### 5. Scripture or Shakespeare mode
+A daily multi-round "which is it?" round-robin — the shareable/viral hook. Both
+corpora are public domain (KJV already bundled; Shakespeare added), so no
+licensing wrinkle.
+
+- **Loop:** 8 passages per day, one at a time. Two big choice buttons —
+  📖 **Scripture** / 🎭 **Shakespeare**. Tap one → the card does a 3D flip
+  reveal (reuse Classic's flip keyframes) showing right/wrong + the true
+  attribution (e.g. "Ecclesiastes 1:2" or "Macbeth, Act V"), a running tally
+  ticks, then **Next →**. After round 8 a results modal opens.
+- **No single "answer"** and **no character**, so (like Verse mode) there is
+  **no AI chat** and **no version toggle** — KJV is the scripture baseline.
+- **Difficulty is the feature:** KJV's Early-Modern-English cadence overlaps
+  Shakespeare's, so honest mistakes are common — those near-misses are exactly
+  what people screenshot. Curate the pool toward genuinely ambiguous passages
+  (archaic, aphoristic) and trim anything with dead giveaways ("verily",
+  "thy kingdom", obvious proper nouns like "Romeo").
+- **Deterministic daily set:** date-hash deterministically shuffles the pool and
+  takes 8, clamped to **≥2 of each source** so no degenerate all-one-source day.
+  The Scripture/Shakespeare split is intentionally *not* fixed at 4/4 so players
+  can't game the count.
+- **Feedback per round:** 🟩 correct / 🟥 wrong (no 🟨). Immediate, per-passage.
+- **Share (spoiler-free):** the green/red grid in round order + score, e.g.
+  ```
+  Bibdle 🎭 Scripture or Shakespeare — 2026-06-17
+  🟩🟩🟥🟩🟩🟩🟥🟩
+  6/8
+  https://bibdle-daily.vercel.app
+  ```
+  Order is preserved but *which* passage was which is not revealed, so friends
+  can play the same daily. Surfaces the other-modes quick links like every mode.
+- **Stats/streak:** finishing the daily run counts as the "win" for streak
+  purposes (streak = consecutive days completed — forgiving, drives return).
+  The existing `guessDistribution` slot is repurposed as a **score
+  distribution** (score 0–8 → count). A perfect-run (8/8) streak is a possible
+  future brag metric.
+
+#### Engineering touchpoints
+- `src/data/types.ts` — add `BardPassage { id; text; source: "scripture" | "shakespeare"; attribution: string }`.
+- `src/data/bardPassages.ts` — new curated pool (~60–100 items, roughly balanced). Scripture entries are KJV; reuse/extend `verses.ts` style.
+- `src/lib/daily.ts` — add `ModeId` member `"shakespeare"`; add `dailyBardRound(key)` returning the 8 picks via deterministic shuffle + ≥2-each clamp.
+- `src/lib/modes.ts` — register `{ id: "shakespeare", title: "Shakespeare", icon: "🎭", blurb: "Bible verse or the Bard?" }`.
+- `src/lib/share.ts` — `buildShareText` is currently guess-count phrased ("Solved in N guesses"); branch on score-based modes to emit `${score}/8` instead. Confirm `ShareModal` passes the score through.
+- `src/lib/useDailyState.ts` — state shape `{ picks: (Source | null)[]; done: boolean }`.
+- `src/components/ShakespeareGame.tsx` (+ reuse `GuessGame.module.css`, add a flip-card / choice-button block) and `src/app/shakespeare/page.tsx` route.
+- No `CharacterSearch`, no `CharacterChat`, no `VersionToggle` for this mode.
+
 ### Future modes (backlog)
 - Relation mode (genealogy clues).
 - Object/symbol mode.
 - Timeline ordering mode.
+- Connections-style daily (4 hidden biblical groups; NYT-Connections share grid).
+- Higher/Lower (lifespans, chapter counts).
 
 ## AI character chat — ✅ implemented
 - Unlocks per-mode after a correct guess ("Talk to David →") in Classic, Quote,
