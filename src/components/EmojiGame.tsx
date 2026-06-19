@@ -116,7 +116,11 @@ export default function EmojiGame() {
       )}
 
       {showChat && (
-        <CharacterChat character={answer} onClose={() => setShowChat(false)} />
+        <CharacterChat
+          character={answer}
+          mode="emoji"
+          onClose={() => setShowChat(false)}
+        />
       )}
 
       {showShare && (
@@ -124,6 +128,11 @@ export default function EmojiGame() {
           mode="emoji"
           guessCount={guessCount}
           grid={shareGrid}
+          chatName={answer.name}
+          onChat={() => {
+            setShowShare(false);
+            setShowChat(true);
+          }}
           onClose={() => setShowShare(false)}
         />
       )}

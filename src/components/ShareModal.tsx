@@ -19,6 +19,10 @@ interface Props {
   title?: string;
   /** Override the subtitle line (defaults to "{guessCount} guesses"). */
   subtitle?: string;
+  /** Name of the character to chat with — enables the "Chat with X" button. */
+  chatName?: string;
+  /** Opens the character chat (provided alongside chatName by character modes). */
+  onChat?: () => void;
 }
 
 export default function ShareModal({
@@ -28,6 +32,8 @@ export default function ShareModal({
   onClose,
   title,
   subtitle,
+  chatName,
+  onChat,
 }: Props) {
   const [toast, setToast] = useState(false);
   const shareText = buildShareText(mode, guessCount, grid);
@@ -106,9 +112,16 @@ export default function ShareModal({
           </div>
         </dl>
 
-        <button className={styles.shareBtn} onClick={handleShare}>
-          📋 Copy result
-        </button>
+        <div className={styles.actions}>
+          <button className={styles.shareBtn} onClick={handleShare}>
+            📋 Copy result
+          </button>
+          {chatName && onChat && (
+            <button className={styles.chatBtn} onClick={onChat}>
+              💬 Chat with {chatName}
+            </button>
+          )}
+        </div>
 
         <div className={styles.switch}>
           <span className={styles.switchLabel}>Keep playing</span>

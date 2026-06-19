@@ -1,60 +1,103 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { track } from "@vercel/analytics";
 import type { Character } from "@/data/types";
+import type { ModeId } from "@/lib/daily";
 import { dateKey } from "@/lib/daily";
+import { getCharacterQuestions } from "@/data/characterQuestions";
 import type { ChatMessage } from "@/lib/llm";
 import styles from "./CharacterChat.module.css";
 
 interface Props {
   character: Character;
   onClose: () => void;
+  /** Mode the chat was opened from — recorded in analytics. */
+  mode?: ModeId;
 }
 
 /** Max user messages a player may send per character per day. */
 const DAILY_LIMIT = 10;
 
-function countKey(characterId: string) {
+function greeting(character: Character): ChatMessage {
+  return {
+    role: "assistant",
+    content: `Peace be with you. I am ${character.name}. Ask me what you will.`,
+  };
+}
+
+/** Per-character, per-day key for the saved transcript. */
+function logKey(characterId: string) {
   return `bibdle:chat:${characterId}:${dateKey()}`;
 }
 
-function readCount(characterId: string): number {
+function readLog(character: Character): ChatMessage[] {
   try {
-    const raw = localStorage.getItem(countKey(characterId));
-    const n = raw ? parseInt(raw, 10) : 0;
-    return Number.isFinite(n) && n > 0 ? n : 0;
+    const raw = localStorage.getItem(logKey(character.id));
+    if (!raw) return [greeting(character)];
+    const parsed = JSON.parse(raw);
+    if (
+      Array.isArray(parsed) &&
+      parsed.length > 0 &&
+      parsed.every(
+        (m) =>
+          m &&
+          (m.role === "user" || m.role === "assistant") &&
+          typeof m.content === "string"
+      )
+    ) {
+      return parsed as ChatMessage[];
+    }
   } catch {
-    return 0;
+    // corrupt or unavailable storage — fall back to a fresh greeting
   }
+  return [greeting(character)];
 }
 
-function writeCount(characterId: string, n: number) {
+function writeLog(characterId: string, messages: ChatMessage[]) {
   try {
-    localStorage.setItem(countKey(characterId), String(n));
+    localStorage.setItem(logKey(characterId), JSON.stringify(messages));
   } catch {
     // ignore unavailable storage
   }
 }
 
-export default function CharacterChat({ character, onClose }: Props) {
-  const [messages, setMessages] = useState<ChatMessage[]>([
-    {
-      role: "assistant",
-      content: `Peace be with you. I am ${character.name}. Ask me what you will.`,
-    },
-  ]);
+export default function CharacterChat({ character, onClose, mode }: Props) {
+  // Restore today's conversation with this character, if any.
+  const [messages, setMessages] = useState<ChatMessage[]>(() =>
+    readLog(character)
+  );
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [sentCount, setSentCount] = useState(0);
 
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Hydrate today's used-message count from storage.
+  // Used-message count is derived from the restored transcript.
+  const sentCount = messages.filter((m) => m.role === "user").length;
+
+  const questions = useMemo(
+    () => getCharacterQuestions(character.id),
+    [character.id]
+  );
+  // A curated question makes a more inviting placeholder than "Ask … something".
+  // Picked once per mount (lazy init is the sanctioned place for randomness).
+  const [placeholder] = useState(
+    () => questions[Math.floor(Math.random() * questions.length)]
+  );
+  // Surface tappable starters until the player has asked their first question.
+  const showSuggestions = sentCount === 0;
+
+  // Persist the transcript whenever it changes.
   useEffect(() => {
-    setSentCount(readCount(character.id));
-  }, [character.id]);
+    writeLog(character.id, messages);
+  }, [character.id, messages]);
+
+  // Record that the chat was opened (once per mount).
+  useEffect(() => {
+    track("chat_opened", { character: character.id, mode: mode ?? "unknown" });
+  }, [character.id, mode]);
 
   // Escape to close.
   useEffect(() => {
@@ -78,6 +121,11 @@ export default function CharacterChat({ character, onClose }: Props) {
   const trimmed = input.trim();
   const canSend = !sending && !capReached && trimmed.length > 0;
 
+  function pickSuggestion(question: string) {
+    setInput(question);
+    inputRef.current?.focus();
+  }
+
   async function send() {
     if (!canSend) return;
     setError(null);
@@ -86,10 +134,6 @@ export default function CharacterChat({ character, onClose }: Props) {
     const history = [...messages, userMsg];
     setMessages(history);
     setInput("");
-
-    const nextCount = sentCount + 1;
-    setSentCount(nextCount);
-    writeCount(character.id, nextCount);
 
     setSending(true);
     try {
@@ -171,6 +215,22 @@ export default function CharacterChat({ character, onClose }: Props) {
           )}
         </div>
 
+        {showSuggestions && !capReached && (
+          <div className={styles.suggestions} aria-label="Suggested questions">
+            {questions.map((q) => (
+              <button
+                key={q}
+                type="button"
+                className={styles.suggestion}
+                onClick={() => pickSuggestion(q)}
+                disabled={sending}
+              >
+                {q}
+              </button>
+            ))}
+          </div>
+        )}
+
         {error && (
           <p className={styles.error} role="alert">
             {error}
@@ -190,7 +250,7 @@ export default function CharacterChat({ character, onClose }: Props) {
               type="text"
               value={input}
               maxLength={1000}
-              placeholder={`Ask ${character.name} something…`}
+              placeholder={placeholder}
               onChange={(e) => setInput(e.target.value)}
               disabled={sending}
               aria-label="Your message"
@@ -211,6 +271,11 @@ export default function CharacterChat({ character, onClose }: Props) {
             {remaining} {remaining === 1 ? "message" : "messages"} left today
           </p>
         )}
+
+        <p className={styles.disclaimer}>
+          ✨ Replies are AI-generated in character and may be inaccurate — they
+          aren&rsquo;t Scripture.
+        </p>
       </div>
     </div>
   );

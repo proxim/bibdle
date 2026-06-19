@@ -161,6 +161,39 @@
   border-radius: var(--radius);
 }
 
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.suggestion {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--fg);
+  background: var(--bg-tile);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 150ms ease, transform 150ms ease;
+}
+
+.suggestion:hover:not(:disabled) {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.suggestion:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.suggestion:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .inputRow {
   display: flex;
   gap: 0.5rem;
@@ -219,6 +252,14 @@
   font-size: 0.7rem;
   text-align: center;
   color: var(--fg-muted);
+}
+
+.disclaimer {
+  font-size: 0.66rem;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--fg-muted);
+  opacity: 0.85;
 }
 
 @keyframes fadeIn {

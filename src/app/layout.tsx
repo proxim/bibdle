@@ -56,6 +56,11 @@ export default function RootLayout({
       <body>
         <ThemeToggle />
         {children}
+        <footer className="siteDisclaimer">
+          Chat replies and other non-scripture content are AI-generated and may
+          contain mistakes. Scripture quotations are from the King James Version
+          (public domain).
+        </footer>
         <Analytics />
       </body>
     </html>

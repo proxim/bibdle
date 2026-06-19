@@ -95,6 +95,13 @@
   border: 1px solid var(--border);
 }
 
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
 .shareBtn {
   width: 100%;
   padding: 0.85rem;
@@ -111,6 +118,24 @@
 .shareBtn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 24px -10px var(--accent);
+}
+
+.chatBtn {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--fg);
+  background: var(--bg-tile);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 150ms ease, border-color 150ms ease;
+}
+
+.chatBtn:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
 }
 
 .switch {

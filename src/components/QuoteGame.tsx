@@ -112,7 +112,11 @@ export default function QuoteGame() {
       )}
 
       {showChat && (
-        <CharacterChat character={answer} onClose={() => setShowChat(false)} />
+        <CharacterChat
+          character={answer}
+          mode="quote"
+          onClose={() => setShowChat(false)}
+        />
       )}
 
       {showShare && (
@@ -120,6 +124,11 @@ export default function QuoteGame() {
           mode="quote"
           guessCount={guessCount}
           grid={shareGrid}
+          chatName={answer.name}
+          onChat={() => {
+            setShowShare(false);
+            setShowChat(true);
+          }}
           onClose={() => setShowShare(false)}
         />
       )}

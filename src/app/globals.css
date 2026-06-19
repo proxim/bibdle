@@ -75,6 +75,19 @@ button {
   color: inherit;
 }
 
+.siteDisclaimer {
+  margin-top: auto;
+  padding: 1.5rem 1rem 1.25rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--fg-muted);
+  opacity: 0.8;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
