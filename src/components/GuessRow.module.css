@@ -39,17 +39,19 @@
 .correct {
   background: var(--correct);
   border-color: transparent;
+  color: var(--on-tile);
 }
 
 .partial {
   background: var(--partial);
   border-color: transparent;
+  color: var(--on-tile);
 }
 
 .wrong {
   background: var(--wrong);
   border-color: transparent;
-  color: var(--fg-muted);
+  color: var(--on-tile);
 }
 
 @keyframes flipIn {

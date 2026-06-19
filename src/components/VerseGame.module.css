@@ -36,10 +36,12 @@
 .correct {
   background: var(--correct);
   border-color: transparent;
+  color: var(--on-tile);
 }
 
-.correct .guessDetail {
-  color: var(--fg);
+.correct .guessDetail,
+.wrong .guessDetail {
+  color: var(--on-tile);
 }
 
 .section {
@@ -53,6 +55,7 @@
 .wrong {
   background: var(--wrong);
   border-color: transparent;
+  color: var(--on-tile);
 }
 
 @keyframes flipIn {

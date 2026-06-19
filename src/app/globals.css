@@ -11,6 +11,9 @@
   --correct: #2e7d32;
   --partial: #b8860b;
   --wrong: #5c2b29;
+  /* Text sitting on a colored (correct/partial/wrong) fill — light in both
+     themes, since those fills are saturated regardless of light/dark. */
+  --on-tile: #ffffff;
   --radius: 10px;
   --flip-duration: 600ms;
   --flip-stagger: 120ms;

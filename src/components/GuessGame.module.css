@@ -76,7 +76,8 @@
   background: var(--wrong);
   border-radius: 999px;
   font-size: 0.85rem;
-  color: var(--fg-muted);
+  color: var(--on-tile);
+  opacity: 0.85;
   text-decoration: line-through;
   animation: pop 300ms ease-out both;
 }
