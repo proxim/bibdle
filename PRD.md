@@ -50,28 +50,30 @@ A daily multi-round "which is it?" round-robin — the shareable/viral hook. Bot
 corpora are public domain (KJV already bundled; Shakespeare added), so no
 licensing wrinkle.
 
-- **Loop:** 8 passages per day, one at a time. Two big choice buttons —
-  📖 **Scripture** / 🎭 **Shakespeare**. Tap one → the card does a 3D flip
-  reveal (reuse Classic's flip keyframes) showing right/wrong + the true
-  attribution (e.g. "Ecclesiastes 1:2" or "Macbeth, Act V"), a running tally
-  ticks, then **Next →**. After round 8 a results modal opens.
+- **Loop:** `BARD_ROUNDS` passages per day (currently **3**), one at a time. Two
+  big choice buttons — 📖 **Scripture** / 🎭 **Shakespeare**. Tap one → the card
+  does a flip reveal showing right/wrong + the true attribution (e.g.
+  "Ecclesiastes 1:2" or "Macbeth"), a running tally ticks, then **Next →**.
+  After the last round a results screen + share modal opens.
 - **No single "answer"** and **no character**, so (like Verse mode) there is
   **no AI chat** and **no version toggle** — KJV is the scripture baseline.
 - **Difficulty is the feature:** KJV's Early-Modern-English cadence overlaps
   Shakespeare's, so honest mistakes are common — those near-misses are exactly
   what people screenshot. Curate the pool toward genuinely ambiguous passages
   (archaic, aphoristic) and trim anything with dead giveaways ("verily",
-  "thy kingdom", obvious proper nouns like "Romeo").
+  "thy kingdom", obvious proper nouns like "Romeo"). Scripture may be drawn from
+  **either testament** (not just OT wisdom books) as long as it stays ambiguous.
 - **Deterministic daily set:** date-hash deterministically shuffles the pool and
-  takes 8, clamped to **≥2 of each source** so no degenerate all-one-source day.
-  The Scripture/Shakespeare split is intentionally *not* fixed at 4/4 so players
-  can't game the count.
+  takes `BARD_ROUNDS`, clamped to **≥`minPer` of each source** (`minPer` = 2 when
+  there's room, else 1 — so at 3 rounds it's ≥1 each) to avoid a degenerate
+  all-one-source day. The split is intentionally *not* fixed so players can't
+  game the count.
 - **Feedback per round:** 🟩 correct / 🟥 wrong (no 🟨). Immediate, per-passage.
 - **Share (spoiler-free):** the green/red grid in round order + score, e.g.
   ```
-  Bibdle 🎭 Scripture or Shakespeare — 2026-06-17
-  🟩🟩🟥🟩🟩🟩🟥🟩
-  6/8
+  Bibdle 🎭 Shakespeare — 2026-06-17
+  🟩🟥🟩
+  2/3
   https://bibdle-daily.vercel.app
   ```
   Order is preserved but *which* passage was which is not revealed, so friends
@@ -79,8 +81,8 @@ licensing wrinkle.
 - **Stats/streak:** finishing the daily run counts as the "win" for streak
   purposes (streak = consecutive days completed — forgiving, drives return).
   The existing `guessDistribution` slot is repurposed as a **score
-  distribution** (score 0–8 → count). A perfect-run (8/8) streak is a possible
-  future brag metric.
+  distribution** (score 0–`BARD_ROUNDS` → count). A perfect-run streak is a
+  possible future brag metric.
 
 #### Engineering touchpoints
 - `src/data/types.ts` — add `BardPassage { id; text; source: "scripture" | "shakespeare"; attribution: string }`.

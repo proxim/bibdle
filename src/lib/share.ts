@@ -1,7 +1,7 @@
 import type { ModeId } from "./daily";
 import type { TileResult } from "./compare";
 import { modeMeta } from "./modes";
-import { dateKey } from "./daily";
+import { dateKey, BARD_ROUNDS } from "./daily";
 
 export const TILE_EMOJI: Record<TileResult, string> = {
   correct: "🟩",
@@ -9,14 +9,26 @@ export const TILE_EMOJI: Record<TileResult, string> = {
   wrong: "⬛",
 };
 
-/** Builds the full shareable text block (title + emoji grid + result line). */
+/** Modes scored out of a fixed number of rounds rather than solved in N guesses. */
+const SCORE_MODES: Partial<Record<ModeId, number>> = {
+  shakespeare: BARD_ROUNDS,
+};
+
+/**
+ * Builds the full shareable text block (title + emoji grid + result line).
+ * For guess modes `value` is the guess count; for score modes it is the score.
+ */
 export function buildShareText(
   mode: ModeId,
-  guessCount: number,
+  value: number,
   grid: string[]
 ): string {
   const meta = modeMeta.get(mode)!;
   const header = `Bibdle ${meta.icon} ${meta.title} — ${dateKey()}`;
-  const result = `Solved in ${guessCount} ${guessCount === 1 ? "guess" : "guesses"}`;
+  const total = SCORE_MODES[mode];
+  const result =
+    total !== undefined
+      ? `${value}/${total}`
+      : `Solved in ${value} ${value === 1 ? "guess" : "guesses"}`;
   return [header, ...grid, result, "https://bibdle-daily.vercel.app"].join("\n");
 }

@@ -15,9 +15,20 @@ interface Props {
   guessCount: number;
   grid: string[];
   onClose: () => void;
+  /** Override the modal heading (e.g. score modes use "Nice!" / "8/8 — Perfect!"). */
+  title?: string;
+  /** Override the subtitle line (defaults to "{guessCount} guesses"). */
+  subtitle?: string;
 }
 
-export default function ShareModal({ mode, guessCount, grid, onClose }: Props) {
+export default function ShareModal({
+  mode,
+  guessCount,
+  grid,
+  onClose,
+  title,
+  subtitle,
+}: Props) {
   const [toast, setToast] = useState(false);
   const shareText = buildShareText(mode, guessCount, grid);
   const stats = readStats(mode);
@@ -31,15 +42,17 @@ export default function ShareModal({ mode, guessCount, grid, onClose }: Props) {
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  // Use the native share sheet only on touch devices (phones/tablets);
-  // desktop browsers always copy to clipboard instead.
-  const isTouchDevice =
-    typeof navigator !== "undefined" &&
-    (navigator.maxTouchPoints > 0 ||
-      (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches));
+  // Use the native share sheet only on real phones/tablets — where the PRIMARY
+  // pointer is touch and there's no hover. Plain `maxTouchPoints > 0` is wrong:
+  // touchscreen laptops/desktops report it too, and there we want a clipboard
+  // copy, not the share sheet.
+  const isMobile =
+    typeof window !== "undefined" &&
+    window.matchMedia("(pointer: coarse)").matches &&
+    window.matchMedia("(hover: none)").matches;
 
   async function handleShare() {
-    if (isTouchDevice && typeof navigator !== "undefined" && navigator.share) {
+    if (isMobile && typeof navigator !== "undefined" && navigator.share) {
       try {
         await navigator.share({ text: shareText });
         return;
@@ -67,9 +80,9 @@ export default function ShareModal({ mode, guessCount, grid, onClose }: Props) {
           ×
         </button>
 
-        <h2 className={styles.title}>Solved!</h2>
+        <h2 className={styles.title}>{title ?? "Solved!"}</h2>
         <p className={styles.subtitle}>
-          {guessCount} {guessCount === 1 ? "guess" : "guesses"}
+          {subtitle ?? `${guessCount} ${guessCount === 1 ? "guess" : "guesses"}`}
         </p>
 
         <pre className={styles.grid}>{grid.join("\n")}</pre>

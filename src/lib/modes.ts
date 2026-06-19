@@ -12,6 +12,7 @@ export const MODES: ModeMeta[] = [
   { id: "quote", title: "Quote", icon: "💬", blurb: "Who said it?" },
   { id: "emoji", title: "Emoji", icon: "🐳", blurb: "Decode the emoji story" },
   { id: "verse", title: "Verse", icon: "📜", blurb: "Which book is this verse from?" },
+  { id: "shakespeare", title: "Shakespeare", icon: "🎭", blurb: "Bible verse or the Bard?" },
 ];
 
 export const modeMeta = new Map(MODES.map((m) => [m.id, m]));

@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import type { ModeId } from "@/lib/daily";
+import { BARD_ROUNDS } from "@/lib/daily";
 import { MODES } from "@/lib/modes";
 import styles from "./HowToPlay.module.css";
 
@@ -77,6 +79,27 @@ const RULES: Record<ModeId, React.ReactNode> = {
       </p>
     </>
   ),
+  shakespeare: (
+    <>
+      <p>
+        {BARD_ROUNDS} passages, one at a time. Each is either a verse from the
+        Bible (KJV) or a line from Shakespeare — call which.
+      </p>
+      <p>
+        The catch: both speak in old, lofty English, so it&apos;s trickier than
+        it sounds. You answer all of them; your score is{" "}
+        <strong>how many you call right</strong>.
+      </p>
+      <ul className={styles.legend}>
+        <li>
+          <span className={styles.sq}>🟩</span> called it right
+        </li>
+        <li>
+          <span className={styles.sq}>🟥</span> fooled you
+        </li>
+      </ul>
+    </>
+  ),
 };
 
 interface Props {
@@ -102,7 +125,11 @@ export default function HowToPlay({ focusMode, onClose }: Props) {
     );
   }
 
-  return (
+  // Render in a portal at <body> so the fixed overlay escapes any ancestor
+  // stacking context (e.g. the ModePage header) and always sits on top.
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
     <div
       className={styles.overlay}
       onClick={onClose}
@@ -145,7 +172,8 @@ export default function HowToPlay({ focusMode, onClose }: Props) {
           </p>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 

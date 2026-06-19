@@ -76,3 +76,14 @@ export interface Verse {
   book: string;
   reference: string; // e.g. "John 3:16"
 }
+
+/** Source corpus for the "Scripture or Shakespeare" mode. */
+export type BardSource = "scripture" | "shakespeare";
+
+export interface BardPassage {
+  id: string;
+  text: string;
+  source: BardSource;
+  /** Revealed after the player answers — KJV reference or Shakespeare play. */
+  attribution: string;
+}
