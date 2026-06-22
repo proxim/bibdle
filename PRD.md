@@ -74,7 +74,7 @@ licensing wrinkle.
   Bibdle 🎭 Shakespeare — 2026-06-17
   🟩🟥🟩
   2/3
-  https://bibdle-daily.vercel.app
+  https://bibdle.app
   ```
   Order is preserved but *which* passage was which is not revealed, so friends
   can play the same daily. Surfaces the other-modes quick links like every mode.

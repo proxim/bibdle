@@ -30,5 +30,5 @@ export function buildShareText(
     total !== undefined
       ? `${value}/${total}`
       : `Solved in ${value} ${value === 1 ? "guess" : "guesses"}`;
-  return [header, ...grid, result, "https://bibdle-daily.vercel.app"].join("\n");
+  return [header, ...grid, result, "https://bibdle.app"].join("\n");
 }

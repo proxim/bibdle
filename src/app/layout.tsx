@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://bibdle-daily.vercel.app";
+const SITE_URL = "https://bibdle.app";
 const TITLE = "Bibdle — the daily Bible guessing game";
 const DESCRIPTION =
   "Guess the Bible character of the day across Classic, Quote, Emoji, and Verse modes.";
