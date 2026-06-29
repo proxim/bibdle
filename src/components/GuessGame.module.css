@@ -110,6 +110,45 @@
   font-size: 0.85rem;
 }
 
+.emojiKey {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+  max-width: 420px;
+  margin: 0;
+  padding: 1rem 1.2rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  animation: rise 500ms ease-out both;
+}
+
+.emojiKeyRow {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.45rem 0.6rem;
+  background: var(--bg-tile);
+  border-radius: var(--radius);
+}
+
+.emojiKeyIcon {
+  flex: 0 0 auto;
+  width: 1.8rem;
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1;
+}
+
+.emojiKeyText {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  color: var(--fg-muted);
+}
+
 .shareLink {
   background: none;
   border: none;

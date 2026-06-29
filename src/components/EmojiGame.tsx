@@ -77,17 +77,27 @@ export default function EmojiGame() {
       </div>
 
       {state.won ? (
-        <div className={styles.winBanner}>
-          <span className={styles.winName}>🎉 {answer.name}!</span>
-          <div className={styles.winActions}>
-            <button className={styles.chatLink} onClick={() => setShowChat(true)}>
-              💬 Talk to {answer.name} →
-            </button>
-            <button className={styles.shareLink} onClick={() => setShowShare(true)}>
-              Share your result →
-            </button>
+        <>
+          <div className={styles.winBanner}>
+            <span className={styles.winName}>🎉 {answer.name}!</span>
+            <div className={styles.winActions}>
+              <button className={styles.chatLink} onClick={() => setShowChat(true)}>
+                💬 Talk to {answer.name} →
+              </button>
+              <button className={styles.shareLink} onClick={() => setShowShare(true)}>
+                Share your result →
+              </button>
+            </div>
           </div>
-        </div>
+          <dl className={styles.emojiKey} aria-label="Emoji meanings">
+            {answer.emojis.map((emoji, i) => (
+              <div key={i} className={styles.emojiKeyRow}>
+                <dt className={styles.emojiKeyIcon}>{emoji}</dt>
+                <dd className={styles.emojiKeyText}>{answer.emojiMeanings[i]}</dd>
+              </div>
+            ))}
+          </dl>
+        </>
       ) : (
         <>
           {showHint ? (

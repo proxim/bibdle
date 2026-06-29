@@ -13,6 +13,13 @@ export const CHARACTERS: Character[] = [
     era: "Creation & Early World",
     gender: "Male",
     emojis: ["🌍", "🍎", "🌳", "🧍", "🐍"],
+    emojiMeanings: [
+      "Formed from the dust of the earth",
+      "Ate the forbidden fruit",
+      "Tree of knowledge in Eden",
+      "The first man God created",
+      "Tempted through the serpent",
+    ],
     quotes: [
       {
         text: "The woman whom thou gavest to be with me, she gave me of the tree, and I did eat.",
@@ -34,6 +41,13 @@ export const CHARACTERS: Character[] = [
     era: "Creation & Early World",
     gender: "Female",
     emojis: ["🌸", "🐍", "🍎", "👩", "🌳"],
+    emojiMeanings: [
+      "Born in the garden of Eden",
+      "Beguiled by the serpent",
+      "Ate the forbidden fruit",
+      "The first woman, mother of all living",
+      "Tree of knowledge of good and evil",
+    ],
     quotes: [
       {
         text: "The serpent beguiled me, and I did eat.",
@@ -55,6 +69,13 @@ export const CHARACTERS: Character[] = [
     era: "Creation & Early World",
     gender: "Male",
     emojis: ["🌧️", "🛶", "🐘", "🌈", "🕊️"],
+    emojiMeanings: [
+      "Forty days of flooding rain",
+      "Built the great ark",
+      "Two of every animal aboard",
+      "Rainbow sign of the covenant",
+      "Dove returned with an olive leaf",
+    ],
     quotes: [
       {
         text: "Cursed be Canaan; a servant of servants shall he be unto his brethren.",
@@ -76,6 +97,13 @@ export const CHARACTERS: Character[] = [
     era: "Patriarchs",
     gender: "Male",
     emojis: ["⭐", "🏕️", "🔪", "🐏", "👴"],
+    emojiMeanings: [
+      "Descendants as countless as the stars",
+      "Sojourned in tents toward the promised land",
+      "Raised the knife over Isaac",
+      "Ram provided in his son's place",
+      "Father of faith in old age",
+    ],
     quotes: [
       {
         text: "My son, God will provide himself a lamb for a burnt offering.",
@@ -97,6 +125,13 @@ export const CHARACTERS: Character[] = [
     era: "Patriarchs",
     gender: "Female",
     emojis: ["👵", "😂", "👶", "⛺", "🌟"],
+    emojiMeanings: [
+      "Bore a son in old age",
+      "Laughed at the promise",
+      "Mother of Isaac, whose name means laughter",
+      "Dwelt in tents with Abraham",
+      "Promised offspring like the stars",
+    ],
     quotes: [
       {
         text: "God hath made me to laugh, so that all that hear will laugh with me.",
@@ -118,6 +153,13 @@ export const CHARACTERS: Character[] = [
     era: "Patriarchs",
     gender: "Male",
     emojis: ["🪜", "🤼", "🍲", "👬", "🐑"],
+    emojiMeanings: [
+      "Dreamed of a ladder to heaven",
+      "Wrestled with God till daybreak",
+      "Bought the birthright with stew",
+      "Twin who grasped Esau's heel",
+      "Tended Laban's flocks for his wives",
+    ],
     quotes: [
       {
         text: "I will not let thee go, except thou bless me.",
@@ -139,6 +181,13 @@ export const CHARACTERS: Character[] = [
     era: "Patriarchs",
     gender: "Male",
     emojis: ["🌈", "🧥", "💭", "🌾", "👑"],
+    emojiMeanings: [
+      "Coat of many colours",
+      "Stripped of his coat by his brothers",
+      "Dreamer and interpreter of dreams",
+      "Stored grain through Egypt's famine",
+      "Raised to second over Pharaoh",
+    ],
     quotes: [
       {
         text: "Ye thought evil against me; but God meant it unto good.",
@@ -160,6 +209,13 @@ export const CHARACTERS: Character[] = [
     era: "Exodus & Wilderness",
     gender: "Male",
     emojis: ["🔥", "🌿", "🌊", "📜", "⛰️"],
+    emojiMeanings: [
+      "Spoke with God in flame",
+      "The burning bush unconsumed",
+      "Parted the Red Sea",
+      "Received the Law's tablets",
+      "Met God atop Mount Sinai",
+    ],
     quotes: [
       {
         text: "Let my people go, that they may serve me.",
@@ -181,6 +237,13 @@ export const CHARACTERS: Character[] = [
     era: "Conquest & Judges",
     gender: "Male",
     emojis: ["🎺", "🧱", "⚔️", "☀️", "🗺️"],
+    emojiMeanings: [
+      "Trumpets blown at Jericho",
+      "Walls of Jericho fell down",
+      "Conqueror of Canaan",
+      "Made the sun stand still",
+      "Divided the land among the tribes",
+    ],
     quotes: [
       {
         text: "As for me and my house, we will serve the LORD.",
@@ -202,6 +265,13 @@ export const CHARACTERS: Character[] = [
     era: "Conquest & Judges",
     gender: "Female",
     emojis: ["🌾", "💞", "👵", "💍", "🌙"],
+    emojiMeanings: [
+      "Gleaned in the fields of Boaz",
+      "Loyal love that would not part",
+      "Clung to her widowed mother-in-law",
+      "Redeemed and married by Boaz",
+      "Lay at his feet on the threshing floor",
+    ],
     quotes: [
       {
         text: "Whither thou goest, I will go; and where thou lodgest, I will lodge: thy people shall be my people, and thy God my God.",
@@ -222,7 +292,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Dan",
     era: "Conquest & Judges",
     gender: "Male",
-    emojis: ["💪", "💇", "🦁", "🏛️", "🌪️"],
+    emojis: ["💪", "🦁", "🦊", "💇", "🏛️"],
+    emojiMeanings: [
+      "Supernatural Nazirite strength",
+      "Slew a lion bare-handed",
+      "Loosed three hundred foxes with firebrands",
+      "Strength lay in his unshorn hair",
+      "Pulled down Dagon's temple",
+    ],
     quotes: [
       {
         text: "Out of the eater came forth meat, and out of the strong came forth sweetness.",
@@ -244,6 +321,13 @@ export const CHARACTERS: Character[] = [
     era: "United Kingdom",
     gender: "Male",
     emojis: ["🎯", "🪨", "🎵", "👑", "🐑"],
+    emojiMeanings: [
+      "Slung a stone with deadly aim",
+      "Felled Goliath with a stone",
+      "Psalmist who played the harp",
+      "Anointed king of Israel",
+      "Shepherd boy of Bethlehem",
+    ],
     quotes: [
       {
         text: "The LORD is my shepherd; I shall not want.",
@@ -269,6 +353,13 @@ export const CHARACTERS: Character[] = [
     era: "United Kingdom",
     gender: "Male",
     emojis: ["🧠", "👑", "🏛️", "⚖️", "💰"],
+    emojiMeanings: [
+      "Wisest of all kings",
+      "Son of David who reigned in Jerusalem",
+      "Built the first temple",
+      "Judged the divided-baby dispute",
+      "Renowned for immense riches",
+    ],
     quotes: [
       {
         text: "Vanity of vanities; all is vanity.",
@@ -294,6 +385,13 @@ export const CHARACTERS: Character[] = [
     era: "Divided Kingdom",
     gender: "Male",
     emojis: ["🔥", "🌧️", "🐦‍⬛", "🌪️", "🛞"],
+    emojiMeanings: [
+      "Called down fire on Carmel",
+      "Shut and reopened the heavens",
+      "Fed by ravens at the brook",
+      "Taken up in a whirlwind",
+      "Chariot of fire bore him to heaven",
+    ],
     quotes: [
       {
         text: "How long halt ye between two opinions? if the LORD be God, follow him.",
@@ -315,6 +413,13 @@ export const CHARACTERS: Character[] = [
     era: "Exile & Return",
     gender: "Female",
     emojis: ["👑", "🤫", "🍷", "🎭", "✡️"],
+    emojiMeanings: [
+      "Crowned queen of Persia",
+      "Hid her people and kindred",
+      "Pleaded at the king's banquet",
+      "Foiled Haman's deadly plot",
+      "A Jewess who saved her people",
+    ],
     quotes: [
       {
         text: "If I perish, I perish.",
@@ -335,7 +440,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Exile & Return",
     gender: "Male",
-    emojis: ["🦁", "🙏", "🥦", "💭", "✍️"],
+    emojis: ["🥦", "🙏", "💭", "✍️", "🦁"],
+    emojiMeanings: [
+      "Refused the king's rich food",
+      "Prayed three times a day",
+      "Interpreted the king's dreams",
+      "Read the writing on the wall",
+      "Survived a night in the lions' den",
+    ],
     quotes: [
       {
         text: "My God hath sent his angel, and hath shut the lions' mouths.",
@@ -357,6 +469,13 @@ export const CHARACTERS: Character[] = [
     era: "Divided Kingdom",
     gender: "Male",
     emojis: ["🐳", "🏃", "⛵", "🌊", "🌱"],
+    emojiMeanings: [
+      "Swallowed by the great fish",
+      "Fled from God to Tarshish",
+      "Cast into the sea in a storm",
+      "Three days in the deep",
+      "Sulked under a withered plant",
+    ],
     quotes: [
       {
         text: "I cried by reason of mine affliction unto the LORD, and he heard me; out of the belly of hell cried I, and thou heardest my voice.",
@@ -377,7 +496,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Life of Jesus",
     gender: "Female",
-    emojis: ["👼", "👶", "⭐", "🐴", "💙"],
+    emojis: ["👼", "👶", "⭐", "🫏", "💙"],
+    emojiMeanings: [
+      "Visited by the angel Gabriel",
+      "Gave birth to the Christ child",
+      "Star shone over his birth",
+      "Rode to Bethlehem with Joseph",
+      "Treasured all things in her heart",
+    ],
     quotes: [
       {
         text: "Behold the handmaid of the Lord; be it unto me according to thy word.",
@@ -399,6 +525,13 @@ export const CHARACTERS: Character[] = [
     era: "Life of Jesus",
     gender: "Male",
     emojis: ["🌊", "🦗", "🍯", "🗣️", "🏜️"],
+    emojiMeanings: [
+      "Baptized in the river Jordan",
+      "Ate locusts in the wild",
+      "Ate wild honey",
+      "Voice crying, Repent ye",
+      "Preacher in the wilderness",
+    ],
     quotes: [
       {
         text: "He must increase, but I must decrease.",
@@ -424,6 +557,13 @@ export const CHARACTERS: Character[] = [
     era: "Life of Jesus",
     gender: "Male",
     emojis: ["🎣", "🐓", "🗝️", "🌊", "🪨"],
+    emojiMeanings: [
+      "A fisherman of Galilee",
+      "Denied Jesus before the cock crew",
+      "Given the keys of the kingdom",
+      "Walked on water toward Jesus",
+      "The rock on which the church is built",
+    ],
     quotes: [
       {
         text: "Thou art the Christ, the Son of the living God.",
@@ -449,6 +589,13 @@ export const CHARACTERS: Character[] = [
     era: "Early Church",
     gender: "Male",
     emojis: ["⚡", "🐎", "✉️", "⛓️", "🛤️"],
+    emojiMeanings: [
+      "Blinded by light from heaven",
+      "Struck down on the Damascus road",
+      "Wrote letters to the churches",
+      "Imprisoned for the gospel",
+      "Missionary journeys across the empire",
+    ],
     quotes: [
       {
         text: "I have fought a good fight, I have finished my course, I have kept the faith.",
@@ -474,6 +621,13 @@ export const CHARACTERS: Character[] = [
     era: "Life of Jesus",
     gender: "Female",
     emojis: ["🌅", "🪦", "😢", "🌿", "👁️"],
+    emojiMeanings: [
+      "Came early on the first day",
+      "Found the tomb empty",
+      "Wept outside the sepulchre",
+      "Mistook the risen Lord for the gardener",
+      "First to see the risen Christ",
+    ],
     quotes: [
       {
         text: "They have taken away my Lord, and I know not where they have laid him.",
@@ -495,6 +649,13 @@ export const CHARACTERS: Character[] = [
     era: "Life of Jesus",
     gender: "Male",
     emojis: ["🤔", "👆", "🩹", "🙏", "👀"],
+    emojiMeanings: [
+      "Doubted the resurrection",
+      "Put his finger in the nail prints",
+      "Touched the wounds of Christ",
+      "Confessed, My Lord and my God",
+      "Would not believe till he saw",
+    ],
     quotes: [
       {
         text: "Except I shall see in his hands the print of the nails, and put my finger into the print of the nails, and thrust my hand into his side, I will not believe.",
@@ -517,6 +678,13 @@ export const CHARACTERS: Character[] = [
     era: "Life of Jesus",
     gender: "Male",
     emojis: ["🌳", "🧗", "💰", "🏠", "📏"],
+    emojiMeanings: [
+      "Climbed a sycamore tree",
+      "Scrambled up to see Jesus",
+      "Chief tax collector who repaid fourfold",
+      "Jesus stayed at his house",
+      "Short of stature",
+    ],
     quotes: [
       {
         text: "Behold, Lord, the half of my goods I give to the poor.",
@@ -538,6 +706,13 @@ export const CHARACTERS: Character[] = [
     era: "Creation & Early World",
     gender: "Male",
     emojis: ["🌾", "😠", "🩸", "🏃", "🔪"],
+    emojiMeanings: [
+      "A tiller of the ground",
+      "Angry that his offering was rejected",
+      "His brother's blood cried out",
+      "Made a fugitive and wanderer",
+      "First murderer, who slew Abel",
+    ],
     quotes: [
       { text: "Am I my brother's keeper?", reference: "Genesis 4:9" },
     ],
@@ -556,6 +731,13 @@ export const CHARACTERS: Character[] = [
     era: "Creation & Early World",
     gender: "Male",
     emojis: ["🐑", "🔥", "🙏", "🩸", "😇"],
+    emojiMeanings: [
+      "A keeper of sheep",
+      "His burnt offering was accepted",
+      "Brought a pleasing sacrifice to God",
+      "Slain by his brother Cain",
+      "Remembered as the first martyr",
+    ],
     quotes: [],
     description: "Shepherd son slain by his brother",
     persona:
@@ -572,6 +754,13 @@ export const CHARACTERS: Character[] = [
     era: "Creation & Early World",
     gender: "Male",
     emojis: ["👶", "🌱", "🙏", "👨", "📜"],
+    emojiMeanings: [
+      "Born to Adam and Eve",
+      "Appointed in place of slain Abel",
+      "In his days men called on the LORD",
+      "Third son of the first man",
+      "Ancestor of Noah through his line",
+    ],
     quotes: [],
     description: "Third son of Adam, ancestor of Noah",
     persona:
@@ -588,6 +777,13 @@ export const CHARACTERS: Character[] = [
     era: "Creation & Early World",
     gender: "Male",
     emojis: ["🚶", "☁️", "✨", "🙏", "⬆️"],
+    emojiMeanings: [
+      "Walked with God",
+      "Did not see death",
+      "Father of Methuselah",
+      "Lived in close fellowship with God",
+      "God took him up without dying",
+    ],
     quotes: [],
     description: "Walked with God and was taken without dying",
     persona:
@@ -604,6 +800,13 @@ export const CHARACTERS: Character[] = [
     era: "Creation & Early World",
     gender: "Male",
     emojis: ["👴", "⏳", "🎂", "📜", "🕰️"],
+    emojiMeanings: [
+      "An exceedingly old man",
+      "Lifespan stretched on and on",
+      "Lived nine hundred sixty-nine years",
+      "Son of Enoch in the genealogy",
+      "The longest-lived man in the Bible",
+    ],
     quotes: [],
     description: "The longest-lived man in the Bible",
     persona:
@@ -619,7 +822,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Hebrew",
     era: "Patriarchs",
     gender: "Male",
-    emojis: ["😂", "🐏", "🔪", "⛰️", "👨"],
+    emojis: ["👨", "😂", "🔪", "⛰️", "🐏"],
+    emojiMeanings: [
+      "Son of promise to Abraham and Sarah",
+      "His name means laughter",
+      "Bound under his father's knife",
+      "Offered on Mount Moriah",
+      "Spared by the ram in the thicket",
+    ],
     quotes: [
       {
         text: "Behold the fire and the wood: but where is the lamb for a burnt offering?",
@@ -640,7 +850,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Hebrew",
     era: "Patriarchs",
     gender: "Female",
-    emojis: ["🏺", "🐫", "💍", "👯", "💧"],
+    emojis: ["🏺", "💧", "🐫", "💍", "👯"],
+    emojiMeanings: [
+      "Came to the well with her pitcher",
+      "Drew water for the servant",
+      "Watered his ten camels",
+      "Betrothed to Isaac sight unseen",
+      "Mother of the twins Esau and Jacob",
+    ],
     quotes: [
       { text: "I will go.", reference: "Genesis 24:58" },
     ],
@@ -658,7 +875,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Edom",
     era: "Patriarchs",
     gender: "Male",
-    emojis: ["🏹", "🍲", "🧔", "🦌", "😢"],
+    emojis: ["🏹", "🦌", "🧔", "🍲", "😢"],
+    emojiMeanings: [
+      "A skilful hunter",
+      "Came in weary from the field",
+      "A hairy, ruddy man",
+      "Sold his birthright for stew",
+      "Wept for the lost blessing",
+    ],
     quotes: [
       {
         text: "Hast thou but one blessing, my father? bless me, even me also, O my father.",
@@ -680,6 +904,13 @@ export const CHARACTERS: Character[] = [
     era: "Patriarchs",
     gender: "Female",
     emojis: ["🐑", "💞", "😭", "👶", "⛺"],
+    emojiMeanings: [
+      "A shepherdess met at the well",
+      "Jacob loved and served for her",
+      "Wept in her barrenness",
+      "Mother of Joseph and Benjamin",
+      "Died on the road to Bethlehem",
+    ],
     quotes: [
       { text: "Give me children, or else I die.", reference: "Genesis 30:1" },
     ],
@@ -697,7 +928,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel",
     era: "Patriarchs",
     gender: "Female",
-    emojis: ["👁️", "💍", "👶", "⛺", "🌾"],
+    emojis: ["👁️", "💍", "⛺", "🌾", "👶"],
+    emojiMeanings: [
+      "Known for her tender eyes",
+      "Wed to Jacob by Laban's trick",
+      "Elder daughter of Laban",
+      "Her son's mandrakes from the field",
+      "Mother of six of the tribes",
+    ],
     quotes: [
       {
         text: "Now will I praise the LORD.",
@@ -719,6 +957,13 @@ export const CHARACTERS: Character[] = [
     era: "Exodus & Wilderness",
     gender: "Male",
     emojis: ["🗣️", "🐍", "🐂", "🕎", "👘"],
+    emojiMeanings: [
+      "Spokesman for his brother Moses",
+      "His rod became a serpent",
+      "Fashioned the golden calf",
+      "Tended the tabernacle lampstand",
+      "Israel's first high priest",
+    ],
     quotes: [
       {
         text: "These be thy gods, O Israel, which brought thee up out of the land of Egypt.",
@@ -740,6 +985,13 @@ export const CHARACTERS: Character[] = [
     era: "Exodus & Wilderness",
     gender: "Female",
     emojis: ["🪘", "💃", "🌊", "👶", "🧺"],
+    emojiMeanings: [
+      "Took a timbrel in her hand",
+      "Led the women in dancing",
+      "Sang after crossing the Red Sea",
+      "Watched over baby Moses",
+      "Guarded his basket in the bulrushes",
+    ],
     quotes: [
       {
         text: "Sing ye to the LORD, for he hath triumphed gloriously; the horse and his rider hath he thrown into the sea.",
@@ -760,7 +1012,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Exodus & Wilderness",
     gender: "Male",
-    emojis: ["🍇", "⛰️", "💪", "🗺️", "⚔️"],
+    emojis: ["🍇", "🗺️", "⚔️", "💪", "⛰️"],
+    emojiMeanings: [
+      "Brought back the grapes of Eshcol",
+      "One of the twelve spies",
+      "Urged Israel to take the land",
+      "Still vigorous at eighty-five",
+      "Claimed his mountain, Hebron",
+    ],
     quotes: [
       {
         text: "Let us go up at once, and possess it; for we are well able to overcome it.",
@@ -781,7 +1040,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile (Canaanite)",
     era: "Conquest & Judges",
     gender: "Female",
-    emojis: ["🧵", "🪟", "🕵️", "🧱", "🌹"],
+    emojis: ["🏠", "🕵️", "🧱", "🧵", "🪟"],
+    emojiMeanings: [
+      "Innkeeper of Jericho",
+      "Hid the Israelite spies",
+      "Her house was upon the city wall",
+      "Spared by the scarlet cord",
+      "Bound it in her window",
+    ],
     quotes: [
       {
         text: "The LORD your God, he is God in heaven above, and in earth beneath.",
@@ -803,6 +1069,13 @@ export const CHARACTERS: Character[] = [
     era: "Conquest & Judges",
     gender: "Male",
     emojis: ["🐑", "💧", "🔦", "📯", "🍞"],
+    emojiMeanings: [
+      "Laid out a fleece of wool",
+      "Tested God with dew on the fleece",
+      "Torches hidden in pitchers",
+      "Three hundred men blew trumpets",
+      "A barley loaf in the enemy's dream",
+    ],
     quotes: [
       {
         text: "The sword of the LORD, and of Gideon.",
@@ -824,6 +1097,13 @@ export const CHARACTERS: Character[] = [
     era: "Conquest & Judges",
     gender: "Female",
     emojis: ["🌴", "⚖️", "⚔️", "🎶", "👩‍⚖️"],
+    emojiMeanings: [
+      "Held court under her palm tree",
+      "Judged Israel in her day",
+      "Sent Barak against Sisera",
+      "Sang a triumphant victory song",
+      "A prophetess and woman judge",
+    ],
     quotes: [
       {
         text: "Up; for this is the day in which the LORD hath delivered Sisera into thine hand.",
@@ -844,7 +1124,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Levi (Ephraim)",
     era: "United Kingdom",
     gender: "Male",
-    emojis: ["🕯️", "👂", "🛢️", "👑", "🙏"],
+    emojis: ["🕯️", "👂", "🙏", "🛢️", "👑"],
+    emojiMeanings: [
+      "Ministered by the lamp of God",
+      "Heard God call him as a child",
+      "Dedicated to the LORD at the temple",
+      "Anointed with the horn of oil",
+      "Anointed Israel's first kings",
+    ],
     quotes: [
       {
         text: "Speak; for thy servant heareth.",
@@ -865,7 +1152,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Benjamin",
     era: "United Kingdom",
     gender: "Male",
-    emojis: ["👑", "🗡️", "😔", "🎵", "📏"],
+    emojis: ["📏", "👑", "🎵", "😔", "🗡️"],
+    emojiMeanings: [
+      "Stood head and shoulders above all",
+      "Israel's first king",
+      "Soothed by David's harp",
+      "Tormented and jealous of David",
+      "Fell on his own sword in battle",
+    ],
     quotes: [
       {
         text: "I have played the fool, and have erred exceedingly.",
@@ -887,6 +1181,13 @@ export const CHARACTERS: Character[] = [
     era: "United Kingdom",
     gender: "Male",
     emojis: ["🗡️", "🛡️", "💪", "🪨", "📏"],
+    emojiMeanings: [
+      "Philistine champion with a great spear",
+      "Defied the armies of Israel",
+      "A mighty man of war",
+      "Felled by a sling stone",
+      "A giant of Gath, six cubits tall",
+    ],
     quotes: [
       {
         text: "Am I a dog, that thou comest to me with staves?",
@@ -908,6 +1209,13 @@ export const CHARACTERS: Character[] = [
     era: "United Kingdom",
     gender: "Male",
     emojis: ["🏹", "🤝", "👑", "⚔️", "💙"],
+    emojiMeanings: [
+      "Gave his bow in covenant to David",
+      "Bound to David in friendship",
+      "Son of King Saul",
+      "Fell with his father in battle",
+      "Loved David as his own soul",
+    ],
     quotes: [
       {
         text: "There is no restraint to the LORD to save by many or by few.",
@@ -928,7 +1236,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "United Kingdom",
     gender: "Male",
-    emojis: ["💇", "🐴", "🌳", "👑", "🗡️"],
+    emojis: ["💇", "🫏", "🌳", "👑", "🗡️"],
+    emojiMeanings: [
+      "Famed for his thick hair",
+      "Rode away upon a mule",
+      "Caught by his head in an oak",
+      "Rebel son who seized the throne",
+      "Slain by Joab's darts",
+    ],
     quotes: [],
     description: "David's rebel son caught by his hair in a tree",
     persona:
@@ -944,7 +1259,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "United Kingdom",
     gender: "Female",
-    emojis: ["🛁", "👑", "💔", "👶", "📜"],
+    emojis: ["🛁", "💔", "👑", "📜", "👶"],
+    emojiMeanings: [
+      "Seen bathing from the rooftop",
+      "Her husband Uriah was slain",
+      "Wife taken by King David",
+      "Secured her son's succession",
+      "Mother of Solomon",
+    ],
     quotes: [
       {
         text: "Let my lord king David live for ever.",
@@ -965,7 +1287,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel",
     era: "United Kingdom",
     gender: "Male",
-    emojis: ["🗣️", "🐑", "👉", "👑", "⚖️"],
+    emojis: ["🗣️", "⚖️", "🐑", "👑", "👉"],
+    emojiMeanings: [
+      "Court prophet in David's reign",
+      "Brought God's verdict on the king",
+      "Told the parable of the poor man's lamb",
+      "Confronted King David's sin",
+      "Declared, Thou art the man",
+    ],
     quotes: [
       { text: "Thou art the man.", reference: "2 Samuel 12:7" },
     ],
@@ -984,6 +1313,13 @@ export const CHARACTERS: Character[] = [
     era: "Divided Kingdom",
     gender: "Male",
     emojis: ["🧴", "🐻", "🪓", "🍲", "👨‍🦲"],
+    emojiMeanings: [
+      "Multiplied the widow's oil",
+      "She-bears mauled the mockers",
+      "Made the axe head float",
+      "Healed the deadly pottage",
+      "Mocked as a bald head",
+    ],
     quotes: [
       {
         text: "I pray thee, let a double portion of thy spirit be upon me.",
@@ -1005,6 +1341,13 @@ export const CHARACTERS: Character[] = [
     era: "Divided Kingdom",
     gender: "Male",
     emojis: ["⚔️", "🛁", "💧", "🦠", "7️⃣"],
+    emojiMeanings: [
+      "Captain of the Syrian army",
+      "Sent to wash and be clean",
+      "Bathed in the river Jordan",
+      "A leper seeking healing",
+      "Dipped seven times and was cleansed",
+    ],
     quotes: [
       {
         text: "Behold, now I know that there is no God in all the earth, but in Israel.",
@@ -1025,7 +1368,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Divided Kingdom",
     gender: "Male",
-    emojis: ["👑", "🙏", "☀️", "🛡️", "💧"],
+    emojis: ["👑", "💧", "🛡️", "🙏", "☀️"],
+    emojiMeanings: [
+      "Righteous king of Judah",
+      "Dug a tunnel for Jerusalem's water",
+      "Saw Jerusalem delivered from Assyria",
+      "Prayed for his life and was healed",
+      "Given fifteen years as the shadow turned back",
+    ],
     quotes: [
       {
         text: "Remember now, O LORD, I beseech thee, how I have walked before thee in truth.",
@@ -1046,7 +1396,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Divided Kingdom",
     gender: "Male",
-    emojis: ["👑", "📜", "🛠️", "🙏", "👦"],
+    emojis: ["👦", "👑", "🛠️", "🙏", "📜"],
+    emojiMeanings: [
+      "Crowned king at eight years old",
+      "Reigned righteously over Judah",
+      "Repaired the house of the LORD",
+      "Led a great reform against idols",
+      "Rediscovered the Book of the Law",
+    ],
     quotes: [],
     description: "Boy king who rediscovered the Book of the Law",
     persona:
@@ -1063,6 +1420,13 @@ export const CHARACTERS: Character[] = [
     era: "Divided Kingdom",
     gender: "Male",
     emojis: ["🔥", "🪶", "👑", "📜", "🕊️"],
+    emojiMeanings: [
+      "Lips touched with a live coal",
+      "Wrote majestic prophecy",
+      "Saw the Lord high upon a throne",
+      "Foretold the suffering servant",
+      "Promised Immanuel and the Spirit",
+    ],
     quotes: [
       {
         text: "Here am I; send me.",
@@ -1084,6 +1448,13 @@ export const CHARACTERS: Character[] = [
     era: "Exile & Return",
     gender: "Male",
     emojis: ["😢", "🏺", "⛓️", "📜", "🔥"],
+    emojiMeanings: [
+      "The weeping prophet",
+      "Watched the potter at his wheel",
+      "Put in the stocks and the pit",
+      "His scroll was cut and burned",
+      "God's word like fire in his bones",
+    ],
     quotes: [
       {
         text: "Before I formed thee in the belly I knew thee.",
@@ -1104,7 +1475,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Levi",
     era: "Exile & Return",
     gender: "Male",
-    emojis: ["🦴", "🛞", "👁️", "🌪️", "📜"],
+    emojis: ["📜", "🌪️", "👁️", "🛞", "🦴"],
+    emojiMeanings: [
+      "Ate the scroll sweet as honey",
+      "Saw God's glory in a whirlwind",
+      "Wheels full of eyes round about",
+      "Wheels within wheels",
+      "Prophesied to the valley of dry bones",
+    ],
     quotes: [
       {
         text: "O ye dry bones, hear the word of the LORD.",
@@ -1126,6 +1504,13 @@ export const CHARACTERS: Character[] = [
     era: "Exile & Return",
     gender: "Male",
     emojis: ["👑", "🗿", "🔥", "🐂", "🌳"],
+    emojiMeanings: [
+      "Mighty king of Babylon",
+      "Set up a golden image",
+      "Cast three men into the furnace",
+      "Humbled to graze like an ox",
+      "Saw the great tree felled in a dream",
+    ],
     quotes: [
       {
         text: "Did not we cast three men bound into the midst of the fire?",
@@ -1147,6 +1532,13 @@ export const CHARACTERS: Character[] = [
     era: "Exile & Return",
     gender: "Male",
     emojis: ["🔥", "🧍", "👑", "🚫", "🛡️"],
+    emojiMeanings: [
+      "Thrown into the fiery furnace",
+      "A fourth walked unhurt with them",
+      "Defied King Nebuchadnezzar's decree",
+      "Refused to bow to the golden image",
+      "Preserved unharmed by God",
+    ],
     quotes: [
       {
         text: "Our God whom we serve is able to deliver us from the burning fiery furnace.",
@@ -1168,6 +1560,13 @@ export const CHARACTERS: Character[] = [
     era: "Exile & Return",
     gender: "Male",
     emojis: ["🔥", "🧍", "👑", "🚫", "🛡️"],
+    emojiMeanings: [
+      "Cast into the burning furnace",
+      "Walked in the flames with a fourth",
+      "Would not worship the king's image",
+      "Refused to bow at the music's sound",
+      "Came out without a hair singed",
+    ],
     quotes: [],
     description: "Hebrew unharmed in the burning furnace",
     persona:
@@ -1184,6 +1583,13 @@ export const CHARACTERS: Character[] = [
     era: "Exile & Return",
     gender: "Male",
     emojis: ["🔥", "🧍", "👑", "🚫", "🛡️"],
+    emojiMeanings: [
+      "Bound and thrown into the furnace",
+      "Stood in the fire unharmed",
+      "Defied Nebuchadnezzar's command",
+      "Refused to serve the golden image",
+      "Delivered by God from the flames",
+    ],
     quotes: [],
     description: "Hebrew delivered from the fiery furnace",
     persona:
@@ -1200,6 +1606,13 @@ export const CHARACTERS: Character[] = [
     era: "Exile & Return",
     gender: "Male",
     emojis: ["📜", "🖋️", "🙏", "🏛️", "📖"],
+    emojiMeanings: [
+      "A ready scribe of the Law",
+      "Skilled with the writing pen",
+      "Prayed and confessed for the people",
+      "Led exiles back to Jerusalem",
+      "Read and taught the Law of Moses",
+    ],
     quotes: [],
     description: "Priest-scribe who taught the Law after exile",
     persona:
@@ -1215,7 +1628,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Exile & Return",
     gender: "Male",
-    emojis: ["🧱", "🛠️", "🏰", "🙏", "🍷"],
+    emojis: ["🍷", "🙏", "🛠️", "🏰", "🧱"],
+    emojiMeanings: [
+      "Cupbearer to the Persian king",
+      "Prayed before he answered the king",
+      "Worked with sword and trowel",
+      "Set up the gates of the city",
+      "Rebuilt Jerusalem's walls in fifty-two days",
+    ],
     quotes: [
       {
         text: "The God of heaven, he will prosper us; therefore we his servants will arise and build.",
@@ -1236,7 +1656,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Uz",
     era: "Patriarchs",
     gender: "Male",
-    emojis: ["🤕", "🌪️", "💔", "🐑", "🙏"],
+    emojis: ["🤕", "💔", "🐑", "🙏", "🌪️"],
+    emojiMeanings: [
+      "Struck with painful boils",
+      "Lost his children and all he had",
+      "Flocks restored twofold in the end",
+      "Blessed the name of the LORD",
+      "God answered him from the whirlwind",
+    ],
     quotes: [
       {
         text: "The LORD gave, and the LORD hath taken away; blessed be the name of the LORD.",
@@ -1257,7 +1684,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel",
     era: "Divided Kingdom",
     gender: "Male",
-    emojis: ["💔", "💍", "🌾", "❤️‍🩹", "📜"],
+    emojis: ["💍", "💔", "🌾", "📜", "❤️‍🩹"],
+    emojiMeanings: [
+      "Commanded to marry a wife of whoredoms",
+      "His wife Gomer proved unfaithful",
+      "Warned they sow wind and reap whirlwind",
+      "A living parable of God's love",
+      "Bought her back and loved her still",
+    ],
     quotes: [],
     description: "Prophet who married an unfaithful wife",
     persona:
@@ -1273,7 +1707,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Divided Kingdom",
     gender: "Male",
-    emojis: ["🐑", "🌳", "⚖️", "🧺", "📜"],
+    emojis: ["🐑", "🌳", "🧺", "📜", "⚖️"],
+    emojiMeanings: [
+      "A herdsman of Tekoa",
+      "Gatherer of sycamore fruit",
+      "Saw a basket of summer fruit",
+      "Prophesied against Israel's sins",
+      "Cried, Let judgment roll down",
+    ],
     quotes: [
       {
         text: "Let judgment run down as waters, and righteousness as a mighty stream.",
@@ -1294,7 +1735,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["🪚", "🔨", "👶", "🌟", "🫏"],
+    emojis: ["🪚", "🔨", "🌟", "🫏", "👶"],
+    emojiMeanings: [
+      "A carpenter by trade",
+      "Worked with hammer and tools",
+      "Guided to Bethlehem at the nativity",
+      "Fled to Egypt with the child",
+      "Earthly guardian of Jesus",
+    ],
     quotes: [],
     description: "Carpenter who was the earthly father of Jesus",
     persona:
@@ -1310,7 +1758,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Levi",
     era: "Life of Jesus",
     gender: "Female",
-    emojis: ["🤰", "👶", "🙏", "👵", "✨"],
+    emojis: ["👵", "🙏", "🤰", "✨", "👶"],
+    emojiMeanings: [
+      "Barren and well advanced in years",
+      "A righteous kinswoman of Mary",
+      "Conceived a son in her old age",
+      "Her babe leaped in the womb",
+      "Mother of John the Baptist",
+    ],
     quotes: [
       {
         text: "Blessed art thou among women, and blessed is the fruit of thy womb.",
@@ -1331,7 +1786,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Levi",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["🤐", "🕯️", "👼", "📝", "👶"],
+    emojis: ["🕯️", "👼", "🤐", "👶", "📝"],
+    emojiMeanings: [
+      "Burned incense in the temple",
+      "Gabriel appeared beside the altar",
+      "Struck mute for his unbelief",
+      "Promised a son in old age",
+      "Wrote, His name is John",
+    ],
     quotes: [
       {
         text: "His name is John.",
@@ -1352,7 +1814,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Heaven (angel)",
     era: "Exile & Return",
     gender: "Male",
-    emojis: ["👼", "📯", "✨", "📜", "🌟"],
+    emojis: ["👼", "✨", "🌟", "📜", "📯"],
+    emojiMeanings: [
+      "An archangel of God",
+      "Stands in the presence of God",
+      "Heralded the Bethlehem birth",
+      "Explained Daniel's visions",
+      "Announced the births of John and Jesus",
+    ],
     quotes: [
       {
         text: "Fear not, Mary: for thou hast found favour with God.",
@@ -1373,7 +1842,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile (Idumean)",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["👑", "⭐", "😠", "🗡️", "🏛️"],
+    emojis: ["👑", "🏛️", "⭐", "😠", "🗡️"],
+    emojiMeanings: [
+      "King of Judea",
+      "A great builder of works",
+      "Questioned the wise men about the star",
+      "Troubled by a newborn king",
+      "Ordered the slaughter of the infants",
+    ],
     quotes: [
       {
         text: "Go and search diligently for the young child; and when ye have found him, bring me word again.",
@@ -1394,7 +1870,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile (Roman)",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["🏛️", "🧼", "🙌", "⚖️", "✝️"],
+    emojis: ["🏛️", "⚖️", "🙌", "🧼", "✝️"],
+    emojiMeanings: [
+      "Roman governor of Judea",
+      "Sat on the judgment seat",
+      "Found no fault in Jesus",
+      "Washed his hands of the matter",
+      "Sentenced Jesus to the cross",
+    ],
     quotes: [
       {
         text: "What is truth?",
@@ -1415,7 +1898,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["💰", "💋", "🌳", "🪙", "😈"],
+    emojis: ["💰", "🪙", "💋", "🌳", "😈"],
+    emojiMeanings: [
+      "Kept the disciples' money bag",
+      "Sold him for thirty pieces of silver",
+      "Betrayed Jesus with a kiss",
+      "Hanged himself in despair",
+      "The disciple who betrayed his Lord",
+    ],
     quotes: [
       {
         text: "Hail, master.",
@@ -1436,7 +1926,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel (Galilee)",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["❤️", "🎣", "📜", "🦅", "🕊️"],
+    emojis: ["🎣", "❤️", "📜", "🦅", "🕊️"],
+    emojiMeanings: [
+      "A fisherman of Galilee",
+      "The disciple whom Jesus loved",
+      "Wrote a Gospel of love",
+      "Soared to visions on Patmos",
+      "Received the Revelation",
+    ],
     quotes: [
       {
         text: "God is love.",
@@ -1457,7 +1954,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel (Galilee)",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["🎣", "⚡", "⛵", "🗡️", "🐟"],
+    emojis: ["🎣", "🐟", "⛵", "⚡", "🗡️"],
+    emojiMeanings: [
+      "A fisherman called from his nets",
+      "Son of Zebedee the fisherman",
+      "Left his boat to follow Jesus",
+      "A son of thunder",
+      "First apostle slain by Herod's sword",
+    ],
     quotes: [],
     description: "Son of thunder, first apostle to be martyred",
     persona:
@@ -1473,7 +1977,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel (Galilee)",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["🎣", "🐟", "🍞", "👬", "⛵"],
+    emojis: ["🎣", "🐟", "⛵", "🍞", "👬"],
+    emojiMeanings: [
+      "A fisherman of Galilee",
+      "Followed John the Baptist first",
+      "Left his boat for Jesus",
+      "Found the boy with loaves and fishes",
+      "Brought his brother Simon Peter",
+    ],
     quotes: [
       {
         text: "We have found the Messias.",
@@ -1494,7 +2005,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel (Galilee)",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["🍞", "🤝", "❓", "👣", "📖"],
+    emojis: ["👣", "📖", "❓", "🍞", "🤝"],
+    emojiMeanings: [
+      "Called with the words, Follow me",
+      "An apostle from Bethsaida",
+      "Asked, Lord, shew us the Father",
+      "Tested over feeding the multitude",
+      "Brought Nathanael to Jesus",
+    ],
     quotes: [
       {
         text: "Lord, shew us the Father, and it sufficeth us.",
@@ -1515,7 +2033,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel (Galilee)",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["💰", "🪙", "📜", "🧾", "✍️"],
+    emojis: ["🪙", "💰", "🧾", "✍️", "📜"],
+    emojiMeanings: [
+      "Collected the coins of tribute",
+      "A wealthy publican",
+      "Called from the tax booth",
+      "Left all to follow Jesus",
+      "Wrote the first Gospel",
+    ],
     quotes: [],
     description: "Tax collector called from his booth to follow",
     persona:
@@ -1531,7 +2056,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel (Galilee)",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["🌳", "❓", "🙌", "👑", "📖"],
+    emojis: ["❓", "📖", "🙌", "👑", "🌳"],
+    emojiMeanings: [
+      "Asked if good could come from Nazareth",
+      "An Israelite in whom was no guile",
+      "Believed when Jesus knew his heart",
+      "Confessed Jesus King of Israel",
+      "Called from under the fig tree",
+    ],
     quotes: [
       {
         text: "Can there any good thing come out of Nazareth?",
@@ -1556,7 +2088,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel (Judea)",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["🌙", "📜", "❓", "🕯️", "🌿"],
+    emojis: ["📜", "🕯️", "❓", "🌿", "🌙"],
+    emojiMeanings: [
+      "A Pharisee and ruler of the Jews",
+      "A teacher of Israel",
+      "Asked how a man could be born again",
+      "Brought myrrh and aloes to bury Jesus",
+      "Came to Jesus by night",
+    ],
     quotes: [
       {
         text: "How can a man be born when he is old?",
@@ -1578,6 +2117,13 @@ export const CHARACTERS: Character[] = [
     era: "Life of Jesus",
     gender: "Female",
     emojis: ["🍳", "🧹", "🏠", "😤", "🙏"],
+    emojiMeanings: [
+      "Cumbered about much serving",
+      "Busy with household tasks",
+      "Host of Bethany",
+      "Complained her sister left her alone",
+      "Confessed Jesus as the Christ",
+    ],
     quotes: [
       {
         text: "Lord, dost thou not care that my sister hath left me to serve alone?",
@@ -1598,7 +2144,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel (Bethany)",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["⚰️", "🪦", "🧻", "😢", "🚶"],
+    emojis: ["😢", "⚰️", "🪦", "🧻", "🚶"],
+    emojiMeanings: [
+      "His death made Jesus weep",
+      "Friend of Jesus from Bethany",
+      "Lay four days in the tomb",
+      "Bound hand and foot in graveclothes",
+      "Came forth at the call, Come forth",
+    ],
     quotes: [],
     description: "Friend of Jesus raised after four days dead",
     persona:
@@ -1614,7 +2167,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel (Bethany)",
     era: "Life of Jesus",
     gender: "Female",
-    emojis: ["🧴", "💇‍♀️", "🦶", "🙇‍♀️", "🌿"],
+    emojis: ["🙇‍♀️", "🦶", "🌿", "🧴", "💇‍♀️"],
+    emojiMeanings: [
+      "Sat at the feet of Jesus",
+      "Listened at his feet to learn",
+      "The house filled with the odour",
+      "Anointed him with costly spikenard",
+      "Wiped his feet with her hair",
+    ],
     quotes: [
       {
         text: "Lord, if thou hadst been here, my brother had not died.",
@@ -1635,7 +2195,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Levi (Cyprus)",
     era: "Early Church",
     gender: "Male",
-    emojis: ["🤝", "💰", "✉️", "⛵", "🕊️"],
+    emojis: ["💰", "✉️", "⛵", "🕊️", "🤝"],
+    emojiMeanings: [
+      "Sold his land for the church",
+      "Vouched for the converted Saul",
+      "Sailed to Cyprus with Paul",
+      "Full of the Holy Spirit",
+      "Called the son of encouragement",
+    ],
     quotes: [],
     description: "The 'son of encouragement' who traveled with Paul",
     persona:
@@ -1651,7 +2218,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel",
     era: "Early Church",
     gender: "Male",
-    emojis: ["🪨", "😇", "👼", "🙏", "✨"],
+    emojis: ["😇", "✨", "👼", "🙏", "🪨"],
+    emojiMeanings: [
+      "His face shone like an angel's",
+      "Full of faith and the Holy Spirit",
+      "Saw the Son of man at God's right hand",
+      "Prayed for those who killed him",
+      "Stoned as the first Christian martyr",
+    ],
     quotes: [
       {
         text: "Lord, lay not this sin to their charge.",
@@ -1672,7 +2246,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel (Lystra)",
     era: "Early Church",
     gender: "Male",
-    emojis: ["✉️", "👦", "📖", "🤝", "⛪"],
+    emojis: ["👦", "📖", "🤝", "⛪", "✉️"],
+    emojiMeanings: [
+      "A young minister",
+      "Knew the scriptures from a child",
+      "Paul's true son in the faith",
+      "Shepherded the church at Ephesus",
+      "Received two of Paul's letters",
+    ],
     quotes: [],
     description: "Young protege of Paul, pastor at Ephesus",
     persona:
@@ -1688,7 +2269,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile (Thyatira)",
     era: "Early Church",
     gender: "Female",
-    emojis: ["💜", "🧵", "🏠", "🌊", "🙏"],
+    emojis: ["🌊", "🧵", "🙏", "🏠", "💜"],
+    emojiMeanings: [
+      "Met Paul by the riverside",
+      "A dealer in fine cloth",
+      "The Lord opened her heart",
+      "Opened her home to Paul",
+      "A seller of purple, first European convert",
+    ],
     quotes: [
       {
         text: "If ye have judged me to be faithful to the Lord, come into my house, and abide there.",
@@ -1710,6 +2298,13 @@ export const CHARACTERS: Character[] = [
     era: "Early Church",
     gender: "Male",
     emojis: ["🪖", "🙏", "👼", "🕊️", "🏠"],
+    emojiMeanings: [
+      "A Roman centurion at Caesarea",
+      "A devout man whose prayers reached God",
+      "An angel told him to send for Peter",
+      "The Holy Spirit fell on his household",
+      "First Gentile convert in his house",
+    ],
     quotes: [],
     description: "Roman centurion, the first Gentile convert",
     persona:
@@ -1725,7 +2320,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile",
     era: "Early Church",
     gender: "Male",
-    emojis: ["⚕️", "✍️", "📜", "⛵", "🐂"],
+    emojis: ["🐂", "⛵", "✍️", "📜", "⚕️"],
+    emojiMeanings: [
+      "Symbolized by the ox",
+      "Traveled with Paul by sea",
+      "A careful historian",
+      "Wrote a Gospel and the Acts",
+      "The beloved physician",
+    ],
     quotes: [],
     description: "Physician who wrote a Gospel and Acts",
     persona:
@@ -1741,7 +2343,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel",
     era: "Early Church",
     gender: "Male",
-    emojis: ["⛓️", "🎶", "🌍", "✉️", "🌊"],
+    emojis: ["🌍", "✉️", "🌊", "⛓️", "🎶"],
+    emojiMeanings: [
+      "A leader of the early church",
+      "Helped carry the apostles' letter",
+      "Traveled the mission field with Paul",
+      "Imprisoned at Philippi",
+      "Sang hymns at midnight in jail",
+    ],
     quotes: [],
     description: "Paul's companion who sang in prison",
     persona:
@@ -1757,7 +2366,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel (Alexandria)",
     era: "Early Church",
     gender: "Male",
-    emojis: ["🗣️", "📖", "💧", "🌊", "🔥"],
+    emojis: ["🗣️", "📖", "🌊", "💧", "🔥"],
+    emojiMeanings: [
+      "An eloquent man of Alexandria",
+      "Mighty in the scriptures",
+      "Knew only the baptism of John",
+      "Taught the way of God more perfectly",
+      "Fervent in spirit, preaching Christ",
+    ],
     quotes: [],
     description: "Eloquent Alexandrian preacher of Christ",
     persona:
@@ -1774,6 +2390,13 @@ export const CHARACTERS: Character[] = [
     era: "Early Church",
     gender: "Female",
     emojis: ["⛺", "🧵", "📖", "🏠", "🤝"],
+    emojiMeanings: [
+      "A tentmaker by trade",
+      "Worked with her husband Aquila",
+      "Taught Apollos the way of God",
+      "Hosted a church in her home",
+      "A faithful coworker of Paul",
+    ],
     quotes: [],
     description: "Tentmaker and teacher who instructed Apollos",
     persona:
@@ -1790,6 +2413,13 @@ export const CHARACTERS: Character[] = [
     era: "Early Church",
     gender: "Male",
     emojis: ["⛺", "🧵", "📖", "🏠", "🤝"],
+    emojiMeanings: [
+      "A Jewish tentmaker from Pontus",
+      "Plied his trade with his wife Priscilla",
+      "Instructed Apollos more perfectly",
+      "Hosted a church in his house",
+      "Labored alongside Paul",
+    ],
     quotes: [],
     description: "Jewish tentmaker who labored beside Paul",
     persona:
@@ -1805,7 +2435,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["✝️", "🐟", "🍞", "👑", "🕊️"],
+    emojis: ["🐟", "🍞", "🕊️", "👑", "✝️"],
+    emojiMeanings: [
+      "Made his disciples fishers of men",
+      "Fed multitudes and called himself the bread of life",
+      "The Spirit descended like a dove",
+      "King of kings, born in Bethlehem",
+      "Crucified and risen",
+    ],
     quotes: [
       {
         text: "I am the way, the truth, and the life: no man cometh unto the Father, but by me.",
@@ -1831,6 +2468,13 @@ export const CHARACTERS: Character[] = [
     era: "Exile & Return",
     gender: "Male",
     emojis: ["👑", "📜", "🏛️", "🕊️", "🔓"],
+    emojiMeanings: [
+      "King of Persia who conquered Babylon",
+      "Issued a decree to the exiles",
+      "Charged them to rebuild the temple",
+      "Named God's anointed shepherd",
+      "Freed the Jews from captivity",
+    ],
     quotes: [
       {
         text: "The LORD God of heaven hath given me all the kingdoms of the earth; and he hath charged me to build him an house at Jerusalem.",
@@ -1851,7 +2495,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile (Philistine)",
     era: "Conquest & Judges",
     gender: "Female",
-    emojis: ["💇", "💰", "😴", "✂️", "🕸️"],
+    emojis: ["💰", "🕸️", "💇", "😴", "✂️"],
+    emojiMeanings: [
+      "Paid silver by the Philistine lords",
+      "Ensnared him with her coaxing",
+      "Coaxed the secret of his hair",
+      "Lulled him to sleep on her knees",
+      "Had his locks shaved away",
+    ],
     quotes: [
       {
         text: "Tell me, I pray thee, wherein thy great strength lieth.",
@@ -1872,7 +2523,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Conquest & Judges",
     gender: "Male",
-    emojis: ["🌾", "💍", "🏞️", "👞", "❤️"],
+    emojis: ["🏞️", "🌾", "❤️", "👞", "💍"],
+    emojiMeanings: [
+      "A wealthy landowner of Bethlehem",
+      "Ruth gleaned in his fields",
+      "Showed kindness to the foreign widow",
+      "Sealed the redemption with a sandal",
+      "Redeemed and married Ruth",
+    ],
     quotes: [
       {
         text: "The LORD recompense thy work, and a full reward be given thee of the LORD God of Israel.",
@@ -1894,6 +2552,13 @@ export const CHARACTERS: Character[] = [
     era: "Conquest & Judges",
     gender: "Female",
     emojis: ["👵", "😢", "🌾", "💞", "👶"],
+    emojiMeanings: [
+      "A widow of Bethlehem",
+      "Bade them call her Mara, the bitter",
+      "Returned home at barley harvest",
+      "Her daughter-in-law clung to her",
+      "Nursed her grandson Obed",
+    ],
     quotes: [
       {
         text: "Call me not Naomi, call me Mara: for the Almighty hath dealt very bitterly with me.",
@@ -1915,6 +2580,13 @@ export const CHARACTERS: Character[] = [
     era: "Patriarchs",
     gender: "Male",
     emojis: ["🍞", "🍷", "👑", "🙏", "⛰️"],
+    emojiMeanings: [
+      "Brought out bread",
+      "Brought out wine",
+      "King of Salem",
+      "Priest of the most high God",
+      "Blessed Abram and received a tithe",
+    ],
     quotes: [
       {
         text: "Blessed be Abram of the most high God, possessor of heaven and earth.",
@@ -1935,7 +2607,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Hebrew",
     era: "Patriarchs",
     gender: "Male",
-    emojis: ["🏙️", "🔥", "🧂", "⛺", "🏃"],
+    emojis: ["⛺", "🏙️", "🏃", "🔥", "🧂"],
+    emojiMeanings: [
+      "Nephew of Abraham who pitched his tent",
+      "Chose to dwell in Sodom",
+      "Fled the city at the angels' urging",
+      "Escaped the fire and brimstone",
+      "His wife became a pillar of salt",
+    ],
     quotes: [
       {
         text: "Oh, not so, my Lord.",
@@ -1956,7 +2635,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Hebrew",
     era: "Patriarchs",
     gender: "Male",
-    emojis: ["🏹", "🏜️", "💧", "👶", "👨"],
+    emojis: ["🏜️", "💧", "👶", "👨", "🏹"],
+    emojiMeanings: [
+      "Cast out into the wilderness",
+      "Saved by a well of water",
+      "Son of Abraham by Hagar",
+      "Promised to father a great nation",
+      "Grew to be a wild archer",
+    ],
     quotes: [],
     description: "Abraham's firstborn son by Hagar",
     persona:
@@ -1972,7 +2658,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile (Egyptian)",
     era: "Patriarchs",
     gender: "Female",
-    emojis: ["🏜️", "💧", "👶", "😢", "👼"],
+    emojis: ["👶", "🏜️", "💧", "😢", "👼"],
+    emojiMeanings: [
+      "Bore Ishmael to Abraham",
+      "Sent into the wilderness",
+      "Found a well of water",
+      "Wept for her dying son",
+      "Met the angel and named God who sees",
+    ],
     quotes: [
       {
         text: "Thou God seest me.",
@@ -1993,7 +2686,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Hebrew (Aramean)",
     era: "Patriarchs",
     gender: "Male",
-    emojis: ["🐑", "💍", "🤝", "💰", "⛺"],
+    emojis: ["⛺", "🐑", "🤝", "💰", "💍"],
+    emojiMeanings: [
+      "An Aramean of Haran",
+      "Owner of large flocks",
+      "Struck a bargain with Jacob",
+      "Changed Jacob's wages ten times",
+      "Wed Leah to Jacob before Rachel",
+    ],
     quotes: [
       {
         text: "It must not be so done in our country, to give the younger before the firstborn.",
@@ -2014,7 +2714,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile (Egyptian)",
     era: "Exodus & Wilderness",
     gender: "Male",
-    emojis: ["👑", "🐍", "🌊", "🐸", "🏜️"],
+    emojis: ["👑", "🏜️", "🐍", "🐸", "🌊"],
+    emojiMeanings: [
+      "King of Egypt",
+      "Enslaved Israel in his land",
+      "His magicians' rods became serpents",
+      "Plagued with frogs and more",
+      "His army drowned in the Red Sea",
+    ],
     quotes: [
       {
         text: "Who is the LORD, that I should obey his voice to let Israel go?",
@@ -2036,6 +2743,13 @@ export const CHARACTERS: Character[] = [
     era: "Conquest & Judges",
     gender: "Male",
     emojis: ["⚔️", "⛰️", "🐎", "🌧️", "🎶"],
+    emojiMeanings: [
+      "Israelite commander against Sisera",
+      "Mustered his men on Mount Tabor",
+      "Faced Sisera's iron chariots",
+      "The river Kishon swept them away",
+      "Sang the victory song with Deborah",
+    ],
     quotes: [
       {
         text: "If thou wilt go with me, then I will go: but if thou wilt not go with me, then I will not go.",
@@ -2056,7 +2770,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile (Sidonian)",
     era: "Divided Kingdom",
     gender: "Female",
-    emojis: ["👑", "💄", "🐕", "🔥", "🪟"],
+    emojis: ["👑", "🔥", "💄", "🪟", "🐕"],
+    emojiMeanings: [
+      "Wicked queen, wife of Ahab",
+      "Promoted the worship of Baal",
+      "Painted her face and tired her head",
+      "Thrown down from a window",
+      "Devoured by dogs as foretold",
+    ],
     quotes: [
       {
         text: "So let the gods do to me, and more also, if I make not thy life as the life of one of them by to morrow about this time.",
@@ -2077,7 +2798,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel",
     era: "Divided Kingdom",
     gender: "Male",
-    emojis: ["👑", "🍇", "🏹", "⛈️", "😠"],
+    emojis: ["👑", "😠", "⛈️", "🍇", "🏹"],
+    emojiMeanings: [
+      "Wicked king of Israel",
+      "Husband of Jezebel who served Baal",
+      "Reigned through Elijah's drought",
+      "Coveted Naboth's vineyard",
+      "Slain by an arrow in battle",
+    ],
     quotes: [
       {
         text: "Hast thou found me, O mine enemy?",
@@ -2098,7 +2826,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Divided Kingdom",
     gender: "Male",
-    emojis: ["🦗", "🌾", "🔥", "🌙", "📜"],
+    emojis: ["🌾", "🦗", "🌙", "🔥", "📜"],
+    emojiMeanings: [
+      "The harvest was laid waste",
+      "A devastating plague of locusts",
+      "The moon turned to blood",
+      "Foretold the day of the LORD",
+      "Prophesied the Spirit poured on all flesh",
+    ],
     quotes: [
       {
         text: "I will pour out my spirit upon all flesh; and your sons and your daughters shall prophesy.",
@@ -2119,7 +2854,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Divided Kingdom",
     gender: "Male",
-    emojis: ["⚖️", "🌾", "🏙️", "🐑", "📜"],
+    emojis: ["🌾", "🏙️", "🐑", "📜", "⚖️"],
+    emojiMeanings: [
+      "A prophet of rural Judah",
+      "Denounced the oppression of the cities",
+      "Foretold the shepherd-ruler from Bethlehem",
+      "Prophesied of the coming Messiah",
+      "Called to do justly and love mercy",
+    ],
     quotes: [
       {
         text: "What doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?",
@@ -2141,6 +2883,13 @@ export const CHARACTERS: Character[] = [
     era: "Exile & Return",
     gender: "Male",
     emojis: ["🚪", "📜", "🐎", "✡️", "👑"],
+    emojiMeanings: [
+      "Sat at the king's gate",
+      "Uncovered a plot against the king",
+      "Paraded on horseback in honor",
+      "A Jew who would not bow to Haman",
+      "Raised to greatness in the kingdom",
+    ],
     quotes: [
       {
         text: "Who knoweth whether thou art come to the kingdom for such a time as this?",
@@ -2161,7 +2910,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile (Agagite)",
     era: "Exile & Return",
     gender: "Male",
-    emojis: ["😡", "🎲", "⚰️", "👑", "📜"],
+    emojis: ["👑", "😡", "📜", "🎲", "⚰️"],
+    emojiMeanings: [
+      "Raised high by the king",
+      "Enraged that Mordecai would not bow",
+      "Decreed the destruction of the Jews",
+      "Cast Pur, the lot, for the day",
+      "Hanged on his own gallows",
+    ],
     quotes: [
       {
         text: "Thus shall it be done to the man whom the king delighteth to honour.",
@@ -2182,7 +2938,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile (Babylonian)",
     era: "Exile & Return",
     gender: "Male",
-    emojis: ["✍️", "🍷", "🧱", "👑", "😨"],
+    emojis: ["👑", "🍷", "🧱", "😨", "✍️"],
+    emojiMeanings: [
+      "The last king of Babylon",
+      "Feasted with the temple vessels",
+      "A hand wrote upon the plaster wall",
+      "His knees smote in terror",
+      "Saw the handwriting on the wall",
+    ],
     quotes: [
       {
         text: "Whosoever shall read this writing, and shew me the interpretation thereof, shall be clothed with scarlet.",
@@ -2203,7 +2966,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Exile & Return",
     gender: "Male",
-    emojis: ["🧱", "🏛️", "📜", "👷", "🕊️"],
+    emojis: ["📜", "🧱", "👷", "🕊️", "🏛️"],
+    emojiMeanings: [
+      "A descendant of David",
+      "Led the first return from Babylon",
+      "Governor who laid the foundation",
+      "Built not by might, but by the Spirit",
+      "Rebuilt the second temple",
+    ],
     quotes: [],
     description: "Governor who rebuilt the temple after exile",
     persona:
@@ -2219,7 +2989,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "United Kingdom",
     gender: "Female",
-    emojis: ["🍞", "🫏", "🙇‍♀️", "👑", "🕊️"],
+    emojis: ["🍞", "🫏", "🙇‍♀️", "🕊️", "👑"],
+    emojiMeanings: [
+      "Brought loaves and provisions to David",
+      "Rode out to meet him on a donkey",
+      "Bowed to the ground before him",
+      "Stayed David's hand from bloodshed",
+      "Became David's wife",
+    ],
     quotes: [
       {
         text: "Upon me, my lord, upon me let this iniquity be.",
@@ -2241,6 +3018,13 @@ export const CHARACTERS: Character[] = [
     era: "United Kingdom",
     gender: "Male",
     emojis: ["⚔️", "🩸", "🐴", "🏰", "🗡️"],
+    emojiMeanings: [
+      "Captain of David's armies",
+      "A ruthless and bloody general",
+      "Pierced Absalom in the oak",
+      "Loyal to David's throne",
+      "Treacherously slew Abner and Amasa",
+    ],
     quotes: [],
     description: "David's ruthless army commander",
     persona:
@@ -2256,7 +3040,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Exile & Return",
     gender: "Male",
-    emojis: ["🦅", "⛰️", "🔥", "📜", "⚖️"],
+    emojis: ["📜", "⚖️", "🔥", "🦅", "⛰️"],
+    emojiMeanings: [
+      "Wrote the shortest Old Testament book",
+      "Pronounced God's judgment",
+      "Foretold Edom consumed as stubble",
+      "Though Edom soared like the eagle",
+      "Doom on proud Edom's rocky heights",
+    ],
     quotes: [
       {
         text: "The pride of thine heart hath deceived thee.",
@@ -2277,7 +3068,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel",
     era: "Early Church",
     gender: "Male",
-    emojis: ["🎲", "1️⃣2️⃣", "📜", "🙏", "🕊️"],
+    emojis: ["🕊️", "🙏", "📜", "🎲", "1️⃣2️⃣"],
+    emojiMeanings: [
+      "A follower from John's baptism onward",
+      "Chosen after the believers prayed",
+      "Fulfilled the scripture about Judas's place",
+      "Selected by the casting of lots",
+      "Numbered with the twelve apostles",
+    ],
     quotes: [],
     description: "Apostle chosen by lot to replace Judas",
     persona:
@@ -2293,7 +3091,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel",
     era: "Early Church",
     gender: "Male",
-    emojis: ["💰", "🤥", "⚰️", "🏠", "😨"],
+    emojis: ["🏠", "💰", "🤥", "😨", "⚰️"],
+    emojiMeanings: [
+      "Sold a piece of property",
+      "Kept back part of the price",
+      "Lied to the apostles about the gift",
+      "Great fear came on the church",
+      "Fell down dead at Peter's rebuke",
+    ],
     quotes: [],
     description: "Believer struck dead for lying about a gift",
     persona:
@@ -2309,7 +3114,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel",
     era: "Early Church",
     gender: "Male",
-    emojis: ["🏜️", "🛞", "💧", "📜", "🏃"],
+    emojis: ["🏜️", "🏃", "🛞", "📜", "💧"],
+    emojiMeanings: [
+      "Sent to a desert road",
+      "Ran to overtake the chariot",
+      "Met the Ethiopian's chariot",
+      "The eunuch read from Isaiah",
+      "Baptized him in the water",
+    ],
     quotes: [
       {
         text: "Understandest thou what thou readest?",
@@ -2330,7 +3142,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel (Joppa)",
     era: "Early Church",
     gender: "Female",
-    emojis: ["🧵", "👗", "💞", "🪡", "🙏"],
+    emojis: ["🧵", "🪡", "👗", "💞", "🙏"],
+    emojiMeanings: [
+      "A disciple skilled with thread",
+      "Sewed with her needle",
+      "Made coats and garments for widows",
+      "Full of good works and almsdeeds",
+      "Raised from death at Peter's prayer",
+    ],
     quotes: [],
     description: "Charitable seamstress raised from death by Peter",
     persona:
@@ -2346,7 +3165,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Judah",
     era: "Early Church",
     gender: "Male",
-    emojis: ["⛪", "📜", "🙏", "🤝", "👑"],
+    emojis: ["🙏", "⛪", "🤝", "📜", "👑"],
+    emojiMeanings: [
+      "Known for his piety and prayer",
+      "Led the church in Jerusalem",
+      "Presided at the Jerusalem council",
+      "Wrote that faith without works is dead",
+      "Brother of the Lord Jesus",
+    ],
     quotes: [
       {
         text: "Faith without works is dead.",
@@ -2367,7 +3193,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile (Greek)",
     era: "Early Church",
     gender: "Male",
-    emojis: ["✉️", "⛪", "🏝️", "🤝", "📖"],
+    emojis: ["🤝", "📖", "⛪", "🏝️", "✉️"],
+    emojiMeanings: [
+      "A trusted companion of Paul",
+      "A Greek convert to the faith",
+      "Set the churches in order",
+      "Ministered on the island of Crete",
+      "Received one of Paul's letters",
+    ],
     quotes: [],
     description: "Greek coworker of Paul, pastor in Crete",
     persona:
@@ -2383,7 +3216,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile",
     era: "Early Church",
     gender: "Male",
-    emojis: ["⛓️", "🏃", "✉️", "🤝", "🕊️"],
+    emojis: ["⛓️", "🏃", "🕊️", "✉️", "🤝"],
+    emojiMeanings: [
+      "A bondservant of Philemon",
+      "Ran away from his master",
+      "Converted by Paul in prison",
+      "Carried Paul's letter home",
+      "Received back as a beloved brother",
+    ],
     quotes: [],
     description: "Runaway slave converted and sent back to his master",
     persona:
@@ -2399,7 +3239,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile (Idumean)",
     era: "Life of Jesus",
     gender: "Female",
-    emojis: ["💃", "👑", "🗡️", "🍽️", "😠"],
+    emojis: ["👑", "😠", "💃", "🍽️", "🗡️"],
+    emojiMeanings: [
+      "Wife of Herod Antipas",
+      "Held a grudge against John the Baptist",
+      "Her daughter danced before the king",
+      "Asked John's head on a platter",
+      "Had John the Baptist beheaded",
+    ],
     quotes: [],
     description: "Queen who plotted the death of John the Baptist",
     persona:
@@ -2415,7 +3262,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Gentile (Cyrene)",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["✝️", "🪵", "🤝", "🛣️", "💪"],
+    emojis: ["🛣️", "🤝", "💪", "🪵", "✝️"],
+    emojiMeanings: [
+      "A passer-by from Cyrene",
+      "Compelled by the soldiers",
+      "Bore the heavy load",
+      "Carried the wooden beam",
+      "Carried the cross of Jesus",
+    ],
     quotes: [],
     description: "Man compelled to carry the cross of Jesus",
     persona:
@@ -2431,7 +3285,14 @@ export const CHARACTERS: Character[] = [
     tribeNation: "Israel (Arimathea)",
     era: "Life of Jesus",
     gender: "Male",
-    emojis: ["🪦", "🧺", "🪨", "🕊️", "💰"],
+    emojis: ["💰", "🕊️", "🧵", "🪨", "🪦"],
+    emojiMeanings: [
+      "A rich and honorable counsellor",
+      "A secret disciple of Jesus",
+      "Wrapped the body in clean linen",
+      "Rolled a great stone to the door",
+      "Gave his own new tomb for Jesus",
+    ],
     quotes: [],
     description: "Rich man who gave his tomb for Jesus' burial",
     persona:

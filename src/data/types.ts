@@ -56,6 +56,8 @@ export interface Character {
   era: Era;
   gender: "Male" | "Female";
   emojis: string[]; // up to 5, ordered from cryptic to obvious
+  /** Short gloss for each emoji, aligned 1:1 with `emojis`, shown after solving. */
+  emojiMeanings: string[];
   quotes: { text: string; reference: string }[];
   /** Short one-line hint shown to the player; identifies without naming. */
   description: string;
