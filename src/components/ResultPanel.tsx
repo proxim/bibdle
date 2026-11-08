@@ -14,7 +14,7 @@ export default function ResultPanel({ eyebrow, title, detail, children }: Props)
   return (
     <section className={styles.panel} aria-label="Result">
       <p className={styles.eyebrow}>{eyebrow}</p>
-      <h2 className={styles.title}>{title}</h2>
+      <h2 className={styles.title} tabIndex={-1} data-focus-fallback>{title}</h2>
       {detail && <p className={styles.detail}>{detail}</p>}
       <div className={`${styles.actions} ${buttons.row}`}>{children}</div>
     </section>
