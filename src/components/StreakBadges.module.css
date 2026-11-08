@@ -1,11 +1,23 @@
+.streaks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1.1rem;
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+  animation: fade 300ms var(--ease-out) both;
+}
+
+.label {
+  font-weight: 500;
+  color: var(--fg);
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem 1.1rem;
   list-style: none;
-  font-size: 0.9375rem;
-  color: var(--fg-muted);
-  animation: fade 300ms var(--ease-out) both;
 }
 
 .count {

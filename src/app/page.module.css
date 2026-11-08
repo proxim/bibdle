@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 2.5rem;
-  width: min(100%, 64rem);
+  width: min(100%, var(--col-home));
   margin-inline: auto;
   padding: 4.5rem 1rem 1.5rem;
 }

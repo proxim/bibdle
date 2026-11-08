@@ -24,7 +24,10 @@ export default function ModePage({
   children,
 }: Props) {
   return (
-    <main className={`${styles.page} ${wide ? styles.wide : ""}`}>
+    <main
+      className={`${styles.page} ${wide ? styles.wide : ""}`}
+      data-col={wide ? "wide" : undefined}
+    >
       <header className={styles.header}>
         <Link href="/" className={styles.back}>
           <svg

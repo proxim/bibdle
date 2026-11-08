@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { MODES } from "@/lib/modes";
 import { readStats } from "@/lib/stats";
 import styles from "./StreakBadges.module.css";
@@ -12,6 +12,7 @@ interface Streak {
 }
 
 export default function StreakBadges() {
+  const labelId = useId();
   const [mounted, setMounted] = useState(false);
   const [streaks, setStreaks] = useState<Streak[]>([]);
 
@@ -36,13 +37,18 @@ export default function StreakBadges() {
   }
 
   return (
-    <ul className={styles.row} aria-label="Current streaks">
-      {active.map((s) => (
-        <li key={s.id} title={`${s.title}: ${s.streak}-day streak`}>
-          {s.title}
-          <span className={styles.count}>{s.streak}</span>
-        </li>
-      ))}
-    </ul>
+    <div className={styles.streaks}>
+      <p className={styles.label} id={labelId}>
+        Streak
+      </p>
+      <ul className={styles.row} aria-labelledby={labelId}>
+        {active.map((s) => (
+          <li key={s.id} title={`${s.title}: ${s.streak}-day streak`}>
+            {s.title}
+            <span className={styles.count}>{s.streak}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
