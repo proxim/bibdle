@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useSyncExternalStore } from "react";
+import { useHydrated } from "./useHydrated";
 
 /**
  * Supported Bible translations.
@@ -24,14 +25,30 @@ function isVersion(value: unknown): value is BibleVersion {
   return value === "KJV" || value === "NIV";
 }
 
+// Session-only fallback so the toggle still works when storage is unavailable.
+let memoryVersion: BibleVersion = DEFAULT_VERSION;
+
 function readStored(): BibleVersion {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (isVersion(stored)) return stored;
   } catch {
-    // storage unavailable (private mode) — fall through to default
+    // storage unavailable (private mode) — fall through to the in-memory value
+    return memoryVersion;
   }
   return DEFAULT_VERSION;
+}
+
+const VERSION_CHANGE_EVENT = "bibdle:version-change";
+
+// Keep multiple toggles / tabs in sync.
+function subscribe(onChange: () => void) {
+  window.addEventListener("storage", onChange);
+  window.addEventListener(VERSION_CHANGE_EVENT, onChange);
+  return () => {
+    window.removeEventListener("storage", onChange);
+    window.removeEventListener(VERSION_CHANGE_EVENT, onChange);
+  };
 }
 
 /**
@@ -45,40 +62,23 @@ export function useBibleVersion(): {
   setVersion: (next: BibleVersion) => void;
   mounted: boolean;
 } {
-  const [version, setVersionState] = useState<BibleVersion>(DEFAULT_VERSION);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setVersionState(readStored());
-    setMounted(true);
-
-    // Keep multiple toggles / tabs in sync.
-    function onStorage(e: StorageEvent) {
-      if (e.key === STORAGE_KEY && isVersion(e.newValue)) {
-        setVersionState(e.newValue);
-      }
-    }
-    function onLocal() {
-      setVersionState(readStored());
-    }
-    window.addEventListener("storage", onStorage);
-    window.addEventListener("bibdle:version-change", onLocal);
-    return () => {
-      window.removeEventListener("storage", onStorage);
-      window.removeEventListener("bibdle:version-change", onLocal);
-    };
-  }, []);
+  const version = useSyncExternalStore(
+    subscribe,
+    readStored,
+    () => DEFAULT_VERSION
+  );
+  const mounted = useHydrated();
 
   const setVersion = useCallback((next: BibleVersion) => {
-    setVersionState(next);
+    memoryVersion = next;
     try {
       localStorage.setItem(STORAGE_KEY, next);
     } catch {
       // ignore
     }
-    // Notify other hook instances in this same tab (storage event only fires
+    // Notify every hook instance in this same tab (storage event only fires
     // cross-tab), so the version toggle and the game text stay in sync.
-    window.dispatchEvent(new Event("bibdle:version-change"));
+    window.dispatchEvent(new Event(VERSION_CHANGE_EVENT));
   }, []);
 
   return { version, setVersion, mounted };

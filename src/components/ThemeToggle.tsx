@@ -1,25 +1,34 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+import { useHydrated } from "@/lib/useHydrated";
 import styles from "./ThemeToggle.module.css";
 
 type Theme = "light" | "dark";
 
 const STORAGE_KEY = "bibdle:theme";
 
-export default function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState<Theme>("dark");
+// The theme lives on <html data-theme> (set by the inline script in layout),
+// so subscribe to that attribute rather than mirroring it into React state.
+function subscribe(onChange: () => void) {
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+  return () => observer.disconnect();
+}
 
-  useEffect(() => {
-    const current = (document.documentElement.dataset.theme as Theme) || "dark";
-    setTheme(current);
-    setMounted(true);
-  }, []);
+function getTheme(): Theme {
+  return (document.documentElement.dataset.theme as Theme) || "dark";
+}
+
+export default function ThemeToggle() {
+  const mounted = useHydrated();
+  const theme = useSyncExternalStore<Theme>(subscribe, getTheme, () => "dark");
 
   function toggle() {
     const next: Theme = theme === "dark" ? "light" : "dark";
-    setTheme(next);
     document.documentElement.dataset.theme = next;
     try {
       localStorage.setItem(STORAGE_KEY, next);

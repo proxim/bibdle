@@ -1,12 +1,39 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import {
+  useCallback,
+  useMemo,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import { dateKey, type ModeId } from "./daily";
+import { useHydrated } from "./useHydrated";
 
 const KEY_PREFIX = "bibdle:state";
 
 function storageKey(mode: ModeId, key: string) {
   return `${KEY_PREFIX}:${mode}:${key}`;
+}
+
+// Session-only fallback so progress still works when storage is unavailable.
+const memory = new Map<string, string>();
+const listeners = new Set<() => void>();
+
+function readRaw(storageKeyName: string): string | null {
+  try {
+    return localStorage.getItem(storageKeyName);
+  } catch {
+    return memory.get(storageKeyName) ?? null;
+  }
+}
+
+function subscribe(onChange: () => void) {
+  listeners.add(onChange);
+  window.addEventListener("storage", onChange);
+  return () => {
+    listeners.delete(onChange);
+    window.removeEventListener("storage", onChange);
+  };
 }
 
 /**
@@ -19,33 +46,49 @@ export function useDailyState<T>(
   initial: T,
   key: string = dateKey()
 ): [T, (next: T | ((prev: T) => T)) => void, boolean] {
-  const [state, setRawState] = useState<T>(initial);
-  const [hydrated, setHydrated] = useState(false);
+  const [initialState] = useState(initial);
+  const hydrated = useHydrated();
+  const name = storageKey(mode, key);
 
-  useEffect(() => {
+  const raw = useSyncExternalStore(
+    subscribe,
+    () => readRaw(name),
+    () => null
+  );
+
+  const state = useMemo(() => {
+    if (raw === null) return initialState;
     try {
-      const stored = localStorage.getItem(storageKey(mode, key));
-      if (stored !== null) setRawState(JSON.parse(stored) as T);
+      return JSON.parse(raw) as T;
     } catch {
-      // ignore corrupt / unavailable storage
+      // ignore corrupt storage
+      return initialState;
     }
-    setHydrated(true);
-  }, [mode, key]);
+  }, [raw, initialState]);
 
   const setState = useCallback(
     (next: T | ((prev: T) => T)) => {
-      setRawState((prev) => {
-        const value =
-          typeof next === "function" ? (next as (p: T) => T)(prev) : next;
+      let prev = initialState;
+      const current = readRaw(name);
+      if (current !== null) {
         try {
-          localStorage.setItem(storageKey(mode, key), JSON.stringify(value));
+          prev = JSON.parse(current) as T;
         } catch {
-          // ignore
+          // ignore corrupt storage
         }
-        return value;
-      });
+      }
+      const value =
+        typeof next === "function" ? (next as (p: T) => T)(prev) : next;
+      const serialized = JSON.stringify(value);
+      memory.set(name, serialized);
+      try {
+        localStorage.setItem(name, serialized);
+      } catch {
+        // ignore
+      }
+      listeners.forEach((l) => l());
     },
-    [mode, key]
+    [name, initialState]
   );
 
   return [state, setState, hydrated];

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useId, useMemo, useSyncExternalStore } from "react";
+import { useHydrated } from "@/lib/useHydrated";
 import { MODES } from "@/lib/modes";
 import { readStats } from "@/lib/stats";
 import styles from "./StreakBadges.module.css";
@@ -11,21 +12,27 @@ interface Streak {
   streak: number;
 }
 
+function subscribe(onChange: () => void) {
+  window.addEventListener("storage", onChange);
+  return () => window.removeEventListener("storage", onChange);
+}
+
+// Serialized so the snapshot is a stable primitive between renders.
+function getSnapshot(): string {
+  return JSON.stringify(
+    MODES.map((m) => ({
+      id: m.id,
+      title: m.title,
+      streak: readStats(m.id).currentStreak,
+    }))
+  );
+}
+
 export default function StreakBadges() {
   const labelId = useId();
-  const [mounted, setMounted] = useState(false);
-  const [streaks, setStreaks] = useState<Streak[]>([]);
-
-  useEffect(() => {
-    setStreaks(
-      MODES.map((m) => ({
-        id: m.id,
-        title: m.title,
-        streak: readStats(m.id).currentStreak,
-      }))
-    );
-    setMounted(true);
-  }, []);
+  const mounted = useHydrated();
+  const snapshot = useSyncExternalStore(subscribe, getSnapshot, () => "[]");
+  const streaks = useMemo(() => JSON.parse(snapshot) as Streak[], [snapshot]);
 
   // Render nothing during SSR / first paint to avoid hydration mismatch.
   if (!mounted) return null;

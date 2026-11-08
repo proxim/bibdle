@@ -1,20 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import styles from "./PuzzleDate.module.css";
 
-export default function PuzzleDate() {
-  const [label, setLabel] = useState<string | null>(null);
+function subscribe() {
+  return () => {};
+}
 
-  useEffect(() => {
-    setLabel(
-      new Date().toLocaleDateString(undefined, {
-        weekday: "long",
-        month: "long",
-        day: "numeric",
-      })
-    );
-  }, []);
+function getLabel() {
+  return new Date().toLocaleDateString(undefined, {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+export default function PuzzleDate() {
+  const label = useSyncExternalStore(subscribe, getLabel, () => null);
 
   // Avoid SSR/first-paint mismatch — date is locale/timezone dependent.
   if (!label) return null;
