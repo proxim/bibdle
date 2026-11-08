@@ -7,7 +7,6 @@ import styles from "./StreakBadges.module.css";
 
 interface Streak {
   id: string;
-  icon: string;
   title: string;
   streak: number;
 }
@@ -20,7 +19,6 @@ export default function StreakBadges() {
     setStreaks(
       MODES.map((m) => ({
         id: m.id,
-        icon: m.icon,
         title: m.title,
         streak: readStats(m.id).currentStreak,
       }))
@@ -34,24 +32,17 @@ export default function StreakBadges() {
   const active = streaks.filter((s) => s.streak > 0);
 
   if (active.length === 0) {
-    return <p className={styles.hint}>Start a streak today</p>;
+    return <p className={styles.hint}>Solve any puzzle to start a streak.</p>;
   }
 
   return (
-    <div className={styles.row} aria-label="Current streaks">
+    <ul className={styles.row} aria-label="Current streaks">
       {active.map((s) => (
-        <span
-          key={s.id}
-          className={styles.badge}
-          title={`${s.title}: ${s.streak}-day streak`}
-        >
-          <span aria-hidden="true">{s.icon}</span>
-          <span className={styles.flame} aria-hidden="true">
-            🔥
-          </span>
+        <li key={s.id} title={`${s.title}: ${s.streak}-day streak`}>
+          {s.title}
           <span className={styles.count}>{s.streak}</span>
-        </span>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

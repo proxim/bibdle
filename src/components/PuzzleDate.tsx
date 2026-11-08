@@ -10,7 +10,6 @@ export default function PuzzleDate() {
     setLabel(
       new Date().toLocaleDateString(undefined, {
         weekday: "long",
-        year: "numeric",
         month: "long",
         day: "numeric",
       })
