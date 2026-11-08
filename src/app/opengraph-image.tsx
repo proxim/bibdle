@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Bibdle — the daily Bible guessing game";
+export const alt = "Bibdle: the daily Bible guessing game";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -13,22 +13,21 @@ export default function OpengraphImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "center",
-          backgroundColor: "#0d1117",
-          backgroundImage:
-            "radial-gradient(ellipse 80% 60% at 50% 0%, #d4a01733, transparent)",
-          color: "#e6edf3",
+          padding: "0 112px",
+          backgroundColor: "#15120e",
+          color: "#f0e9dc",
           fontFamily: "sans-serif",
         }}
       >
         <div
           style={{
             display: "flex",
-            fontSize: 160,
-            fontWeight: 800,
-            letterSpacing: "0.03em",
-            color: "#f5d061",
+            fontSize: 188,
+            fontWeight: 700,
+            letterSpacing: "-0.04em",
+            lineHeight: 1,
           }}
         >
           Bibdle
@@ -36,21 +35,21 @@ export default function OpengraphImage() {
         <div
           style={{
             display: "flex",
-            marginTop: 12,
-            fontSize: 44,
-            color: "#8b949e",
+            width: 96,
+            height: 4,
+            marginTop: 36,
+            backgroundColor: "#dcac52",
           }}
-        >
-          The daily Bible guessing game
-        </div>
+        />
         <div
           style={{
             display: "flex",
-            marginTop: 48,
-            fontSize: 40,
+            marginTop: 36,
+            fontSize: 44,
+            color: "#a89e8b",
           }}
         >
-          📖 💬 🐳 📜
+          A new Bible puzzle every day.
         </div>
       </div>
     ),
