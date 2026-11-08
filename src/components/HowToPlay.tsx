@@ -81,8 +81,8 @@ const RULES: Record<ModeId, React.ReactNode> = {
         </li>
       </ul>
       <p>
-        A <strong>↑ / ↓</strong> arrow points toward the book&apos;s canonical
-        position.
+        The arrow (<strong>↑</strong> or <strong>↓</strong>) points toward the
+        book&apos;s canonical position.
       </p>
     </>
   ),
