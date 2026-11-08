@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useId, useState } from "react";
 import type { Character } from "@/data/types";
 import styles from "./CharacterSearch.module.css";
 
@@ -30,11 +30,15 @@ export default function CharacterSearch({
       )
     : [];
 
-  useEffect(() => setHighlighted(0), [query]);
+  // Any change to the query starts the highlight back at the first match.
+  function updateQuery(value: string) {
+    setQuery(value);
+    setHighlighted(0);
+  }
 
   function choose(character: Character) {
     onSelect(character);
-    setQuery("");
+    updateQuery("");
   }
 
   function handleKeyDown(e: React.KeyboardEvent) {
@@ -45,7 +49,7 @@ export default function CharacterSearch({
       e.preventDefault();
       setHighlighted((h) => Math.max(h - 1, 0));
     } else if (e.key === "Escape") {
-      setQuery("");
+      updateQuery("");
     } else if (e.key === "Enter") {
       e.preventDefault();
       if (matches[highlighted]) {
@@ -64,9 +68,10 @@ export default function CharacterSearch({
       <input
         className={`${styles.input} ${shake ? styles.shake : ""}`}
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => updateQuery(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder="Type a character name…"
+        name="character"
         aria-label="Guess a character"
         role="combobox"
         aria-expanded={open}

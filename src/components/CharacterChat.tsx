@@ -234,6 +234,7 @@ export default function CharacterChat({ character, onClose, mode }: Props) {
             placeholder={placeholder}
             onChange={(e) => setInput(e.target.value)}
             disabled={sending}
+            name="message"
             aria-label="Your message"
             data-autofocus
           />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useId, useState } from "react";
 import type { Book } from "@/data/types";
 import styles from "./CharacterSearch.module.css";
 
@@ -18,11 +18,15 @@ export default function BookSearch({ options, onSelect }: Props) {
   const q = query.trim().toLowerCase();
   const matches = q ? options.filter((b) => b.name.toLowerCase().includes(q)) : [];
 
-  useEffect(() => setHighlighted(0), [query]);
+  // Any change to the query starts the highlight back at the first match.
+  function updateQuery(value: string) {
+    setQuery(value);
+    setHighlighted(0);
+  }
 
   function choose(book: Book) {
     onSelect(book);
-    setQuery("");
+    updateQuery("");
   }
 
   function handleKeyDown(e: React.KeyboardEvent) {
@@ -33,7 +37,7 @@ export default function BookSearch({ options, onSelect }: Props) {
       e.preventDefault();
       setHighlighted((h) => Math.max(h - 1, 0));
     } else if (e.key === "Escape") {
-      setQuery("");
+      updateQuery("");
     } else if (e.key === "Enter") {
       e.preventDefault();
       if (matches[highlighted]) {
@@ -52,9 +56,10 @@ export default function BookSearch({ options, onSelect }: Props) {
       <input
         className={`${styles.input} ${shake ? styles.shake : ""}`}
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => updateQuery(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder="Type a book of the Bible…"
+        name="book"
         aria-label="Guess a book"
         role="combobox"
         aria-expanded={open}
