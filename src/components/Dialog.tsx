@@ -20,7 +20,8 @@ interface Props {
 /**
  * Shared modal shell: scrim, Escape to close, focus moved in on open, Tab kept
  * inside, and focus handed back to the trigger on close. Mark the control that
- * should receive initial focus with `data-autofocus`.
+ * should receive initial focus with `data-autofocus`; a page element marked
+ * `data-focus-fallback` receives focus if the trigger no longer exists.
  */
 export default function Dialog({
   label,
@@ -76,7 +77,13 @@ export default function Dialog({
     return () => {
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = previousOverflow;
-      previous?.focus?.({ preventScroll: true });
+      // The trigger can be gone by now (e.g. the search box replaced by the
+      // result panel after a win, leaving body as the saved target); fall back to the page's declared landing spot.
+      const restore =
+        previous?.isConnected && previous !== document.body
+          ? previous
+          : document.querySelector<HTMLElement>("[data-focus-fallback]");
+      restore?.focus?.({ preventScroll: true });
     };
   }, []);
 
