@@ -1,0 +1,83 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--scrim);
+  animation: fadeIn 180ms ease-out both;
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--dialog-gap, 1rem);
+  width: min(100%, var(--dialog-width, 27.5rem));
+  height: var(--dialog-height, auto);
+  max-height: min(100%, 44rem);
+  padding: var(--dialog-padding, 1.75rem 1.5rem 1.5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  animation: enter 220ms var(--ease-out) both;
+}
+
+.close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  color: var(--fg-muted);
+  background: none;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    transform 160ms var(--ease-out);
+}
+
+.close:active {
+  transform: scale(0.94);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .close:hover {
+    color: var(--fg);
+  }
+}
+
+.title {
+  padding-right: 2rem;
+  font-size: 1.75rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

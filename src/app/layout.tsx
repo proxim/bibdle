@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Hanken_Grotesk, Newsreader } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import ThemeToggle from "@/components/ThemeToggle";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const sans = Hanken_Grotesk({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const serif = Newsreader({
+  variable: "--font-serif",
   subsets: ["latin"],
+  style: ["normal", "italic"],
+  axes: ["opsz"],
 });
 
 const SITE_URL = "https://bibdle.app";
-const TITLE = "Bibdle — the daily Bible guessing game";
+const TITLE = "Bibdle: the daily Bible guessing game";
 const DESCRIPTION =
-  "Guess the Bible character of the day across Classic, Quote, Emoji, and Verse modes.";
+  "A new Bible puzzle every day. Play Classic, Quote, Emoji, Verse, and Scripture or Shakespeare.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -47,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
+      className={`${sans.variable} ${serif.variable}`}
       suppressHydrationWarning
     >
       <head>
