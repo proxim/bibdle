@@ -1,11 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useId, useMemo, useState } from "react";
 import { dailyBardRound, BARD_ROUNDS } from "@/lib/daily";
 import type { BardSource } from "@/data/types";
 import { useDailyState } from "@/lib/useDailyState";
 import { recordWin } from "@/lib/stats";
+import ResultPanel from "./ResultPanel";
 import ShareModal from "./ShareModal";
+import buttons from "./buttons.module.css";
 import styles from "./ShakespeareGame.module.css";
 
 interface State {
@@ -14,15 +16,15 @@ interface State {
 }
 
 const SOURCE_LABEL: Record<BardSource, string> = {
-  scripture: "📖 Scripture",
-  shakespeare: "🎭 Shakespeare",
+  scripture: "Scripture",
+  shakespeare: "Shakespeare",
 };
 
 function scoreTitle(score: number): string {
-  if (score === BARD_ROUNDS) return "Perfect! 🏆";
-  if (score >= BARD_ROUNDS / 2) return "Nice!";
-  if (score > 0) return "Not bad!";
-  return "Tough one!";
+  if (score === BARD_ROUNDS) return "Perfect score";
+  if (score >= BARD_ROUNDS / 2) return "Solid run";
+  if (score > 0) return "A few right";
+  return "Tough set";
 }
 
 export default function ShakespeareGame() {
@@ -33,6 +35,7 @@ export default function ShakespeareGame() {
   });
   const [revealing, setRevealing] = useState(false);
   const [showShare, setShowShare] = useState(false);
+  const revealId = useId();
 
   const answered = state.picks.filter((p) => p !== null).length;
   const score = state.picks.reduce(
@@ -79,21 +82,18 @@ export default function ShakespeareGame() {
 
   if (!hydrated) return <div className={styles.game} />;
 
-  // Result screen — run complete and the reveal of the last answer dismissed.
+  // Result screen: run complete and the reveal of the last answer dismissed.
   if (done && !revealing) {
     return (
       <div className={styles.game}>
-        <div className={styles.result}>
-          <span className={styles.resultScore}>
-            {score}
-            <span className={styles.resultTotal}>/{BARD_ROUNDS}</span>
-          </span>
-          <span className={styles.resultGrid}>{shareGrid[0]}</span>
-          <span className={styles.resultLabel}>{scoreTitle(score)}</span>
-          <button className={styles.shareLink} onClick={() => setShowShare(true)}>
-            Share your result →
+        <ResultPanel
+          eyebrow={scoreTitle(score)}
+          title={`${score} of ${BARD_ROUNDS} correct`}
+        >
+          <button className={buttons.primary} onClick={() => setShowShare(true)}>
+            Share result
           </button>
-        </div>
+        </ResultPanel>
 
         {showShare && (
           <ShareModal
@@ -101,7 +101,7 @@ export default function ShakespeareGame() {
             guessCount={score}
             grid={shareGrid}
             title={scoreTitle(score)}
-            subtitle={`${score} / ${BARD_ROUNDS} correct`}
+            subtitle={`${score} of ${BARD_ROUNDS} correct`}
             onClose={() => setShowShare(false)}
           />
         )}
@@ -115,60 +115,56 @@ export default function ShakespeareGame() {
     <div className={styles.game}>
       <div className={styles.scorebar}>
         <span className={styles.round}>
-          Round {Math.min(activeIndex + 1, BARD_ROUNDS)} / {BARD_ROUNDS}
+          Round {Math.min(activeIndex + 1, BARD_ROUNDS)} of {BARD_ROUNDS}
         </span>
-        <div className={styles.dots} aria-hidden="true">
+        <div className={styles.pips} aria-hidden="true">
           {round.map((p, i) => {
             const pick = state.picks[i];
-            const cls =
+            const tone =
               pick !== null
                 ? pick === p.source
-                  ? styles.dotCorrect
-                  : styles.dotWrong
+                  ? styles.pipCorrect
+                  : styles.pipWrong
                 : i === activeIndex && !revealing
-                  ? styles.dotActive
-                  : styles.dot;
-            return <span key={p.id} className={`${styles.dotBase} ${cls}`} />;
+                  ? styles.pipActive
+                  : "";
+            return <span key={p.id} className={`${styles.pip} ${tone}`} />;
           })}
         </div>
-        <span className={styles.tally}>
-          {score} correct
-        </span>
+        <span className={styles.tally}>{score} correct</span>
       </div>
 
-      <div
-        className={`${styles.card} ${revealing ? styles.cardRevealed : ""}`}
-        key={passage.id}
-      >
+      <div className={styles.roundCard} key={passage.id}>
         <blockquote className={styles.passage}>“{passage.text}”</blockquote>
 
         {revealing ? (
           <div className={styles.reveal}>
             <span
+              id={`${revealId}-verdict`}
               className={`${styles.verdict} ${correct ? styles.verdictGood : styles.verdictBad}`}
             >
-              {correct ? "✓ Correct" : "✗ Nope"}
+              {correct ? "Correct" : "Not quite"}
             </span>
-            <span className={styles.attribution}>
-              {SOURCE_LABEL[passage.source]} — {passage.attribution}
+            <span id={`${revealId}-source`} className={styles.source}>
+              {SOURCE_LABEL[passage.source]}
             </span>
-            <button className={styles.next} onClick={handleNext} autoFocus>
-              {answered >= BARD_ROUNDS ? "See results →" : "Next →"}
+            <span className={styles.attribution}>{passage.attribution}</span>
+            <button
+              className={`${buttons.primary} ${styles.next}`}
+              onClick={handleNext}
+              aria-describedby={`${revealId}-verdict ${revealId}-source`}
+              autoFocus
+            >
+              {answered >= BARD_ROUNDS ? "See result" : "Next passage"}
             </button>
           </div>
         ) : (
           <div className={styles.choices}>
-            <button
-              className={`${styles.choice} ${styles.choiceScripture}`}
-              onClick={() => handleChoose("scripture")}
-            >
-              📖 Scripture
+            <button className={styles.choice} onClick={() => handleChoose("scripture")}>
+              Scripture
             </button>
-            <button
-              className={`${styles.choice} ${styles.choiceShakespeare}`}
-              onClick={() => handleChoose("shakespeare")}
-            >
-              🎭 Shakespeare
+            <button className={styles.choice} onClick={() => handleChoose("shakespeare")}>
+              Shakespeare
             </button>
           </div>
         )}

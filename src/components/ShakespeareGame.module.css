@@ -55,7 +55,7 @@
 
 /* ─────────────────────────── Passage ─────────────────────────── */
 
-.round-card {
+.roundCard {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -128,15 +128,11 @@
 }
 
 .verdictGood {
-  color: var(--correct);
+  color: var(--hit);
 }
 
 .verdictBad {
   color: var(--miss);
-}
-
-:global(:root[data-theme="dark"]) .verdictGood {
-  color: #6aa27c;
 }
 
 .source {
@@ -153,13 +149,6 @@
 
 .next {
   margin-top: 1rem;
-}
-
-/* ─────────────────────────── Result screen ─────────────────────────── */
-
-.resultGrid {
-  font-size: 1.4rem;
-  letter-spacing: 0.15rem;
 }
 
 @keyframes rise {

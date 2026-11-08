@@ -15,6 +15,7 @@
   --correct: #2e7a4b;
   --partial: #d6a53c;
   --wrong: #2d2821;
+  --hit: #6fbf8a;
   --miss: #e07a62;
   --on-correct: #ffffff;
   --on-partial: #1a1408;
@@ -39,6 +40,7 @@
   --correct: #2a6e43;
   --partial: #d6a53c;
   --wrong: #e3d9c4;
+  --hit: #2a6e43;
   --miss: #a3361f;
   --on-correct: #ffffff;
   --on-partial: #1a1408;
