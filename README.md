@@ -22,7 +22,7 @@ streak — are tracked locally.
 
 ## AI character chat
 
-After you solve Classic, Quote, or Emoji mode, a **💬 Talk to {name} →** button
+After you solve Classic, Quote, or Emoji mode, a **Talk to {name}** button
 unlocks a chat where the day's character replies in persona (Verse mode has no
 character, so it has no chat). Replies are short, stay in the biblical
 narrative, and gently deflect modern/off-topic questions.

@@ -6,65 +6,119 @@
 }
 
 .tile {
+  --tile-bg: var(--bg-tile);
+  --tile-fg: var(--fg);
+  --tile-border: var(--border);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
-  min-height: 64px;
-  padding: 0.4rem;
-  font-size: 0.78rem;
-  font-weight: 600;
+  gap: 0.15rem;
+  min-height: 4rem;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.3;
   text-align: center;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--bg-tile);
+  color: var(--tile-fg);
+  background: var(--tile-bg);
+  border: 1px solid var(--tile-border);
+  border-radius: var(--radius-sm);
 }
 
 .nameTile {
-  flex-direction: column;
-  background: var(--bg-raised);
-  border-color: var(--accent-soft);
+  --tile-bg: var(--bg-raised);
+  gap: 0.2rem;
 }
 
 .nameEmoji {
   font-size: 1.3rem;
+  line-height: 1;
 }
 
-.flip {
-  animation: flipIn var(--flip-duration) ease both;
-  transform-style: preserve-3d;
-  backface-visibility: visible;
+.label {
+  display: none;
+  font-weight: 400;
 }
 
 .correct {
-  background: var(--correct);
-  border-color: transparent;
-  color: var(--on-tile);
+  --tile-bg: var(--correct);
+  --tile-fg: var(--on-correct);
+  --tile-border: transparent;
 }
 
 .partial {
-  background: var(--partial);
-  border-color: transparent;
-  color: var(--on-tile);
+  --tile-bg: var(--partial);
+  --tile-fg: var(--on-partial);
+  --tile-border: transparent;
 }
 
 .wrong {
-  background: var(--wrong);
-  border-color: transparent;
-  color: var(--on-tile);
+  --tile-bg: var(--wrong);
+  --tile-fg: var(--on-wrong);
 }
 
-@keyframes flipIn {
+.arrow {
+  margin-left: 0.15rem;
+  font-weight: 600;
+}
+
+/* Only the newest guess flips; the colour swaps while the tile is edge-on. */
+.flip {
+  animation: flip var(--flip-duration) var(--ease-in-out) both;
+}
+
+@keyframes flip {
   0% {
-    transform: rotateX(90deg);
+    transform: perspective(600px) rotateX(0deg);
+    color: transparent;
     background: var(--bg-tile);
-    color: transparent;
+    border-color: var(--border);
   }
-  55% {
-    transform: rotateX(90deg);
+  50% {
+    transform: perspective(600px) rotateX(90deg);
     color: transparent;
+    background: var(--bg-tile);
+    border-color: var(--border);
+  }
+  50.01% {
+    color: var(--tile-fg);
+    background: var(--tile-bg);
+    border-color: var(--tile-border);
   }
   100% {
-    transform: rotateX(0deg);
+    transform: perspective(600px) rotateX(0deg);
+    color: var(--tile-fg);
+    background: var(--tile-bg);
+    border-color: var(--tile-border);
+  }
+}
+
+@media (max-width: 48rem) {
+  .row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-column: auto;
+  }
+
+  .nameTile {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    min-height: 3rem;
+    padding: 0.5rem 0.85rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .tile:not(.nameTile) {
+    min-height: 4.75rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  .label {
+    display: block;
+    font-size: 0.8125rem;
   }
 }

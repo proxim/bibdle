@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useId, useState } from "react";
 import type { Character } from "@/data/types";
 import styles from "./CharacterSearch.module.css";
 
@@ -19,7 +19,7 @@ export default function CharacterSearch({
   const [query, setQuery] = useState("");
   const [highlighted, setHighlighted] = useState(0);
   const [shake, setShake] = useState(false);
-  const listRef = useRef<HTMLUListElement>(null);
+  const listId = useId();
 
   const q = query.trim().toLowerCase();
   const matches = q
@@ -30,20 +30,26 @@ export default function CharacterSearch({
       )
     : [];
 
-  useEffect(() => setHighlighted(0), [query]);
+  // Any change to the query starts the highlight back at the first match.
+  function updateQuery(value: string) {
+    setQuery(value);
+    setHighlighted(0);
+  }
 
   function choose(character: Character) {
     onSelect(character);
-    setQuery("");
+    updateQuery("");
   }
 
   function handleKeyDown(e: React.KeyboardEvent) {
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      setHighlighted((h) => Math.min(h + 1, matches.length - 1));
+      setHighlighted((h) => Math.min(h + 1, Math.min(matches.length, 8) - 1));
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
       setHighlighted((h) => Math.max(h - 1, 0));
+    } else if (e.key === "Escape") {
+      updateQuery("");
     } else if (e.key === "Enter") {
       e.preventDefault();
       if (matches[highlighted]) {
@@ -55,37 +61,49 @@ export default function CharacterSearch({
     }
   }
 
+  const open = matches.length > 0;
+
   return (
     <div className={styles.wrap}>
       <input
         className={`${styles.input} ${shake ? styles.shake : ""}`}
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => updateQuery(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder="Type a character name…"
+        name="character"
         aria-label="Guess a character"
+        role="combobox"
+        aria-expanded={open}
+        aria-controls={listId}
+        aria-autocomplete="list"
+        aria-activedescendant={open ? `${listId}-${highlighted}` : undefined}
         autoFocus
         autoComplete="off"
         spellCheck={false}
       />
-      {matches.length > 0 && (
-        <ul className={styles.list} ref={listRef} role="listbox">
+      {open && (
+        <ul className={styles.list} id={listId} role="listbox" aria-label="Characters">
           {matches.slice(0, 8).map((c, i) => (
-            <li key={c.id} role="option" aria-selected={i === highlighted}>
-              <button
-                type="button"
-                className={`${styles.option} ${i === highlighted ? styles.optionActive : ""}`}
-                onMouseEnter={() => setHighlighted(i)}
-                onClick={() => choose(c)}
-              >
-                {showEmoji && (
-                  <span className={styles.optionEmoji}>{c.emojis[0]}</span>
-                )}
-                <span>{c.name}</span>
-                {c.aliases.length > 0 && (
-                  <span className={styles.optionAlias}>({c.aliases[0]})</span>
-                )}
-              </button>
+            <li
+              key={c.id}
+              id={`${listId}-${i}`}
+              role="option"
+              aria-selected={i === highlighted}
+              className={`${styles.option} ${i === highlighted ? styles.optionActive : ""}`}
+              onMouseEnter={() => setHighlighted(i)}
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={() => choose(c)}
+            >
+              {showEmoji && (
+                <span className={styles.optionEmoji} aria-hidden="true">
+                  {c.emojis[0]}
+                </span>
+              )}
+              <span>{c.name}</span>
+              {c.aliases.length > 0 && (
+                <span className={styles.optionAlias}>({c.aliases[0]})</span>
+              )}
             </li>
           ))}
         </ul>

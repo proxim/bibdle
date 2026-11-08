@@ -1,0 +1,59 @@
+.base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    transform 160ms var(--ease-out);
+}
+
+.base:active {
+  transform: scale(0.97);
+}
+
+.primary {
+  composes: base;
+  color: var(--on-accent);
+  background: var(--accent);
+}
+
+.secondary {
+  composes: base;
+  color: var(--fg);
+  background: transparent;
+  border-color: var(--border-strong);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .primary:hover {
+    background: var(--accent-hover);
+  }
+
+  .secondary:hover {
+    background: var(--bg-raised);
+    border-color: var(--fg-muted);
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+@media (max-width: 30rem) {
+  .row > * {
+    flex: 1 1 100%;
+  }
+}

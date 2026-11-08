@@ -71,7 +71,7 @@ export async function POST(request: Request) {
   // Graceful no-key handling: the build & route must work with no env vars.
   if (!isChatConfigured()) {
     return NextResponse.json({
-      reply: `(${character.name} is resting for now — live chat isn't configured on this deployment. Set the GEMINI_API_KEY environment variable to enable it.)`,
+      reply: `(${character.name} is resting for now. Live chat isn't configured on this deployment; set the GEMINI_API_KEY environment variable to enable it.)`,
       configured: false,
     });
   }

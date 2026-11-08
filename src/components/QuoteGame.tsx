@@ -10,7 +10,9 @@ import { getText } from "@/data/translations";
 import { POPULATED_VERSIONS, useBibleVersion } from "@/lib/version";
 import CharacterSearch from "./CharacterSearch";
 import CharacterChat from "./CharacterChat";
+import ResultPanel from "./ResultPanel";
 import ShareModal from "./ShareModal";
+import buttons from "./buttons.module.css";
 import styles from "./GuessGame.module.css";
 
 interface State {
@@ -41,9 +43,9 @@ export default function QuoteGame() {
     "?",
   ];
   const hints = [
-    `📚 Book: ${book}`,
-    `🔖 Chapter: ${chapter}`,
-    `🔤 Starts with “${answer.name[0]}”`,
+    { label: "Book", value: book },
+    { label: "Chapter", value: chapter },
+    { label: "First letter", value: answer.name[0] },
   ].slice(0, wrong.length);
 
   const guessedIds = new Set(state.wrongIds);
@@ -70,33 +72,35 @@ export default function QuoteGame() {
       <blockquote className={styles.prompt}>“{quoteText}”</blockquote>
 
       {showVersionNote && (
-        <p className={styles.versionNote}>{version} coming soon — showing KJV</p>
+        <p className={styles.versionNote}>
+          {version} is not available yet. Showing KJV.
+        </p>
       )}
 
       {hints.length > 0 && !state.won && (
         <div className={styles.hints}>
           {hints.map((h) => (
-            <span key={h} className={styles.hint}>
-              {h}
+            <span key={h.label} className={styles.hint}>
+              <span className={styles.hintLabel}>{h.label}</span>
+              {h.value}
             </span>
           ))}
         </div>
       )}
 
       {state.won ? (
-        <div className={styles.winBanner}>
-          <span className={styles.winName}>
-            🎉 {answer.name} — {quote.reference}
-          </span>
-          <div className={styles.winActions}>
-            <button className={styles.chatLink} onClick={() => setShowChat(true)}>
-              💬 Talk to {answer.name} →
-            </button>
-            <button className={styles.shareLink} onClick={() => setShowShare(true)}>
-              Share your result →
-            </button>
-          </div>
-        </div>
+        <ResultPanel
+          eyebrow={`Solved in ${guessCount} ${guessCount === 1 ? "guess" : "guesses"}`}
+          title={answer.name}
+          detail={quote.reference}
+        >
+          <button className={buttons.primary} onClick={() => setShowShare(true)}>
+            Share result
+          </button>
+          <button className={buttons.secondary} onClick={() => setShowChat(true)}>
+            Talk to {answer.name}
+          </button>
+        </ResultPanel>
       ) : (
         <CharacterSearch options={remaining} onSelect={handleGuess} />
       )}

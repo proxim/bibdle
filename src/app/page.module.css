@@ -1,231 +1,151 @@
 .main {
-  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 3rem;
-  padding: 2rem 1rem;
-  overflow: hidden;
+  gap: 2.5rem;
+  width: min(100%, var(--col-home));
+  margin-inline: auto;
+  padding: 4.5rem 1rem 1.5rem;
 }
 
-/* Ambient drifting gold motes behind the hero. Transform/opacity only. */
-.ambient {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
 }
 
-.mote {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, #f5d06133, transparent 70%);
-  filter: blur(8px);
-  opacity: 0.5;
-  animation: drift 22s ease-in-out infinite;
-  will-change: transform, opacity;
-}
-
-.mote:nth-child(1) {
-  width: 320px;
-  height: 320px;
-  top: 8%;
-  left: 12%;
-  animation-delay: 0s;
-}
-
-.mote:nth-child(2) {
-  width: 240px;
-  height: 240px;
-  top: 50%;
-  right: 10%;
-  animation-delay: -7s;
-  animation-duration: 28s;
-}
-
-.mote:nth-child(3) {
-  width: 200px;
-  height: 200px;
-  bottom: 6%;
-  left: 40%;
-  animation-delay: -14s;
-  animation-duration: 25s;
-}
-
-.main > .hero,
-.main > .grid,
-.main > .footer {
-  position: relative;
-  z-index: 1;
-}
-
-.hero {
+.intro {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  animation: rise 600ms ease-out both;
+  align-items: flex-start;
+  gap: 0.75rem;
+  animation: rise 360ms var(--ease-out) both;
 }
 
 .title {
-  font-size: clamp(3rem, 10vw, 4.5rem);
-  letter-spacing: 0.05em;
-  background: linear-gradient(120deg, var(--accent), #f5d061, var(--accent));
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shimmer 4s linear infinite;
+  font-size: clamp(3.5rem, 12vw, 5.5rem);
+  letter-spacing: -0.035em;
+  line-height: 0.95;
 }
 
 .tagline {
+  max-width: 22rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.45;
   color: var(--fg-muted);
-  font-size: 1.1rem;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 220px));
-  justify-content: center;
-  gap: 1rem;
-  width: 100%;
-  max-width: 960px;
+.list {
+  list-style: none;
+  border-top: 1px solid var(--border);
 }
 
-.card {
-  --tint: var(--accent);
-  position: relative;
+.item {
+  border-bottom: 1px solid var(--border);
+  animation: rise 360ms var(--ease-out) both;
+  animation-delay: calc(80ms + var(--i) * 45ms);
+}
+
+.mode {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
-  padding: 1.6rem 1rem;
-  background: var(--bg-raised);
-  background-image: linear-gradient(160deg, color-mix(in srgb, var(--tint) 7%, transparent), transparent 60%);
-  border: 1px solid var(--border);
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4.5rem;
+  margin-inline: -0.75rem;
+  padding: 0.9rem 0.75rem;
   border-radius: var(--radius);
   transition:
-    transform 200ms ease,
-    border-color 200ms ease,
-    box-shadow 200ms ease;
-  /* Entrance rise (staggered), then a gentle idle float. */
-  animation:
-    rise 500ms ease-out both,
-    float 6s ease-in-out infinite;
-  animation-delay: calc(var(--i) * 90ms), calc(var(--i) * 90ms + 600ms);
+    background-color 150ms ease,
+    transform 160ms var(--ease-out);
 }
 
-.tint-classic {
-  --tint: #d4a017;
-}
-.tint-quote {
-  --tint: #5aa9e6;
-}
-.tint-emoji {
-  --tint: #56c596;
-}
-.tint-verse {
-  --tint: #c792ea;
+.mode:active {
+  transform: scale(0.985);
 }
 
-.card:hover {
-  transform: translateY(-8px) scale(1.03);
-  border-color: var(--tint);
-  box-shadow:
-    0 16px 36px -14px color-mix(in srgb, var(--tint) 60%, transparent),
-    0 0 24px -8px color-mix(in srgb, var(--tint) 40%, transparent);
-  animation-play-state: paused;
+.modeText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
 }
 
-.card:hover .cardIcon {
-  transform: scale(1.18) rotate(-4deg);
+.modeTitle {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.625rem;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
 }
 
-.cardIcon {
-  font-size: 2.2rem;
-  transition: transform 200ms ease;
-}
-
-.cardTitle {
-  font-weight: 700;
-  font-size: 1.15rem;
-}
-
-.cardBlurb {
+.modeBlurb {
+  font-size: 1rem;
   color: var(--fg-muted);
-  font-size: 0.85rem;
-  text-align: center;
+}
+
+.arrow {
+  flex: none;
+  color: var(--fg-muted);
+  transition:
+    color 150ms ease,
+    transform 200ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mode:hover {
+    background: var(--bg-raised);
+  }
+
+  .mode:hover .arrow {
+    color: var(--accent);
+    transform: translateX(3px);
+  }
 }
 
 .footer {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1.5rem;
+  font-size: 0.9375rem;
   color: var(--fg-muted);
-  font-size: 0.8rem;
 }
 
-.footer a {
+.footer a,
+.footer button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   color: var(--fg-muted);
   transition: color 150ms ease;
 }
 
-.footer a:hover {
-  color: var(--accent);
+@media (hover: hover) and (pointer: fine) {
+  .footer a:hover,
+  .footer button:hover {
+    color: var(--fg);
+  }
 }
 
-.dot {
-  opacity: 0.5;
+@media (min-width: 56rem) {
+  .main {
+    padding-top: 3rem;
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: 5rem;
+    align-items: center;
+  }
 }
 
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes shimmer {
-  to {
-    background-position: 200% center;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-@keyframes drift {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.35;
-  }
-  50% {
-    transform: translate(30px, -24px) scale(1.12);
-    opacity: 0.55;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .mote {
-    animation: none;
-  }
-  .card {
-    animation: rise 500ms ease-out both;
-    animation-delay: calc(var(--i) * 90ms);
   }
 }

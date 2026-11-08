@@ -41,7 +41,7 @@ export default function VersionToggle() {
             title={
               populated
                 ? `Show scripture in ${v}`
-                : `${v} coming soon — shows KJV text for now`
+                : `${v} is coming soon. Shows KJV text for now.`
             }
             onClick={() => setVersion(v)}
           >

@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 import type { Character } from "@/data/types";
 import type { ModeId } from "@/lib/daily";
 import { dateKey } from "@/lib/daily";
 import { getCharacterQuestions } from "@/data/characterQuestions";
 import type { ChatMessage } from "@/lib/llm";
+import Dialog from "./Dialog";
+import dialogStyles from "./Dialog.module.css";
 import styles from "./CharacterChat.module.css";
 
 interface Props {
@@ -73,6 +75,7 @@ export default function CharacterChat({ character, onClose, mode }: Props) {
 
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const titleId = useId();
 
   // Used-message count is derived from the restored transcript.
   const sentCount = messages.filter((m) => m.role === "user").length;
@@ -99,20 +102,12 @@ export default function CharacterChat({ character, onClose, mode }: Props) {
     track("chat_opened", { character: character.id, mode: mode ?? "unknown" });
   }, [character.id, mode]);
 
-  // Escape to close.
-  useEffect(() => {
-    function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") onClose();
-    }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [onClose]);
-
   // Auto-scroll to the newest message / typing indicator.
   useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     listRef.current?.scrollTo({
       top: listRef.current.scrollHeight,
-      behavior: "smooth",
+      behavior: reduceMotion ? "auto" : "smooth",
     });
   }, [messages, sending]);
 
@@ -169,114 +164,113 @@ export default function CharacterChat({ character, onClose, mode }: Props) {
   }
 
   return (
-    <div
-      className={styles.overlay}
-      onClick={onClose}
-      role="dialog"
-      aria-modal="true"
-      aria-label={`Chat with ${character.name}`}
-    >
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.close} onClick={onClose} aria-label="Close">
-          ×
-        </button>
+    <Dialog labelledBy={titleId} onClose={onClose} className={styles.modal}>
+      <header className={styles.header}>
+        <h2 id={titleId} className={dialogStyles.title}>
+          Talk to {character.name}
+        </h2>
+        <p className={styles.subtitle}>{character.description}</p>
+      </header>
 
-        <header className={styles.header}>
-          <span className={styles.avatar} aria-hidden="true">
-            {character.emojis[character.emojis.length - 1] ?? "💬"}
-          </span>
-          <div className={styles.headerText}>
-            <h2 className={styles.title}>Talk to {character.name}</h2>
-            <p className={styles.subtitle}>{character.description}</p>
+      <div className={styles.messages} ref={listRef} aria-live="polite">
+        {messages.map((m, i) => (
+          <div
+            key={i}
+            className={`${styles.bubble} ${
+              m.role === "user" ? styles.user : styles.character
+            }`}
+          >
+            {m.content}
           </div>
-        </header>
+        ))}
 
-        <div className={styles.messages} ref={listRef} aria-live="polite">
-          {messages.map((m, i) => (
-            <div
-              key={i}
-              className={`${styles.bubble} ${
-                m.role === "user" ? styles.user : styles.character
-              }`}
-            >
-              {m.content}
-            </div>
-          ))}
-
-          {sending && (
-            <div
-              className={`${styles.bubble} ${styles.character} ${styles.typing}`}
-              aria-label={`${character.name} is typing`}
-            >
-              <span className={styles.dot} />
-              <span className={styles.dot} />
-              <span className={styles.dot} />
-            </div>
-          )}
-        </div>
-
-        {showSuggestions && !capReached && (
-          <div className={styles.suggestions} aria-label="Suggested questions">
-            {questions.map((q) => (
-              <button
-                key={q}
-                type="button"
-                className={styles.suggestion}
-                onClick={() => pickSuggestion(q)}
-                disabled={sending}
-              >
-                {q}
-              </button>
-            ))}
+        {sending && (
+          <div
+            className={`${styles.bubble} ${styles.character} ${styles.typing}`}
+            aria-label={`${character.name} is typing`}
+          >
+            <span className={styles.dot} />
+            <span className={styles.dot} />
+            <span className={styles.dot} />
           </div>
         )}
-
-        {error && (
-          <p className={styles.error} role="alert">
-            {error}
-          </p>
-        )}
-
-        {capReached ? (
-          <p className={styles.cap}>
-            You&rsquo;ve reached today&rsquo;s message limit with {character.name}.
-            Come back tomorrow to talk again. 🌙
-          </p>
-        ) : (
-          <form className={styles.inputRow} onSubmit={onSubmit}>
-            <input
-              ref={inputRef}
-              className={styles.input}
-              type="text"
-              value={input}
-              maxLength={1000}
-              placeholder={placeholder}
-              onChange={(e) => setInput(e.target.value)}
-              disabled={sending}
-              aria-label="Your message"
-            />
-            <button
-              type="submit"
-              className={styles.send}
-              disabled={!canSend}
-              aria-label="Send message"
-            >
-              ➤
-            </button>
-          </form>
-        )}
-
-        {!capReached && (
-          <p className={styles.remaining}>
-            {remaining} {remaining === 1 ? "message" : "messages"} left today
-          </p>
-        )}
-
-        <p className={styles.disclaimer}>
-          ✨ Replies are AI-generated in character and may be inaccurate — they
-          aren&rsquo;t Scripture.
-        </p>
       </div>
-    </div>
+
+      {showSuggestions && !capReached && (
+        <div className={styles.suggestions} aria-label="Suggested questions">
+          {questions.map((q) => (
+            <button
+              key={q}
+              type="button"
+              className={styles.suggestion}
+              onClick={() => pickSuggestion(q)}
+              disabled={sending}
+            >
+              {q}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {error && (
+        <p className={styles.error} role="alert">
+          {error}
+        </p>
+      )}
+
+      {capReached ? (
+        <p className={styles.cap}>
+          You&rsquo;ve reached today&rsquo;s message limit with {character.name}.
+          Come back tomorrow to talk again.
+        </p>
+      ) : (
+        <form className={styles.inputRow} onSubmit={onSubmit}>
+          <input
+            ref={inputRef}
+            className={styles.input}
+            type="text"
+            value={input}
+            maxLength={1000}
+            placeholder={placeholder}
+            onChange={(e) => setInput(e.target.value)}
+            disabled={sending}
+            name="message"
+            aria-label="Your message"
+            data-autofocus
+          />
+          <button
+            type="submit"
+            className={styles.send}
+            disabled={!canSend}
+            aria-label="Send message"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M10 16V4M5 9l5-5 5 5" />
+            </svg>
+          </button>
+        </form>
+      )}
+
+      {!capReached && (
+        <p className={styles.remaining}>
+          {remaining} {remaining === 1 ? "message" : "messages"} left today
+        </p>
+      )}
+
+      <p className={styles.disclaimer}>
+        Replies are AI-generated in character and may be inaccurate. They
+        aren&rsquo;t Scripture.
+      </p>
+    </Dialog>
   );
 }

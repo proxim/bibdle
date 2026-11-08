@@ -24,7 +24,7 @@ export function buildShareText(
   grid: string[]
 ): string {
   const meta = modeMeta.get(mode)!;
-  const header = `Bibdle ${meta.icon} ${meta.title} — ${dateKey()}`;
+  const header = `Bibdle ${meta.icon} ${meta.title} - ${dateKey()}`;
   const total = SCORE_MODES[mode];
   const result =
     total !== undefined
