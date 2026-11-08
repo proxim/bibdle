@@ -2,54 +2,83 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1.5rem;
-  padding: 1.5rem 1rem 4rem;
+  width: min(100%, var(--col));
+  margin-inline: auto;
+  padding: 0.5rem 1rem 3rem;
+}
+
+.wide {
+  width: min(100%, var(--col-wide));
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-  animation: fadeIn 400ms ease-out both;
+  align-items: flex-start;
+  gap: 0.35rem;
+  animation: fadeIn 300ms var(--ease-out) both;
 }
 
 .back {
-  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  margin-bottom: 0.5rem;
   color: var(--fg-muted);
-  font-size: 0.9rem;
+  font-size: 0.9375rem;
   transition: color 150ms ease;
 }
 
-.back:hover {
-  color: var(--accent);
+.back svg {
+  transition: transform 200ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .back:hover {
+    color: var(--fg);
+  }
+
+  .back:hover svg {
+    transform: translateX(-3px);
+  }
+}
+
+.titleRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
 }
 
 .heading {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.8rem;
+  font-size: clamp(2.25rem, 7vw, 3rem);
 }
 
 .help {
-  vertical-align: middle;
+  flex: none;
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
 }
 
 .sub {
+  font-size: 1.0625rem;
   color: var(--fg-muted);
 }
 
 .versionRow {
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
+    transform: translateY(4px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }

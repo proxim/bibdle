@@ -9,7 +9,9 @@ import { recordWin } from "@/lib/stats";
 import { getText } from "@/data/translations";
 import { POPULATED_VERSIONS, useBibleVersion } from "@/lib/version";
 import BookSearch from "./BookSearch";
+import ResultPanel from "./ResultPanel";
 import ShareModal from "./ShareModal";
+import buttons from "./buttons.module.css";
 import styles from "./GuessGame.module.css";
 import verseStyles from "./VerseGame.module.css";
 
@@ -62,9 +64,9 @@ export default function VerseGame() {
 
   const wrongCount = guesses.filter((g) => g.result !== "correct").length;
   const hints = [
-    `📜 Testament: ${answerBook.testament}`,
-    `📚 Section: ${answerBook.section}`,
-    `🔢 The book has ${answerBook.chapters} chapters`,
+    { label: "Testament", value: answerBook.testament },
+    { label: "Section", value: answerBook.section },
+    { label: "Chapters", value: String(answerBook.chapters) },
   ].slice(0, wrongCount);
 
   const guessedSet = new Set(state.guessedNames);
@@ -95,26 +97,31 @@ export default function VerseGame() {
       <blockquote className={styles.prompt}>“{verseText}”</blockquote>
 
       {showVersionNote && (
-        <p className={styles.versionNote}>{version} coming soon — showing KJV</p>
+        <p className={styles.versionNote}>
+          {version} is not available yet. Showing KJV.
+        </p>
       )}
 
       {hints.length > 0 && !state.won && (
         <div className={styles.hints}>
           {hints.map((h) => (
-            <span key={h} className={styles.hint}>
-              {h}
+            <span key={h.label} className={styles.hint}>
+              <span className={styles.hintLabel}>{h.label}</span>
+              {h.value}
             </span>
           ))}
         </div>
       )}
 
       {state.won ? (
-        <div className={styles.winBanner}>
-          <span className={styles.winName}>🎉 {verse.reference}</span>
-          <button className={styles.shareLink} onClick={() => setShowShare(true)}>
-            Share your result →
+        <ResultPanel
+          eyebrow={`Solved in ${guesses.length} ${guesses.length === 1 ? "guess" : "guesses"}`}
+          title={verse.reference}
+        >
+          <button className={buttons.primary} onClick={() => setShowShare(true)}>
+            Share result
           </button>
-        </div>
+        </ResultPanel>
       ) : (
         <BookSearch options={remaining} onSelect={handleGuess} />
       )}
@@ -128,14 +135,14 @@ export default function VerseGame() {
             >
               <span className={verseStyles.guessName}>{g.book.name}</span>
               <span className={verseStyles.guessDetail}>
-                {g.result === "correct" && "✅ Correct!"}
-                {g.result === "section" && `🟡 Right section (${g.book.section})`}
-                {g.result === "testament" && "🟠 Right testament"}
-                {g.result === "wrong" && "❌ Wrong testament"}
+                {g.result === "correct" && "Correct"}
+                {g.result === "section" && `Right section (${g.book.section})`}
+                {g.result === "testament" && "Right testament"}
+                {g.result === "wrong" && "Wrong testament"}
               </span>
               {g.direction && (
                 <span className={verseStyles.guessArrow}>
-                  {g.direction === "earlier" ? "⬆️ Earlier" : "⬇️ Later"}
+                  {g.direction === "earlier" ? "↑ Earlier" : "↓ Later"}
                 </span>
               )}
             </li>

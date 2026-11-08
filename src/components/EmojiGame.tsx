@@ -8,7 +8,9 @@ import { useDailyState } from "@/lib/useDailyState";
 import { recordWin } from "@/lib/stats";
 import CharacterSearch from "./CharacterSearch";
 import CharacterChat from "./CharacterChat";
+import ResultPanel from "./ResultPanel";
 import ShareModal from "./ShareModal";
+import buttons from "./buttons.module.css";
 import styles from "./GuessGame.module.css";
 
 interface State {
@@ -78,17 +80,17 @@ export default function EmojiGame() {
 
       {state.won ? (
         <>
-          <div className={styles.winBanner}>
-            <span className={styles.winName}>🎉 {answer.name}!</span>
-            <div className={styles.winActions}>
-              <button className={styles.chatLink} onClick={() => setShowChat(true)}>
-                💬 Talk to {answer.name} →
-              </button>
-              <button className={styles.shareLink} onClick={() => setShowShare(true)}>
-                Share your result →
-              </button>
-            </div>
-          </div>
+          <ResultPanel
+            eyebrow={`Solved in ${guessCount} ${guessCount === 1 ? "guess" : "guesses"}`}
+            title={answer.name}
+          >
+            <button className={buttons.primary} onClick={() => setShowShare(true)}>
+              Share result
+            </button>
+            <button className={buttons.secondary} onClick={() => setShowChat(true)}>
+              Talk to {answer.name}
+            </button>
+          </ResultPanel>
           <dl className={styles.emojiKey} aria-label="Emoji meanings">
             {answer.emojis.map((emoji, i) => (
               <div key={i} className={styles.emojiKeyRow}>
@@ -102,7 +104,10 @@ export default function EmojiGame() {
         <>
           {showHint ? (
             <div className={styles.hints}>
-              <span className={styles.hint}>💡 {answer.description}</span>
+              <span className={styles.hint}>
+                <span className={styles.hintLabel}>Hint</span>
+                {answer.description}
+              </span>
             </div>
           ) : (
             <p className={styles.count}>Each wrong guess reveals another emoji</p>

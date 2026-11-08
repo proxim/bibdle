@@ -11,7 +11,9 @@ import { recordWin } from "@/lib/stats";
 import CharacterSearch from "./CharacterSearch";
 import CharacterChat from "./CharacterChat";
 import GuessRow, { HEADER_LABELS } from "./GuessRow";
+import ResultPanel from "./ResultPanel";
 import ShareModal from "./ShareModal";
+import buttons from "./buttons.module.css";
 import styles from "./ClassicGame.module.css";
 
 interface State {
@@ -27,6 +29,8 @@ export default function ClassicGame() {
   });
   const [showShare, setShowShare] = useState(false);
   const [showChat, setShowChat] = useState(false);
+  // The guess submitted this session; only its row plays the flip animation.
+  const [freshId, setFreshId] = useState<string | null>(null);
 
   const feedbacks = state.guessedIds
     .map((id) => characterById.get(id))
@@ -39,13 +43,14 @@ export default function ClassicGame() {
   function handleGuess(character: Character) {
     if (state.won) return;
     const isWin = character.id === answer.id;
+    setFreshId(character.id);
     setState((prev) => ({
       guessedIds: [character.id, ...prev.guessedIds],
       won: prev.won || isWin,
     }));
     if (isWin) {
       recordWin("classic", state.guessedIds.length + 1);
-      setTimeout(() => setShowShare(true), 900);
+      setTimeout(() => setShowShare(true), 1400);
     }
   }
 
@@ -65,20 +70,17 @@ export default function ClassicGame() {
       {!state.won && <CharacterSearch options={remaining} onSelect={handleGuess} />}
 
       {state.won && (
-        <div className={styles.winBanner}>
-          <span className={styles.winName}>
-            🎉 {answer.name} in {feedbacks.length}{" "}
-            {feedbacks.length === 1 ? "guess" : "guesses"}!
-          </span>
-          <div className={styles.winActions}>
-            <button className={styles.chatLink} onClick={() => setShowChat(true)}>
-              💬 Talk to {answer.name} →
-            </button>
-            <button className={styles.shareLink} onClick={() => setShowShare(true)}>
-              Share your result →
-            </button>
-          </div>
-        </div>
+        <ResultPanel
+          eyebrow={`Solved in ${feedbacks.length} ${feedbacks.length === 1 ? "guess" : "guesses"}`}
+          title={answer.name}
+        >
+          <button className={buttons.primary} onClick={() => setShowShare(true)}>
+            Share result
+          </button>
+          <button className={buttons.secondary} onClick={() => setShowChat(true)}>
+            Talk to {answer.name}
+          </button>
+        </ResultPanel>
       )}
 
       {feedbacks.length > 0 && (
@@ -91,7 +93,7 @@ export default function ClassicGame() {
             ))}
           </div>
           {feedbacks.map((g) => (
-            <GuessRow key={g.guess.id} feedback={g} />
+            <GuessRow key={g.guess.id} feedback={g} animate={g.guess.id === freshId} />
           ))}
         </div>
       )}
@@ -99,7 +101,7 @@ export default function ClassicGame() {
       <p className={styles.count}>
         {feedbacks.length === 0
           ? `${CHARACTERS.length} possible characters`
-          : `${feedbacks.length} ${feedbacks.length === 1 ? "guess" : "guesses"} so far`}
+          : `${feedbacks.length} ${feedbacks.length === 1 ? "guess" : "guesses"}`}
       </p>
 
       {showChat && (
